@@ -98,3 +98,7 @@ Mapeie cada efeito ao tempo exato da palavra (`s` em `words.json`):
 Composições de exemplo ficam só na pasta local (os tempos estão fixos na fala de
 cada vídeo) e não são publicadas. O prompt reutilizável para outro agente está em
 [referencias/prompt-modelo.md](referencias/prompt-modelo.md).
+
+Os parâmetros exatos de cada efeito (springs, envelopes, fórmulas de
+enquadramento, confete, placeholders) e o equivalente no After Effects estão em
+[referencias/logica-dos-efeitos.md](referencias/logica-dos-efeitos.md).
