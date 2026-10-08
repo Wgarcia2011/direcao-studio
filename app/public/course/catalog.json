@@ -1,0 +1,33 @@
+{
+  "methods": [
+    {
+      "id": "briefing",
+      "title": "Briefing de edição",
+      "prompt": "Edite o vídeo selecionado preservando voz e sentido. Objetivo: [mensagem e público]. Use o formato e o estilo já definidos. Organize a sequência pela fala real, com títulos curtos e inserções que expliquem a mensagem. Preserve ressalvas, oferta e CTA; não invente informações. Use os assets fornecidos apenas quando forem pertinentes e fora do rosto. Proponha ações executáveis; informe o que depende de material ausente."
+    },
+    {
+      "id": "legendas",
+      "title": "Legendas e enquadramento",
+      "prompt": "Revise as legendas do vídeo selecionado usando a transcrição real. Corrija termos inequívocos, nomes e números sem reescrever a mensagem. Preserve os tempos e cortes aprovados. Garanta leitura e evite repetição entre título e legenda. Faça apenas ajustes disponíveis neste editor; não afirme ter ouvido ou observado o vídeo, pois recebe somente a transcrição e a timeline. Informe ambiguidades que precisam de conferência na amostra."
+    },
+    {
+      "id": "revisao",
+      "title": "Revisão localizada",
+      "prompt": "No intervalo [início–fim] do vídeo selecionado, corrija: [problema observado]. Resultado esperado: [mudança verificável]. Preserve o restante, voz, duração, oferta e decisões aprovadas. Use o estado atual e evite repetir tentativas sem diagnóstico. Aplique apenas ações relacionadas à correção; informe dependências e limites. Não acrescente efeitos nem modifique a direção visual."
+    },
+    {
+      "id": "resumo",
+      "title": "Resumo em 30 segundos",
+      "prompt": "Transforme o vídeo selecionado em 30 segundos. Selecione trechos coerentes pelos tempos da transcrição, preservando mensagem, ressalvas e conclusão. Corte pausas sem cortar palavras. Adicione títulos curtos e poucos elementos que expliquem a fala, sem cobrir o rosto. Use apenas os recursos locais disponíveis. Não invente oferta ou benefícios."
+    },
+    {
+      "id": "cripto",
+      "title": "Exercício de cripto",
+      "prompt": "No vídeo selecionado, use os ícones de cripto fornecidos somente quando a transcrição mencionar a moeda correspondente. Sincronize as imagens com a fala e mantenha o rosto livre. Preserve ressalvas sobre risco. Não use o gráfico de 83 mil, banner de aula ou card de lucro se seus números e oferta não forem confirmados pela gravação. Mantenha os cortes e o estilo aprovados."
+    }
+  ],
+  "assets": [],
+  "lessons": [],
+  "resources": [],
+  "source": "Direção Studio"
+}

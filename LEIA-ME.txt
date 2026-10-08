@@ -1,0 +1,1 @@
+Instalação e uso: README.md. Claude Code: CLAUDE.md e docs/CLI.md.

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="editor-token" content="__CSRF_TOKEN__"><meta name="color-scheme" content="dark"><title>Direção — seu estúdio de vídeo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg class="symbols" aria-hidden="true"><defs>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+<symbol id="i-cut" viewBox="0 0 24 24"><circle cx="5" cy="6" r="3"/><circle cx="5" cy="18" r="3"/><path d="m8 8 13 13M8 16 21 3"/></symbol>
+<symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16M12 5v15M8 20h8"/></symbol>
+<symbol id="i-style" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5Zm-9 10 9 5 9-5M3 18l9 5 9-5"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V3Zm3 0v6h8V3M7 21v-8h10v8"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 5h7l3 3h8v12H3Z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+<symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 4-6 4H2v8h3l6 4ZM16 7q7 5 0 10M14 10q3 2 0 4"/></symbol>
+</defs></svg>
+<header class="topbar">
+ <a href="/" class="brand" aria-label="Direção Studio, início"><span class="brand-symbol"><svg viewBox="0 0 33 37" fill="none" aria-hidden="true"><path d="M16.5 1 32 9.5v18L16.5 36 1 27.5v-18L16.5 1Z M1 9.5l15.5 9L32 9.5 M16.5 19v17 M8 14v9.5l8.5 4.5" stroke="currentColor" stroke-width="1.5"/></svg></span><span>direção<span class="brand-small">STUDIO</span></span></a>
+ <div class="project-title"><span id="project-name">Novo projeto</span><span class="local-label">Arquivos locais</span></div>
+ <div class="top-actions"><button id="deepseek-shortcut" class="button quiet">Chave DeepSeek</button><button id="save-template" class="button quiet" disabled><svg><use href="#i-save"/></svg>Salvar estilo</button><button id="export" class="button primary" disabled>Exportar MP4</button></div>
+</header>
+<nav class="workflow-nav" aria-label="Fluxo de edição"><button id="workflow-prepare">Preparar</button><button id="workflow-direct">Dirigir</button><button id="workflow-review">Revisar</button><button id="workflow-reuse">Reutilizar</button></nav>
+<main class="workspace">
+ <aside class="media-panel">
+  <div class="panel-heading"><h1>Seu material</h1><button id="add-file" class="icon-button" aria-label="Importar vídeo"><svg><use href="#i-upload"/></svg></button></div>
+  <label class="import-zone" for="video-file"><svg><use href="#i-upload"/></svg><strong>Importar um vídeo</strong><span>MP4, MOV ou WebM · até 2 GB</span></label>
+  <input type="file" id="video-file" accept="video/mp4,video/quicktime,video/webm,video/x-matroska" hidden>
+  <p class="section-label">Projetos nesta pasta</p><div id="project-list" class="project-list"><p class="empty-note">Seus vídeos aparecem aqui depois da importação.</p></div>
+  <label class="section-label" for="saved-styles">Estilos salvos</label><select id="saved-styles"><option value="">Escolher um estilo salvo</option></select>
+  <div class="local-foot"><svg><use href="#i-folder"/></svg><p>O vídeo fica no seu computador.<br><span>Os originais são preservados.</span></p></div>
+ </aside>
+ <section class="editor-panel">
+  <div class="editor-heading"><div class="view-switch"><button class="selected" id="view-source">Vídeo</button><button id="view-sample" disabled>Amostra renderizada</button><button id="view-final" disabled>Edição final</button></div><label class="format-select">Formato <select id="format"><option>9:16</option><option>16:9</option><option>1:1</option></select></label></div>
+  <div class="preview-space" id="drop-zone">
+   <div id="empty-preview" class="empty-preview"><div class="empty-film"><span></span><svg><use href="#i-play"/></svg><span></span></div><h2>A próxima edição<br>começa com o seu vídeo.</h2><p>Importe uma gravação. Depois, dê a direção.</p><button id="import-main" class="button primary"><svg><use href="#i-upload"/></svg>Escolher vídeo</button></div>
+   <div id="stage" class="video-stage" hidden><video id="video" playsinline preload="metadata"></video><div class="preview-frame"></div><div id="title-overlay" class="title-overlay"></div><div id="caption-overlay" class="caption-overlay"></div><div id="live-overlays"></div><div class="safe-guide" id="safe-guide"></div></div>
+   <span class="preview-indicator" id="preview-indicator" hidden>Prévia ao vivo</span>
+  </div>
+  <div class="transport"><button id="play" class="icon-button" aria-label="Reproduzir ou pausar vídeo" disabled><svg><use href="#i-play"/></svg></button><span id="time" class="time">00:00 <span>/ 00:00</span></span><input id="seek" type="range" min="0" max="100" value="0" step=".01" aria-label="Posição no vídeo" disabled><button id="safe-toggle" class="text-button" disabled>Área segura</button></div>
+  <section class="timeline"><div class="timeline-heading"><h2>Linha do tempo</h2><span id="duration-note">Importe um vídeo para começar</span></div><div id="timeline-tools" class="timeline-tools" hidden><button id="timeline-edit" class="button quiet">Editar trechos</button><button id="timeline-undo" class="button quiet">Desfazer</button><button id="timeline-redo" class="button quiet">Refazer</button><button id="timeline-build" class="button quiet" data-action="montar">Atualizar prévia dos cortes</button></div><div class="ruler"><span>00:00</span><span id="ruler-mid">—</span><span id="ruler-end">—</span></div><div class="track"><span><svg><use href="#i-play"/></svg>Vídeo</span><div id="video-track" class="track-content video-track"><span class="empty-track">Nenhum vídeo</span></div></div><div class="track"><span><svg><use href="#i-text"/></svg>Legendas</span><div id="caption-track" class="track-content caption-track"><span class="empty-track">A transcrição aparecerá aqui</span></div></div><div class="track" id="element-track-row" hidden><span><svg><use href="#i-text"/></svg>Elementos</span><div id="element-track" class="track-content caption-track"></div></div><div class="track"><span><svg><use href="#i-volume"/></svg>Áudio</span><div id="audio-track" class="track-content audio-track"><span class="empty-track">Áudio do vídeo original</span></div></div></section>
+ </section>
+ <aside class="direction-panel">
+  <nav class="inspector-tabs" aria-label="Ferramentas de edição"><button data-tab="direcao" class="selected">Direção</button><button data-tab="montagem">Montagem</button><button data-tab="legendas">Legendas</button><button data-tab="estilo">Estilo</button></nav>
+  <div class="tab-content" id="tab-direcao">
+   <h2>Você dirige.<br>A edição acontece.</h2><p class="intro-copy">Comece com um comando ou escolha uma etapa.</p>
+   <details class="deepseek-panel"><summary>Conectar DeepSeek</summary><p id="deepseek-status" class="fine-print">DeepSeek desconectado</p><label class="edit-field">Chave da API<input id="deepseek-key" type="password" autocomplete="off" maxlength="512" placeholder="Digite sua chave aqui"></label><label class="edit-field">Modelo<select id="deepseek-model"><option value="deepseek-flash">DeepSeek Flash</option><option value="deepseek-v4-pro">DeepSeek V4 Pro</option><option value="deepseek-chat">DeepSeek Chat (compatibilidade)</option><option value="deepseek-reasoner">DeepSeek Reasoner (compatibilidade)</option></select></label><div class="edit-grid edit-buttons"><button id="deepseek-connect" class="button quiet">Conectar nesta sessão</button><button id="deepseek-disconnect" class="button quiet" disabled>Desconectar</button></div><label class="toggle-row"><span>Usar DeepSeek no envio</span><input id="deepseek-use" type="checkbox" checked disabled></label><p class="fine-print">A instrução, os tempos e a transcrição seguem para a API DeepSeek. O vídeo fica local. A chave permanece na memória desta sessão. A API pode cobrar pelo uso.</p></details><label class="sr-only" for="prompt">Instrução de edição</label><div class="prompt-box"><textarea id="prompt" placeholder="Corta as pausas e coloca legenda." rows="3"></textarea><div><span>Comandos disponíveis</span><button id="send-prompt" class="icon-button send" aria-label="Executar comando" disabled><svg><use href="#i-arrow"/></svg></button></div></div>
+   <div class="suggestions"><button data-command="Corta as pausas e coloca legenda.">Cortes + legendas</button><button data-command="Gerar uma amostra">Ver uma amostra</button></div>
+   <div class="action-list"><button data-action="cortar" disabled><svg><use href="#i-cut"/></svg><span><strong>Retirar silêncios</strong><small>Juntar a fala, manter o respiro</small></span></button><button data-action="legendar" disabled><svg><use href="#i-text"/></svg><span><strong>Transcrever e legendar</strong><small>Whisper local · português</small></span></button><button data-action="amostra" disabled><svg><use href="#i-play"/></svg><span><strong>Gerar amostra de 5 s</strong><small>Ver a edição antes de exportar</small></span></button></div>
+   <button id="deepseek-stop" class="button quiet" hidden>Interromper direção</button><div id="status" class="status-box" role="status" aria-live="polite"><p>Importe seu material para começar.</p></div>
+   <label class="approval"><input type="checkbox" id="approve" disabled><span>Revisei e aprovei esta amostra</span></label>
+   <p class="fine-print">Cortes e transcrição são locais. Sem DeepSeek conectado, use comandos definidos. Com ele conectado, as instruções geram ações validadas e reversíveis.</p>
+  </div>
+<div class="tab-content" id="tab-montagem" hidden>
+ <h2>Monte a história.</h2><p class="intro-copy" id="edit-hint">Selecione um trecho para começar.</p>
+ <button id="edit-enable" class="button primary" data-action="editar">Ativar edição da timeline</button>
+ <div id="editing-controls" hidden>
+  <div class="edit-history-tools"><button id="edit-undo" class="button quiet">Desfazer</button><button id="edit-redo" class="button quiet">Refazer</button></div>
+  <p id="edit-summary" class="edit-summary" role="status"></p>
+  <details open><summary>Trecho selecionado</summary>
+   <label class="edit-field">Trecho<select id="edit-clip"></select></label>
+   <p class="fine-print">Entrada e saída são tempos na cópia de trabalho.</p>
+   <div class="edit-grid"><label class="edit-field">Entrada (s)<input id="clip-in" type="number" min="0" step="0.033"></label><label class="edit-field">Saída (s)<input id="clip-out" type="number" min="0" step="0.033"></label></div>
+   <button id="clip-trim" class="button primary full-button">Aplicar corte</button>
+   <div class="edit-grid edit-buttons"><button id="clip-split" class="button quiet">Dividir no cursor</button><button id="clip-remove" class="button quiet">Retirar trecho</button><button id="clip-before" class="button quiet">Mover antes</button><button id="clip-after" class="button quiet">Mover depois</button></div>
+   <div class="edit-grid"><label class="edit-field">Zoom<input id="clip-zoom" type="number" min="1" max="1.4" step=".05"></label><label class="edit-field">Volume<input id="clip-volume" type="number" min="0" max="2" step=".1"></label></div>
+   <label class="edit-field">Fade de áudio na próxima emenda (s)<input id="clip-fade" type="number" min="0" max=".5" step=".02"></label><button id="clip-adjust" class="button quiet full-button">Aplicar zoom e áudio</button>
+  </details>
+  <details id="element-details"><summary>Textos e elementos 3D</summary>
+   <div class="edit-grid edit-buttons"><button id="overlay-add-text" class="button quiet">Adicionar texto</button><button id="overlay-add-3d" class="button quiet">Adicionar 3D</button></div>
+   <label class="edit-field">Elemento<select id="edit-overlay"></select></label>
+   <div id="overlay-fields" hidden>
+    <label class="edit-field" id="overlay-text-row">Texto<input id="overlay-text" maxlength="120"></label>
+    <label class="edit-field" id="overlay-model-row">Objeto 3D<select id="overlay-model"><option value="cube">Cubo</option><option value="sphere">Esfera</option><option value="torus">Anel</option></select></label>
+    <div class="edit-grid"><label class="edit-field">Começa em (s)<input id="overlay-start" type="number" min="0" step=".1"></label><label class="edit-field">Duração (s)<input id="overlay-duration" type="number" min=".1" step=".1"></label><label class="edit-field">Horizontal (%)<input id="overlay-x" type="number" min="8" max="88"></label><label class="edit-field">Vertical (%)<input id="overlay-y" type="number" min="10" max="80"></label><label class="edit-field">Tamanho do texto<input id="overlay-font" type="number" min="32" max="130"></label><label class="edit-field">Escala 3D<input id="overlay-scale" type="number" min=".3" max="2" step=".1"></label></div>
+    <label class="edit-field">Cor<select id="overlay-color"><option value="#f5a962">Laranja</option><option value="#9759ff">Roxo</option><option value="#c7a7ff">Lilás</option><option value="#f5f0ff">Branco</option></select></label>
+    <p class="fine-print">O marcador mostra a posição. Confira a animação 3D na amostra renderizada.</p>
+    <div class="edit-grid edit-buttons"><button id="overlay-save" class="button primary">Salvar elemento</button><button id="overlay-remove" class="button quiet">Retirar elemento</button></div>
+   </div>
+  </details>
+  <details id="slot-controls"><summary>Marca e chamada final</summary><label class="edit-field">Marca<input id="slot-brand" maxlength="120"></label><label class="edit-field">Chamada final<input id="slot-cta" maxlength="120"></label><button id="slot-save" class="button quiet full-button">Salvar marca e chamada</button></details>
+  <details><summary>Histórico salvo</summary><ol id="edit-history" class="edit-history-list"></ol></details>
+ </div>
+</div>
+
+  <div class="tab-content" id="tab-legendas" hidden><h2>As palavras,<br>no tempo da fala.</h2><p class="intro-copy">Clique em uma legenda para revisar. Tempos ajustados manualmente são estimados.</p><label class="toggle-row"><span>Mostrar legendas</span><input id="captions-toggle" type="checkbox" checked></label><div id="caption-list" class="caption-list"><p class="empty-note">Transcreva seu vídeo para revisar as legendas.</p></div></div>
+  <div class="tab-content" id="tab-estilo" hidden><h2>Uma direção<br>para cada vídeo.</h2><p class="intro-copy">Escolha o tratamento e o motor da composição abaixo.</p><div id="styles" class="styles"><button data-style="limpo"><span class="swatch clean"></span><strong>Limpo</strong><small>O material em primeiro plano</small></button><button data-style="roxo" class="selected"><span class="swatch purple"></span><strong>Roxo</strong><small>Moldura + destaque na fala</small></button><button data-style="lettering"><span class="swatch lettering">Aa</span><strong>Lettering</strong><small>Título grande com entrada</small></button><button data-style="perspectiva"><span class="swatch perspective"></span><strong>Perspectiva</strong><small>Vídeo em um plano inclinado</small></button><button data-style="motion"><span class="swatch motion"></span><strong>Motion</strong><small>Aproximação suave do vídeo</small></button></div><label class="field-label" for="title">Título nos primeiros 3 segundos</label><input id="title" type="text" maxlength="100" placeholder="Escreva o seu gancho"><p class="fine-print">Textos e objetos 3D editáveis estão em Montagem. Selecione as camadas do apresentador abaixo para recortar o fundo.</p></div>
+ </aside>
+</main>
+<footer class="footer"><span id="engine-status">Conferindo os motores locais…</span><span>Prepare · Peça · Revise · Reutilize</span></footer>
+<div id="toast" class="toast" role="alert" hidden></div>
+<script src="app.js"></script><script src="edit-ui.js"></script><script src="deepseek-ui.js"></script><script src="course-ui.js"></script><script src="advanced-ui.js"></script>
+<link rel="stylesheet" href="reference-layout.css"><script src="reference-layout.js"></script>
+<link rel="stylesheet" href="assembly-flow.css"><script src="assembly-flow.js"></script>
+<link rel="stylesheet" href="automatic-edit.css"><script src="automatic-edit.js"></script>
+<link rel="stylesheet" href="caption-studio.css"><script src="caption-studio.js"></script>
+<link rel="stylesheet" href="motion-studio.css"><script src="motion-studio.js"></script></body></html>

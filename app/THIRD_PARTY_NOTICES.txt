@@ -1,0 +1,5 @@
+OpenReel Video — Augustus Otu and Contributors, MIT.
+Revisão c9340465e5d37e684cc25bdbe746c4ccd45e165c.
+A função transition_audio_fades em editing_actions.py adapta packages/core/src/audio/transition-audio-fades.ts.
+Licença integral: third-party/OpenReel-LICENSE.txt.
+Demais ações e persistência: implementação própria em Python inspirada na separação de ações, estado e histórico.
