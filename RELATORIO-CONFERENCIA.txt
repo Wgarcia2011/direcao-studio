@@ -1,0 +1,115 @@
+DIREÇÃO STUDIO — RELATÓRIO DE CONFERÊNCIA
+Data: 08/10/2026
+
+RESULTADO
+Projeto publicado em https://github.com/Wgarcia2011/direcao-studio
+Visibilidade: pública. Branch: main.
+Commit inicial conferido por novo clone: 42211d750269368148cbf6279a6b5d69b49eaca2.
+A mudança para privado ficou para depois, conforme combinado; não foi agendada.
+
+O QUE FOI CORRIGIDO
+- Resolvidos os 20 erros de lint e o aviso do Remotion: tipos explícitos para
+  cenas, assets, legendas e eventos do Player; dependências do efeito React.
+- URLs de mídia agora respeitam a porta escolhida, inclusive no Motion.
+- CLI local adicionada, usando a API, token de sessão e validações da interface.
+  Importa vídeos em blocos, retorna JSON UTF-8 e sinaliza falhas com código 1.
+- Instalação PowerShell cria ambiente virtual, instala os dois projetos Node,
+  prepara fontes e gera o Player. Inicializador usa o ambiente virtual.
+- Dependências Python diretas declaradas e versões transitivas congeladas.
+- Download explícito do Whisper e opção de download prévio do MODNet.
+- Dependência transitiva werift atualizada para 0.25.0, removendo a cadeia de
+  alertas do pacote ip. Auditoria npm após reinstalação: zero alertas.
+  Referência: https://github.com/advisories/GHSA-2p57-rm9w-gvfp
+- Documentação atualizada; CLAUDE.md, SKILL.md e docs/CLI.md orientam o agente.
+- Testes de imagem usam fixture sintética; testes não dependem dos assets do
+  curso nem de uma pasta temporária criada previamente neste computador.
+- Prévia de imagens importadas corrigida para usar local-assets.
+- Distribuição pública tem catálogo sem mídias/documentos do curso e remove
+  links para esses materiais. Fontes do Windows não são redistribuídas.
+
+VALIDAÇÃO EXECUTADA
+[PASSOU] Instalação completa numa pasta separada, com novo ambiente Python e
+         dependências Node baixadas pelos lockfiles.
+[PASSOU] 38 testes Python na distribuição instalada.
+[PASSOU] ESLint e compilação TypeScript no Remotion instalado.
+[PASSOU] Build do Player pela mesma rotina usada na instalação.
+[PASSOU] Download do Whisper e carregamento local em CPU/int8.
+[PASSOU] Fluxo real: vídeo sintético, importação via CLI, transcrição Whisper,
+         timeline, corte para 1 segundo, título/texto, amostra Remotion,
+         aprovação da fixture e exportação MP4 com áudio.
+         Duração conferida: 1,003 segundo. Hash do original preservado.
+         Execução em porta 55781 confirmou o uso fora da porta padrão.
+[PASSOU] Rejeição de revisão desatualizada e aprovação sem amostra válida.
+[PASSOU] Auditoria de publicação antes do envio e no clone do GitHub:
+         83 arquivos de aplicação/documentação, aproximadamente 1,02 MB,
+         nenhum problema. Este relatório é adicionado separadamente.
+[PASSOU] Nenhum submódulo/Git interno no repositório publicado.
+[PASSOU] Conferência de padrões comuns de chaves nos arquivos preparados.
+[PASSOU] Novo clone do GitHub com commit igual ao publicado.
+
+O QUE FOI PUBLICADO
+- Código Python, interface HTML/CSS/JavaScript e composições Remotion.
+- Manifests e lockfiles; scripts de instalação, início, auditoria e validação.
+- Instruções para interface e Claude Code; fontes com licenças incluídas.
+- Catálogo de comandos sem vídeos, imagens ou documentos do curso.
+
+O QUE NÃO FOI PUBLICADO
+- Nenhum vídeo: original, exemplo, prévia, montagem, render ou exportação.
+- Projetos locais, backups, histórico de versões e templates pessoais.
+- Mídias importadas, materiais originais do curso e documentos de edições.
+- Modelos Whisper/MODNet, navegador do renderer, node_modules e ambientes Python.
+- Chaves de API e caches. Vídeos sintéticos de teste permanecem locais e ignorados.
+
+PASTAS LOCAIS
+Fonte e projetos atuais: D:\Wagner\Video\Video Editor
+Repositório preparado e instalado:
+D:\Wagner\Video\Video Editor\exportacao-github\direcao-studio
+Clone de conferência:
+D:\Wagner\Video\Video Editor\validacao-github\direcao-studio
+O Git interno original do Remotion foi preservado na pasta de origem; o envio
+foi feito por uma distribuição independente, sem modificar seu histórico.
+
+INSTALAÇÃO NO OUTRO PC
+1. Instale Git, Python (recomendado 3.11), Node 22+ e FFmpeg/FFprobe no PATH.
+2. Abra PowerShell:
+
+   git clone https://github.com/Wgarcia2011/direcao-studio.git
+   cd direcao-studio
+   powershell -ExecutionPolicy Bypass -File .\INSTALAR.ps1 -BaixarWhisper
+   powershell -ExecutionPolicy Bypass -File .\INICIAR.ps1
+
+3. Abra http://127.0.0.1:8765/editor.
+4. Abra a mesma pasta no Claude Code. Peça para ler CLAUDE.md e operar
+   pela CLI, com o servidor aberto em outro terminal.
+5. Importe seus vídeos localmente. Clonar não transfere projetos antigos.
+6. Gere uma amostra e confira imagem, áudio, cortes e leitura das legendas antes
+   de aprovar a exportação do seu vídeo.
+
+LIMITES DA CONFERÊNCIA
+- A operação pelo terminal foi executada de ponta a ponta; uma sessão real de
+  conversa com Claude Code no outro PC ainda precisa ser conferida ali.
+- O teste sintético valida instalação e processamento, não a qualidade narrativa
+  ou o resultado visual de um vídeo real. Não foi realizada nova revisão visual
+  completa de todas as telas/presets desta distribuição.
+- Na distribuição pública, a fonte de impacto copiada anteriormente do Windows
+  foi substituída por Manrope com licença incluída. Confira a aparência das
+  legendas; ela pode diferir da instalação original.
+- DeepSeek não foi chamado de verdade; seus testes usam respostas simuladas.
+- MODNet e aceleração GPU não foram revalidados neste ciclo. CPU foi validada
+  na exportação; remoção de fundo precisa de modelo e conferência própria.
+- Primeira renderização pode baixar o navegador. Instalação/downloads exigem
+  internet; edição e transcrição usam os arquivos locais.
+
+COMANDOS DE CONFERÊNCIA
+Na pasta instalada:
+  .venv/Scripts/python.exe -m unittest discover -s app/tests -p 'test_*.py'
+  .venv/Scripts/python.exe scripts/auditar-publicacao.py
+  .venv/Scripts/python.exe scripts/verificar-fluxo.py --transcribe
+Na pasta app/remotion-project:
+  npm run lint
+  npm audit
+
+CONCLUSÃO
+Publicação e instalação limpa verificadas, sem vídeos no GitHub. O aplicativo
+está preparado para uso local e operação pelo terminal do Claude Code. A última
+conferência no outro PC é instalar e revisar uma amostra com seu próprio vídeo.
