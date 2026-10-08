@@ -36,7 +36,23 @@ fala; dúvidas de nomes e transcrição devem ser conferidas na amostra.
 Não retire pausas de uma montagem aprovada sem o pedido correspondente.
 Não envie vídeos nem chaves a serviços externos. Não registre chaves no código.
 
-## Estrutura e validação
+## Skills complementares
+
+As quatro skills estão em `.agents/skills/`, com os arquivos de apoio completos.
+Entradas em `.claude/skills/` apontam para elas para uso no Claude Code. Leia a
+skill completa e suas referências relevantes, não apenas a entrada curta.
+
+- Briefing: `.agents/skills/meia-briefing-de-edicao/SKILL.md`.
+- Legendas/enquadramento: `.agents/skills/meia-legendas-e-enquadramento/SKILL.md`.
+- Revisão/retrabalho: `.agents/skills/meia-revisao-economia/SKILL.md`.
+- Remotion: `.agents/skills/remotion-best-practices/SKILL.md`; seu roteador indica
+  as referências para composição, Player, renderização, legendas e outros temas.
+
+Selecione conforme o pedido. Estas orientações não instalam serviços ou modelos
+automaticamente e não autorizam chamadas pagas, mudanças de escopo ou exportação
+sem a aprovação já exigida pelo fluxo do editor.
+
+## Código e verificações
 
 `app/server.py`: API, jobs e validação; `editing_actions.py`: timeline e histórico;
 `assembly_flow.py`: tempos e fades; `remotion_engine.py` e `remotion-project/`:

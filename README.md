@@ -41,6 +41,9 @@ aprove e exporte. Limite atual: 2 GB e 10 minutos por vídeo. A API é local.
 Abra esta pasta no Claude Code e peça a edição. `CLAUDE.md` orienta o agente;
 `docs/CLI.md` descreve os comandos. Inicie o servidor num terminal separado.
 O agente usa `.venv/Scripts/python.exe app/cli.py` e ações validadas localmente.
+As skills de briefing, legendas/enquadramento, revisão e Remotion acompanham o
+repositório em `.agents/skills/`, com entradas para Claude Code em `.claude/skills/`.
+Leia a skill completa e os arquivos de apoio indicados antes de aplicá-la.
 Para outra porta: `INICIAR.ps1 -Port 8876`; na CLI: `--port 8876` antes do comando.
 
 ## Arquivos locais

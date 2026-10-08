@@ -113,3 +113,12 @@ CONCLUSÃO
 Publicação e instalação limpa verificadas, sem vídeos no GitHub. O aplicativo
 está preparado para uso local e operação pelo terminal do Claude Code. A última
 conferência no outro PC é instalar e revisar uma amostra com seu próprio vídeo.
+
+ATUALIZAÇÃO — SKILLS COMPLEMENTARES (08/10/2026)
+Incluídas as skills meia-briefing-de-edicao, meia-legendas-e-enquadramento,
+meia-revisao-economia e remotion-best-practices em .agents/skills, com seus
+arquivos de referência, scripts e recursos de apoio. Entradas em .claude/skills
+apontam para os arquivos completos. CLAUDE.md e README.md indicam como usá-las.
+Nenhum vídeo foi incluído; as imagens dessas skills são ícones de documentação.
+Esta atualização altera instruções e empacotamento; o código do editor e as
+versões de suas dependências permanecem os da validação acima.
