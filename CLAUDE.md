@@ -36,15 +36,27 @@ fala; dúvidas de nomes e transcrição devem ser conferidas na amostra.
 Não retire pausas de uma montagem aprovada sem o pedido correspondente.
 Não envie vídeos nem chaves a serviços externos. Não registre chaves no código.
 
-## Skills complementares
+## Motion dinâmico
 
-As quatro skills estão em `.agents/skills/`, com os arquivos de apoio completos.
+Para cenas de Motion, use `motion-presets`, `motion-show`, `motion-upload`,
+`motion-preset` e `motion-render` da CLI, conforme docs/CLI.md. A renderização de
+Motion usa um fluxo próprio; `run ID amostra` é o fluxo de edição comum.
+Sincronize `start` e `item_times` à fala real. Ao mover o apresentador para o lado,
+ajuste a largura dos cards e o foco do recorte para preservar o rosto.
+Apresente `amostras/motion-preview.mp4`; após aprovação explícita, execute
+`motion-approve ID --reviewed` antes de `motion-render ID --full`.
+
+## Skills de direção
+
+As cinco skills estão em `.agents/skills/`, com os arquivos de apoio completos.
 Entradas em `.claude/skills/` apontam para elas para uso no Claude Code. Leia a
 skill completa e suas referências relevantes, não apenas a entrada curta.
 
 - Briefing: `.agents/skills/meia-briefing-de-edicao/SKILL.md`.
 - Legendas/enquadramento: `.agents/skills/meia-legendas-e-enquadramento/SKILL.md`.
 - Revisão/retrabalho: `.agents/skills/meia-revisao-economia/SKILL.md`.
+- Shorts com motion em código (≈30 s, 16:9 ou 9:16): `.agents/skills/meia-motion-shorts/SKILL.md`;
+  ideias e decisões em `docs/MOTION-IDEIAS.md`.
 - Remotion: `.agents/skills/remotion-best-practices/SKILL.md`; seu roteador indica
   as referências para composição, Player, renderização, legendas e outros temas.
 

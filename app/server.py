@@ -545,6 +545,8 @@ class Handler(BaseHTTPRequestHandler):
                 from urllib.parse import parse_qs
                 directory=project_path(parse_qs(urlparse(self.path).query).get('project',[''])[0])
                 self.send_json(motion_studio.preview(directory,__import__(__name__)))
+            elif path == '/api/motion/presets':
+                self.send_json(motion_studio.motion_presets.catalog())
             elif path == '/api/assets':
                 self.send_json(asset_registry.assets())
             elif path == "/api/templates":
@@ -617,11 +619,17 @@ class Handler(BaseHTTPRequestHandler):
             if not 0 < length <= 2 * 1024 * 1024:
                 raise ValueError("Requisição inválida.")
             data = json.loads(self.rfile.read(length))
-            if self.path in {'/api/motion','/api/motion/suggest','/api/motion/render'}:
+            if self.path in {'/api/motion','/api/motion/suggest','/api/motion/render','/api/motion/preset','/api/motion/approve'}:
                 directory=project_path(data['project'])
                 module=__import__(__name__)
                 if self.path=='/api/motion/suggest':self.send_json(motion_studio.suggest(directory,data.get('prompt',''),module))
                 elif self.path=='/api/motion/render':self.send_json(motion_studio.render_job(directory,data,module),202)
+                elif self.path=='/api/motion/approve':self.send_json(motion_studio.approve(directory,data))
+                elif self.path=='/api/motion/preset':
+                    state=edits.get_state(directory)
+                    source=directory/('edit/limpo.mp4' if (directory/'edit/limpo.mp4').exists() else 'brutos/original.mp4')
+                    total=edits.duration(state['document']) if state else probe(source)['duration']
+                    self.send_json(motion_studio.add_preset(directory,data,total))
                 else:
                     source=directory/('edit/limpo.mp4' if (directory/'edit/limpo.mp4').exists() else 'brutos/original.mp4')
                     self.send_json(motion_studio.save(directory,data,probe(source)['duration']))

@@ -64,3 +64,43 @@ Tempo esgotado da CLI não cancela o job. Falhas retornam código 1 e JSON em st
 Para limpar apenas respirações ou escolher perfis de ritmo, use a interface ou
 `run ID automatico --automatic etapas.json --wait` após consultar o esquema em
 `automatic_edit.validate`. Não invente parâmetros ou opções ausentes.
+
+## Motion dinâmico pelo chat
+
+```powershell
+python app/cli.py motion-presets
+python app/cli.py motion-show ID
+python app/cli.py motion-upload ID 'C:/Imagens/apoio.png'
+python app/cli.py motion-preset ID preset.json
+python app/cli.py motion-render ID --start 0 --seconds 20 --wait
+# Apresente projetos/ID/amostras/motion-preview.mp4 e aguarde aprovação.
+python app/cli.py motion-approve ID --reviewed
+python app/cli.py motion-render ID --full --wait
+```
+
+Os seis presets: `dynamic-title`, `impact-word`, `image-card`, `checklist`,
+`comparison`, `flow`. A adição preserva os outros motions e o histórico.
+O arquivo preset.json recebe a revisão atual do documento Motion (independente
+da revisão da timeline), retornada por `motion-show`:
+
+```json
+{"revision":0,"preset":"checklist","start":3,"duration":4,
+ "items":["Preparar","Praticar","Revisar"],"item_times":[0,1,2],
+ "intensity":"energetic","x":76,"y":42,"box_width":40,
+ "accent":"#4ee2c0","accent2":"#b798ff"}
+```
+
+`item_times` são segundos relativos ao início da inserção; escolha os valores
+pelas palavras da transcrição. Se vazio, o preset distribui entradas automáticas.
+Use `soft`, `balanced` ou `energetic` para intensidade. Os campos `x`, `y` e
+`box_width` são percentuais. Comparações aceitam dois `labels` personalizáveis.
+O preset `image-card` exige o ID de um asset previamente importado.
+
+Para colocar o apresentador de lado, salve o documento completo com `motion ID
+arquivo.json`, incluindo uma cena `kind: "layout"`, `layout: "panel"`, os tempos,
+`presenter_width` (25–70%), `fit`, `focusX` e `focusY`. Identificadores de cena
+precisam ter 12 caracteres hexadecimais; preserve os existentes.
+
+O caminho final é `projetos/ID/final/motion-video.mp4`. Motion possui aprovação
+própria: mudanças na edição, nos textos, assets ou legendas exigem nova amostra.
+Falhas de render retornam erro pela CLI e não substituem o arquivo anterior.

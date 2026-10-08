@@ -3,6 +3,7 @@ import React from 'react';
 import {MotionPath} from './MotionPath';
 import {MotionFloatingCard} from './MotionFloatingCard';
 import {MotionAlert} from './MotionAlert';
+import {DynamicMotion} from './DynamicMotion';
 import {AbsoluteFill,Audio,Img,OffthreadVideo,Sequence,interpolate,staticFile,useCurrentFrame,useVideoConfig} from 'remotion';
 import {VideoProps,Object3D,Explain} from './EditorVideo';
 import {ThreeCanvas} from '@remotion/three';
@@ -11,6 +12,7 @@ function Media({asset,fit}:{asset:MotionAsset | undefined;fit:React.CSSPropertie
 function Element({s,assets}:{s:MotionScene;assets:Record<string,MotionAsset>}){
  const frame=useCurrentFrame();const dur=s.durationInFrames;const ramp=s.intensity==='energetic'?6:s.intensity==='balanced'?10:15;
  const opacity=interpolate(frame,[0,Math.min(ramp,dur/3),Math.max(dur*2/3,dur-ramp),dur],[0,1,1,0],clamp);const rise=interpolate(frame,[0,ramp],[24,0],clamp);
+ if(s.preset)return <DynamicMotion scene={s} assets={assets}/>;
  if(s.effect==='floating')return <MotionFloatingCard scene={s}/>;
  if(s.effect==='alert')return <MotionAlert scene={s}/>;
  const items=s.items?.length?s.items:[s.text];const support=Boolean(s.asset);const lines=s.effect==='comparison'?'row':'column';
@@ -31,9 +33,9 @@ function Captions({words,t,c,policy,horizontal}:{words:Word[];t:number;c:MotionC
 }
 export const MotionVideo:React.FC<{p:VideoProps}>=({p})=>{
  const local=useCurrentFrame();const {width,height,fps}=useVideoConfig();const frame=local+(p.offsetFrames||0),t=frame/fps;const horizontal=width>height;const m=p.motion!;const scene=m.scenes.find((s:MotionScene)=>s.kind==='layout'&&t>=s.start&&t<s.start+s.duration);const layout=scene?.layout||'full';const assets=m.assets||{};
- const progress=scene?interpolate(frame,[scene.startFrame,scene.startFrame+Math.min(24,scene.durationInFrames/3)],[0,1],clamp):0;const exit=scene?interpolate(frame,[scene.startFrame+Math.max(scene.durationInFrames*2/3,scene.durationInFrames-24),scene.startFrame+scene.durationInFrames],[1,0],clamp):1;const phase=Math.min(progress,exit);const smooth=phase*phase*(3-2*phase);
+ const progress=scene?interpolate(frame,[scene.startFrame,scene.startFrame+Math.min(24,scene.durationInFrames/3)],[0,1],clamp):0;const exit=scene?.hold_layout?1:scene?interpolate(frame,[scene.startFrame+Math.max(scene.durationInFrames*2/3,scene.durationInFrames-24),scene.startFrame+scene.durationInFrames],[1,0],clamp):1;const phase=Math.min(progress,exit);const smooth=phase*phase*(3-2*phase);
  let presenter:React.CSSProperties={position:'absolute',inset:0,overflow:'hidden'};let support:React.CSSProperties={position:'absolute',left:'54%',top:'10%',width:'42%',height:'70%',overflow:'hidden',borderRadius:16};
- if(layout==='panel'||layout==='split')presenter=horizontal?{position:'absolute',left:'3%',top:'8%',width:layout==='split'?'46%':'48%',height:'70%',overflow:'hidden',borderRadius:16}:{position:'absolute',left:'5%',top:'6%',width:'90%',height:'44%',overflow:'hidden',borderRadius:16};
+ if(layout==='panel'||layout==='split')presenter=horizontal?{position:'absolute',left:'3%',top:'8%',width:`${scene?.presenter_width??(layout==='split'?46:48)}%`,height:'70%',overflow:'hidden',borderRadius:16}:{position:'absolute',left:'5%',top:'6%',width:'90%',height:'44%',overflow:'hidden',borderRadius:16};
  if(layout==='stage')presenter={position:'absolute',left:'4%',top:'12%',width:'59%',height:'72%',overflow:'hidden',borderRadius:24};
  if(layout==='pip')presenter={position:'absolute',left:'5%',top:'8%',width:'32%',height:'38%',overflow:'hidden',borderRadius:16,zIndex:2};
  if(layout==='pip'||layout==='support')support={position:'absolute',inset:0,overflow:'hidden'};

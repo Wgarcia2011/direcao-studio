@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shorts com motion em código"
+  short_description: "Corte de 30 s com motion Remotion ligado à fala"
+  default_prompt: "Use $meia-motion-shorts para montar um corte de 30 s de [VÍDEO OU PROJETO] em [9:16 ou 16:9], sem legenda e sem emojis, só com placeholders e animações."

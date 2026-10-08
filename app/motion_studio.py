@@ -1,9 +1,10 @@
 """Documentos Motion por projeto; preview/render compartilham props e composição."""
 from pathlib import Path
 from copy import deepcopy
-import json, math, re, threading, uuid, time, shutil
+import json, math, re, threading, uuid, time, shutil, hashlib
 import editing_actions as edits
 import remotion_engine
+import motion_presets
 LOCK=threading.RLock()
 LAYOUTS={'full','zoom','panel','split','pip','support','stage'}
 EFFECTS={'title','keyword','checklist','steps','comparison','flow','calendar','chart','funnel','cards','3d','alert','floating'}
@@ -35,6 +36,12 @@ def normalize(data,total,assets):
         if kind not in {'layout','element'}:raise ValueError('Tipo de inserção inválido.')
         layout=s.get('layout','full');effect=s.get('effect','title')
         if layout not in LAYOUTS or effect not in EFFECTS:raise ValueError('Composição ou efeito inválido.')
+        preset=s.get('preset','')
+        if preset and (preset not in motion_presets.PRESETS or motion_presets.PRESETS[preset]['effect']!=effect):
+            raise ValueError('Preset e efeito não correspondem.')
+        for key in ('accent','accent2'):
+            if not re.fullmatch(r'#[a-fA-F0-9]{6}',s.get(key,'#4ee2c0')):
+                raise ValueError('Cor de Motion inválida.')
         asset=s.get('asset','')
         if asset and asset not in assets:raise ValueError('Mídia não pertence a este projeto.')
         if s.get('caption','keep') not in {'keep','move','hide'}:raise ValueError('Posição da legenda inválida.')
@@ -44,7 +51,17 @@ def normalize(data,total,assets):
         if not isinstance(item_times,list) or (item_times and len(item_times)!=len(items)):raise ValueError('Tempos devem corresponder aos itens.')
         item_times=[number(v,0,duration,'Tempo do item') for v in item_times]
         if item_times!=sorted(item_times):raise ValueError('Tempos dos itens devem estar em ordem.')
+        if preset=='comparison' and len(items)!=2:raise ValueError('A comparação precisa de exatamente dois itens.')
+        labels=s.get('labels',['ANTES','DEPOIS'])
+        if not isinstance(labels,list) or len(labels)!=2 or any(not isinstance(v,str) or len(v)>24 for v in labels):
+            raise ValueError('Use dois rótulos de até 24 caracteres.')
+        if preset in {'checklist','flow'} and not items:raise ValueError('Preencha os itens deste preset.')
+        if preset in {'dynamic-title','impact-word'} and not str(s.get('text','')).strip():raise ValueError('Preencha o texto deste preset.')
         out.append({'item_times':item_times,'id':ident,'kind':kind,'start':start,'duration':duration,'startFrame':round(start*30),'durationInFrames':round(duration*30),'layout':layout,'effect':effect,'text':str(s.get('text',''))[:120],'items':items,'asset':asset,'slot':str(s.get('slot','Apoio visual'))[:60],'required':bool(s.get('required',False)),'fit':'cover' if s.get('fit')=='cover' else 'contain','focusX':number(s.get('focusX',50),0,100,'Foco horizontal'),'focusY':number(s.get('focusY',50),0,100,'Foco vertical'),'x':number(s.get('x',70),8,92,'Horizontal'),'y':number(s.get('y',35),10,80,'Vertical'),'size':number(s.get('size',72),32,120,'Tamanho'),'scale':number(s.get('scale',1.12),1,1.4,'Zoom'),'intensity':s.get('intensity') if s.get('intensity') in {'soft','balanced','energetic'} else 'soft','caption':s.get('caption','keep')})
+        out[-1].update(preset=preset,accent=s.get('accent','#4ee2c0'),accent2=s.get('accent2','#b798ff'))
+        out[-1].update(box_width=number(s.get('box_width',86),20,90,'Largura do motion'),labels=labels)
+        out[-1].update(presenter_width=number(s.get('presenter_width',46 if layout=='split' else 48),25,70,'Largura do apresentador'))
+        out[-1].update(hold_layout=bool(s.get('hold_layout',False)),eyebrow=str(s.get('eyebrow',''))[:32])
     layouts=sorted([s for s in out if s['kind']=='layout'],key=lambda s:s['start'])
     if any(a['start']+a['duration']>b['start']+.02 for a,b in zip(layouts,layouts[1:])):raise ValueError('Composições não podem se sobrepor; ajuste seus intervalos.')
     c=data.get('captions',{});preset=c.get('preset','impacto-turquesa')
@@ -54,6 +71,25 @@ def normalize(data,total,assets):
     return {'version':1,'scenes':out,'captions':{'enabled':bool(c.get('enabled',False)),'preset':preset,'accent':accent,'size':number(c.get('size',100),85,115,'Tamanho da legenda'),'position':c.get('position') if c.get('position') in {'lower','middle','upper'} else 'lower','words':6 if c.get('words')==6 else 4}}
 
 def snapshot(d):return {k:deepcopy(d[k]) for k in ('scenes','captions')}
+
+def add_preset(directory,data,total):
+    d=get(directory)
+    scene=motion_presets.build(data)
+    return save(directory,{'revision':data.get('revision'),'scenes':d['scenes']+[scene],'captions':d['captions']},total)
+
+def review_signature(directory):
+    meta=read(directory/'projeto.json');state=edits.get_state(directory);d=get(directory)
+    payload={'motion':snapshot(d),'assets':d['assets'],'words':words(directory),
+             'timeline':edits.digest(state['document']) if state else meta.get('segments'),
+             'source':meta.get('sha256'),'settings':state['document']['settings'] if state else meta['settings']}
+    return hashlib.sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+
+def approve(directory,data):
+    sig=review_signature(directory);review=directory/'edit/motion-review.json'
+    if not data.get('reviewed'):raise ValueError('Confirme a revisão da amostra de Motion.')
+    if not review.exists() or read(review).get('preview_signature')!=sig or not (directory/'amostras/motion-preview.mp4').exists():
+        raise ValueError('Gere uma amostra do Motion atual antes de aprovar.')
+    d=read(review);d['approved_signature']=sig;write(review,d);return {'approved':True,'revision':get(directory)['revision']}
 def save(directory,data,total):
     with LOCK:
         d=get(directory)
@@ -74,6 +110,8 @@ def words(directory):
     if directory.name=='000d4a5527f24fb7a23677fd137f0b30':
         p=directory.parent.parent/'app/gaby-legenda-pontuada/revisao-pontuacao.json'
         if p.exists():return read(p)['words']
+    state=edits.get_state(directory)
+    if state:return edits.mapped_captions(state).get('words',[])
     p=directory/'edit/legendas.json'
     return read(p).get('words',[]) if p.exists() else []
 
@@ -115,6 +153,12 @@ def suggest(directory,prompt,server):
 
 def render_job(directory,data,server):
     d=get(directory);sample=bool(data.get('sample',True))
+    if any(j['project']==directory.name and j['state'] in {'waiting','running'} for j in server.JOBS.values()):
+        raise ValueError('Aguarde o processamento deste projeto.')
+    sig=review_signature(directory);review=directory/'edit/motion-review.json'
+    if not sample and (not review.exists() or read(review).get('approved_signature')!=sig):
+        raise ValueError('Gere e aprove uma amostra do Motion atual antes de exportar.')
+    if sample:write(review,{'preview_signature':None,'approved_signature':None})
     for scene in d['scenes']:
         if scene['kind']=='element' and scene['effect'] not in {'3d'} and not scene['asset'] and not (scene['text'].strip() or any(v.strip() for v in scene['items'])):
             raise ValueError('Preencha o texto ou os itens da inserção antes de renderizar.')
@@ -123,7 +167,11 @@ def render_job(directory,data,server):
     for s in d['scenes']:
         asset=d['assets'].get(s['asset'])
         if asset and asset['kind']=='video' and asset['duration']+1/30<s['duration']:raise ValueError('A mídia de apoio é menor que a cena: '+asset['name'])
-    ident=uuid.uuid4().hex;job={'id':ident,'project':directory.name,'action':'motion','state':'waiting','message':'Preparando Motion','progress':0};server.JOBS[ident]=job
+    ident=uuid.uuid4().hex;job={'id':ident,'project':directory.name,'action':'motion','state':'waiting','message':'Preparando Motion','progress':0}
+    with server.LOCK:
+        if any(j['project']==directory.name and j['state'] in {'waiting','running'} for j in server.JOBS.values()):
+            raise ValueError('Aguarde o processamento deste projeto.')
+        server.JOBS[ident]=job
     def work():
         try:
             with server.ENGINE:
@@ -140,7 +188,9 @@ def render_job(directory,data,server):
                 stdout,stderr=server.command(['node',server.APP/'remotion-project/render.cjs',pp,temp],cwd=server.APP/'remotion-project',timeout=7200)
                 (workdir/'render.log').write_text(stdout+'\n'+stderr,encoding='utf-8');server.probe(temp);server.command(['ffmpeg','-v','error','-i',temp,'-f','null','-'])
                 if output.exists():shutil.copy2(output,workdir/'previous.mp4')
+                if review_signature(directory)!=sig:raise ValueError('O projeto mudou durante o render. Gere uma nova amostra.')
                 temp.replace(output);url=f'/media/{directory.name}/'+output.relative_to(directory).as_posix()
+                if sample:write(review,{'preview_signature':sig,'approved_signature':None,'revision':d['revision']})
                 manifest=server.ROOT/'Renders/NOVOS/podcast/LOTE-PODCAST.json'
                 if manifest.exists():
                     for row in read(manifest)['items']:
@@ -149,5 +199,5 @@ def render_job(directory,data,server):
                             # Each export keeps a unique revision; sample/full are explicit.
                             target=dest/f'{row["number"]:02}.{d["revision"]:02} - {"AMOSTRA" if sample else "Motion"} - {ident[:6]}.mp4';shutil.copy2(output,target);job['saved_path']=str(target);break
                 job.update(state='done',progress=100,message='Motion pronto',url=url,revision=d['revision'])
-        except Exception as e:job.update(state='failed',message=str(e),progress=0)
+        except Exception as e:job.update(state='error',message=str(e),progress=0)
     threading.Thread(target=work,daemon=True).start();return job

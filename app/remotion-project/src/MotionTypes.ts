@@ -6,6 +6,10 @@ export type MotionScene = {
   text: string; items: string[]; item_times: number[]; asset: string;
   required: boolean; fit: 'cover' | 'contain'; focusX: number; focusY: number;
   x: number; y: number; size: number; scale: number; intensity: string; caption: string;
+  preset?: string; accent?: string; accent2?: string;
+  box_width?: number; labels?: string[];
+  presenter_width?: number;
+  hold_layout?: boolean; eyebrow?: string;
 };
 export type MotionCaptions = {
   enabled: boolean; preset: string; accent: string; size: number;

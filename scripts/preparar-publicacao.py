@@ -1,6 +1,7 @@
 """Monte uma distribuição limpa sem modificar os projetos e o Git interno."""
 from pathlib import Path
 import json
+import re
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,7 +22,7 @@ def copy(relative):
 for name in ('.gitignore', 'README.md', 'CLAUDE.md', 'requirements.txt', 'requirements-lock.txt', 'INSTALAR.ps1', 'INICIAR.ps1'):
     copy(Path(name))
 for name in ('meia-briefing-de-edicao', 'meia-legendas-e-enquadramento',
-             'meia-revisao-economia', 'remotion-best-practices'):
+             'meia-revisao-economia', 'meia-motion-shorts', 'remotion-best-practices'):
     source = ROOT / '.agents/skills' / name
     for path in source.rglob('*'):
         if path.is_file():
@@ -43,7 +44,7 @@ for folder in ('docs', 'scripts'):
             copy(path.relative_to(ROOT))
 modules = ['server', 'cli', 'assembly_flow', 'asset_registry', 'automatic_edit',
            'deepseek_director', 'directed_edit', 'editing_actions', 'matting_cpu',
-           'motion_studio', 'podcast_lote', 'remotion_engine']
+           'motion_studio', 'motion_presets', 'podcast_lote', 'remotion_engine']
 for name in modules:
     copy(Path('app') / (name + '.py'))
 copy(Path('app/THIRD_PARTY_NOTICES.txt'))
@@ -60,10 +61,23 @@ for path in (ROOT / 'app/public/assets').glob('*'):
         copy(path.relative_to(ROOT))
 for path in (ROOT / 'app/tests').glob('test_*.py'):
     copy(path.relative_to(ROOT))
+# Só os componentes gerais do editor são publicados; composições de exemplo por
+# vídeo ficam locais, pois contêm falas e tempos de gravações reais.
+PUBLIC_SRC = {'Composition', 'DynamicMotion', 'EditorVideo', 'MotionAlert', 'MotionFloatingCard',
+              'MotionPath', 'MotionTypes', 'MotionVideo', 'Player', 'Root', 'index'}
 for folder in ('src',):
     for path in (ROOT / 'app/remotion-project' / folder).rglob('*'):
-        if path.is_file() and path.suffix in {'.ts', '.tsx', '.css'}:
+        if path.is_file() and path.suffix in {'.ts', '.tsx', '.css'} and path.stem in PUBLIC_SRC:
             copy(path.relative_to(ROOT))
+root_tsx = DEST / 'app/remotion-project/src/Root.tsx'
+text = root_tsx.read_text(encoding='utf-8')
+for module in re.findall(r"from '\./([^']+)';", text):
+    if module not in PUBLIC_SRC:
+        names = re.search(r"import \{([^}]*)\} from '\./" + module + "';", text).group(1)
+        text = re.sub(r"import \{[^}]*\} from '\./" + module + r"';\n", '', text)
+        component = names.split(',')[0].strip()
+        text = re.sub(r'<Composition id="[^"]*" component=\{' + component + r'\}.*?/>', '', text)
+root_tsx.write_text(text, encoding='utf-8')
 for name in ('package.json', 'package-lock.json', '.gitignore', '.prettierrc',
              'eslint.config.mjs', 'tsconfig.json', 'remotion.config.ts', 'render.cjs',
              'download-model.mjs', 'build-player.cjs'):

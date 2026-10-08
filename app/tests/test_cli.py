@@ -63,6 +63,18 @@ class LocalCLI(unittest.TestCase):
         original = self.projects / identifier / 'brutos/original.mp4'
         self.assertEqual(hashlib.sha256(original.read_bytes()).hexdigest(), digest)
         self.assertTrue(self.client.request('/api/health')['local'])
+        presets=self.client.request('/api/motion/presets')
+        self.assertEqual(len(presets),6)
+        document=self.client.request('/api/motion/preset',{'project':identifier,'revision':0,
+            'preset':'dynamic-title','text':'Teste dinâmico','start':0,'duration':1})
+        self.assertEqual(document['scenes'][0]['preset'],'dynamic-title')
+        self.assertEqual(document['revision'],1)
+        with self.assertRaises(cli.urllib.error.HTTPError):
+            self.client.request('/api/motion/render',{'project':identifier,'sample':False})
+        from PIL import Image
+        image=self.root/'synthetic.png';Image.new('RGB',(8,8),'purple').save(image)
+        asset=self.client.upload(image,identifier)
+        self.assertEqual(asset['kind'],'image')
 
     def test_cli_returns_nonzero_for_failed_job(self):
         with patch.object(cli.Client, 'request', return_value={'state': 'error', 'message': 'Falha controlada'}), \

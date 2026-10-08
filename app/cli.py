@@ -34,10 +34,11 @@ class Client:
         with urllib.request.urlopen(request, timeout=120) as response:
             return json.load(response)
 
-    def upload(self, path):
+    def upload(self, path, project=None):
         path = Path(path).resolve(strict=True)
-        if not 0 < path.stat().st_size <= 2 * 1024**3:
-            raise ValueError('Use um vídeo de até 2 GB.')
+        limit=60*1024**2 if project else 2*1024**3
+        if not 0 < path.stat().st_size <= limit:
+            raise ValueError('Use mídia de até 60 MB.' if project else 'Use um vídeo de até 2 GB.')
         # Obtain the session token, then stream instead of holding the video in RAM.
         if self.token is None:
             with urllib.request.urlopen(self.base + '/editor', timeout=30) as response:
@@ -48,7 +49,7 @@ class Client:
         from urllib.parse import quote
         connection = http.client.HTTPConnection('127.0.0.1', self.port, timeout=300)
         try:
-            connection.putrequest('POST', '/api/upload')
+            connection.putrequest('POST', '/api/motion/upload?project='+quote(project) if project else '/api/upload')
             connection.putheader('X-Editor-Token', self.token)
             connection.putheader('X-File-Name', quote(path.name))
             connection.putheader('Content-Type', 'application/octet-stream')
@@ -70,6 +71,19 @@ def load(path):
     return json.loads(Path(path).read_text(encoding='utf-8-sig'))
 
 
+def wait_job(client, result, timeout):
+    deadline=time.monotonic()+timeout;last=None
+    while result['state'] in ('waiting','running'):
+        if time.monotonic()>=deadline:
+            raise ValueError('Tempo de espera esgotado; consulte job '+result['id'])
+        if result.get('message')!=last:
+            last=result.get('message');print(last,file=sys.stderr)
+        time.sleep(1)
+        result=client.request('/api/jobs/'+result['id'])
+    if result['state']!='done':raise ValueError(result.get('message','Falha no processamento.'))
+    return result
+
+
 def main():
     # JSON is UTF-8 even when PowerShell redirects output on Windows.
     for stream in (sys.stdout, sys.stderr):
@@ -80,6 +94,16 @@ def main():
     commands = parser.add_subparsers(dest='command', required=True)
     commands.add_parser('health')
     commands.add_parser('projects')
+    commands.add_parser('motion-presets')
+    motion_show=commands.add_parser('motion-show');motion_show.add_argument('project')
+    motion_upload=commands.add_parser('motion-upload');motion_upload.add_argument('project');motion_upload.add_argument('file')
+    motion_preset=commands.add_parser('motion-preset');motion_preset.add_argument('project');motion_preset.add_argument('file')
+    motion_render=commands.add_parser('motion-render');motion_render.add_argument('project')
+    motion_render.add_argument('--full',action='store_true');motion_render.add_argument('--start',type=float,default=0)
+    motion_render.add_argument('--seconds',type=float,default=15);motion_render.add_argument('--wait',action='store_true')
+    motion_render.add_argument('--timeout',type=int,default=7200)
+    motion_approve=commands.add_parser('motion-approve');motion_approve.add_argument('project')
+    motion_approve.add_argument('--reviewed',action='store_true',required=True)
     upload = commands.add_parser('import')
     upload.add_argument('file')
     show = commands.add_parser('show')
@@ -108,7 +132,22 @@ def main():
     args = parser.parse_args()
     client = Client(args.port)
     try:
-        if args.command == 'health':
+        if args.command == 'motion-presets':
+            result=client.request('/api/motion/presets')
+        elif args.command == 'motion-show':
+            result=client.request('/api/motion?project='+args.project)
+        elif args.command == 'motion-upload':
+            result=client.upload(args.file,args.project)
+        elif args.command == 'motion-preset':
+            data=load(args.file)
+            if not isinstance(data,dict):raise ValueError('O arquivo deve conter um objeto JSON.')
+            data['project']=args.project;result=client.request('/api/motion/preset',data)
+        elif args.command == 'motion-approve':
+            result=client.request('/api/motion/approve',{'project':args.project,'reviewed':True})
+        elif args.command == 'motion-render':
+            result=client.request('/api/motion/render',{'project':args.project,'sample':not args.full,'start':args.start,'seconds':args.seconds})
+            if args.wait:result=wait_job(client,result,args.timeout)
+        elif args.command == 'health':
             result = client.request('/api/health')
         elif args.command in ('projects', 'show'):
             result = client.request('/api/projects')
@@ -120,7 +159,7 @@ def main():
             result = client.upload(args.file)
         elif args.command == 'job':
             result = client.request('/api/jobs/' + args.id)
-            if result.get('state') == 'error':
+            if result.get('state') in {'error','failed'}:
                 raise ValueError(result.get('message', 'Falha no processamento.'))
         elif args.command in ('run', 'approve'):
             current = next((p for p in client.request('/api/projects') if p['id'] == args.project), None)
@@ -135,18 +174,7 @@ def main():
                     data['automatic'] = load(args.automatic)
                 result = client.request('/api/jobs', data)
                 if args.wait:
-                    deadline = time.monotonic() + args.timeout
-                    last = None
-                    while result['state'] in ('waiting', 'running'):
-                        if time.monotonic() >= deadline:
-                            raise ValueError('Tempo de espera esgotado; consulte job ' + result['id'])
-                        if result.get('message') != last:
-                            last = result.get('message')
-                            print(last, file=sys.stderr)
-                        time.sleep(1)
-                        result = client.request('/api/jobs/' + result['id'])
-                    if result['state'] == 'error':
-                        raise ValueError(result.get('message', 'Falha no processamento.'))
+                    result=wait_job(client,result,args.timeout)
         elif args.command == 'history':
             result = client.request('/api/history', {'project': args.project, 'revision': args.revision, 'history': args.direction})
         else:

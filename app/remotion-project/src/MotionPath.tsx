@@ -3,7 +3,7 @@ import {interpolate,useCurrentFrame,useVideoConfig} from 'remotion';
 const clamp={extrapolateLeft:'clamp',extrapolateRight:'clamp'} as const;
 export function MotionPath({scene}:{scene:MotionScene}){
  const frame=useCurrentFrame();const {fps}=useVideoConfig();
- const labels=scene.items||[];const times=scene.item_times||labels.map((_:string,i:number)=>i*.7);
+ const labels=scene.items||[];const times=scene.item_times?.length?scene.item_times:labels.map((_:string,i:number)=>i*.7);
  const reveal=(i:number)=>interpolate(frame,[times[i]*fps,times[i]*fps+12],[0,1],clamp);
  const icons=[<path key="book" d="M-32 -25Q-16 -34 0 -23Q16 -34 32 -25V29Q16 20 0 31Q-16 20 -32 29ZM0 -23V31"/>,<g key="repeat"><path d="M-29 -5A30 30 0 0 1 26 -18M15 -34L28 -18L10 -15M29 5A30 30 0 0 1 -26 18M-15 34L-28 18L-10 15"/></g>,<path key="flag" d="M-23 35V-34M-23 -31Q-6 -42 10 -29Q25 -19 34 -28V9Q20 18 6 7Q-10 -4 -23 6"/>];
  return <svg viewBox="0 0 720 340" width="100%" aria-label={labels.join(' → ')}>
