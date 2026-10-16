@@ -1,0 +1,40 @@
+{
+  "name": "Pinterest 129 — câmera e tipografia contínuas V2",
+  "reference": "https://br.pinterest.com/pin/12947917676306751/",
+  "component": "app/remotion-project/src/MotionPin129Continuo.tsx",
+  "sceneComponent": "app/remotion-project/src/pin129/ContinuousScene.tsx",
+  "entry": "motion/remotion/src/biblioteca/index.tsx",
+  "renderer": "python scripts/biblioteca_motion.py aplicar PROPS.json --composicao MotionPin129Continuo --slug NOME",
+  "aspectRatio": "9:16",
+  "preview": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30
+  },
+  "opening": "Pergunta completa, início da resposta com a pessoa visível, depois apenas animação contínua.",
+  "props": [
+    "video",
+    "audio",
+    "duration",
+    "motionFrom",
+    "shots",
+    "scenes"
+  ],
+  "sceneFields": [
+    "from",
+    "to",
+    "x",
+    "y",
+    "asset",
+    "emphasis",
+    "emphasisAt",
+    "negative",
+    "layout",
+    "groups"
+  ],
+  "groups": "Grupos de palavras com w/s/e, revelados dentro da composição junto da fala.",
+  "camera": "Cenário amplo e persistente; deslocamento entre coordenadas com 0,77 s de easing; zoom leve durante a permanência.",
+  "workflow": "Preservar fala e corte. Mapear transcrição. Reaproveitar PNGs. Validar quadros consecutivos nas transições. Mostrar prévia com áudio antes de render completo.",
+  "firstApplication": "PASTA-DA-EDICAO",
+  "composition": "MotionPin129Continuo"
+}

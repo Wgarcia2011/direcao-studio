@@ -1,0 +1,959 @@
+{
+  "name": "Contraste Cinético — modelo v3 (Pin 15551561209923797, paleta azul e turquesa)",
+  "reference": "https://br.pinterest.com/pin/15551561209923797/",
+  "source": "CAMINHO/DO/CORTE.mp4",
+  "words": "palavras-corte.json",
+  "output": "contraste-cinetico-v1.mp4",
+  "preview": {
+    "from": 0,
+    "duration": 0
+  },
+  "speakerX": 0.515,
+  "captionY": 1430,
+  "brand": "SUA MARCA",
+  "palette": {
+    "paper": "#f5f4ef",
+    "ink": "#0b1270",
+    "navy": "#0b1270",
+    "accent": "#00d4bc",
+    "muted": "#b9bfd3",
+    "night": "#03051a",
+    "arc": "#cfd9d7",
+    "pink": "#9ff3e7"
+  },
+  "corrections": {
+    "arrasgar": "rasgar",
+    "arrasgado": "rasgado",
+    "Provado": "Aprovado"
+  },
+  "hideCaptions": [
+    [
+      10.75,
+      11.08
+    ],
+    [
+      45.95,
+      46.8
+    ]
+  ],
+  "captionKeys": [
+    "tanto",
+    "carro",
+    "comido",
+    "outro",
+    "calma",
+    "desesperado",
+    "difícil",
+    "desistir",
+    "prova",
+    "derrotado"
+  ],
+  "punches": [
+    {
+      "at": 0.6,
+      "dur": 0.8,
+      "scale": 1.1
+    },
+    {
+      "at": 2.8,
+      "dur": 0.9,
+      "scale": 1.08
+    }
+  ],
+  "scenes": [
+    {
+      "note": "Dois concursos",
+      "from": 5.3,
+      "to": 9.3,
+      "bg": "paper",
+      "arc": true,
+      "textY": 560,
+      "exit": "iris",
+      "lines": [
+        {
+          "text": "Alunos assim,"
+        },
+        {
+          "text": "*dois* concursos",
+          "after": 7.4
+        },
+        {
+          "text": "diferentes"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pin",
+          "tone": "paper",
+          "at": 7.51,
+          "x": 330,
+          "y": 1050,
+          "size": 420,
+          "rot": -5,
+          "title": "Concurso A"
+        },
+        {
+          "kind": "pin",
+          "tone": "paper",
+          "at": 7.87,
+          "x": 760,
+          "y": 1110,
+          "size": 420,
+          "rot": 5,
+          "title": "Concurso B"
+        },
+        {
+          "kind": "pip",
+          "at": 5.35,
+          "x": 540,
+          "y": 1600,
+          "size": 460,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ],
+      "enter": "reveal"
+    },
+    {
+      "note": "PIP: teve um, não lembro",
+      "from": 9.3,
+      "to": 12.8,
+      "bg": "night",
+      "grid": true,
+      "textY": 450,
+      "enter": "reveal",
+      "lines": [
+        {
+          "text": "Teve *um*",
+          "until": 9.95
+        },
+        {
+          "text": "eu não *lembro*",
+          "after": 9.95,
+          "until": 11.4
+        },
+        {
+          "text": "qual que foi",
+          "after": 11.4
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pip",
+          "at": 9.32,
+          "x": 540,
+          "y": 1270,
+          "size": 700,
+          "h": 820,
+          "shape": "round",
+          "zoom": 1.6
+        }
+      ]
+    },
+    {
+      "note": "O bom aluno revoltado",
+      "from": 12.8,
+      "to": 16.55,
+      "bg": "paper",
+      "arc": true,
+      "textY": 470,
+      "enter": "white",
+      "lines": [
+        {
+          "text": "O *aluno* saiu"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pin",
+          "at": 13.19,
+          "x": 380,
+          "y": 1050,
+          "size": 540,
+          "rot": 2,
+          "title": "O aluno",
+          "items": [
+            {
+              "at": 14.11,
+              "text": "bom aluno",
+              "mark": "check"
+            },
+            {
+              "at": 15.43,
+              "text": "revoltado",
+              "mark": "x"
+            }
+          ]
+        },
+        {
+          "kind": "pip",
+          "at": 12.85,
+          "x": 770,
+          "y": 1560,
+          "size": 440,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "Fui muito mal — figura em meio-tom",
+      "from": 16.55,
+      "to": 18.9,
+      "bg": "night",
+      "textY": 1600,
+      "lines": [
+        {
+          "text": "fui muito *mal*",
+          "after": 17.8
+        }
+      ],
+      "objects": [
+        {
+          "kind": "persona",
+          "at": 16.6,
+          "x": 540,
+          "y": 860,
+          "size": 980,
+          "head": [
+            {
+              "text": "Não, cara,",
+              "size": 1.7
+            },
+            {
+              "text": "fui muito",
+              "size": 1.7
+            },
+            {
+              "text": "*mal*",
+              "size": 2.0
+            }
+          ]
+        },
+        {
+          "kind": "pip",
+          "at": 16.6,
+          "x": 850,
+          "y": 230,
+          "size": 300,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ],
+      "exit": "cut"
+    },
+    {
+      "note": "Ia rasgar o gabarito",
+      "from": 18.9,
+      "to": 21.8,
+      "bg": "paper",
+      "grid": true,
+      "textY": 470,
+      "enter": "white",
+      "exit": "iris",
+      "shakeAt": [
+        20.87
+      ],
+      "lines": [
+        {
+          "text": "nem ia preencher",
+          "after": 19.4
+        },
+        {
+          "text": "o *gabarito*"
+        },
+        {
+          "text": "*rasgar*",
+          "after": 20.8
+        },
+        {
+          "text": "e ir embora"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "gabarito",
+          "at": 19.4,
+          "x": 400,
+          "y": 1130,
+          "size": 640,
+          "rot": 6,
+          "fillAt": 999,
+          "tearAt": 20.87
+        },
+        {
+          "kind": "pip",
+          "at": 18.95,
+          "x": 800,
+          "y": 1630,
+          "size": 420,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "PIP: fiquei ali, de carro, sem comer",
+      "from": 21.8,
+      "to": 27.55,
+      "bg": "paper",
+      "arc": true,
+      "textY": 540,
+      "enter": "reveal",
+      "lines": [
+        {
+          "text": "só que eu",
+          "after": 21.8,
+          "until": 23.4
+        },
+        {
+          "text": "*fiquei* ali",
+          "until": 23.4
+        },
+        {
+          "text": "estava de *carro*",
+          "after": 23.45,
+          "until": 25.5
+        },
+        {
+          "text": "com outra galera",
+          "until": 25.5
+        },
+        {
+          "text": "não tinha *comido*",
+          "after": 25.5,
+          "until": 26.55
+        },
+        {
+          "text": "não adiantava *nada*",
+          "after": 26.55
+        }
+      ],
+      "objects": [
+        {
+          "kind": "gabarito",
+          "at": 21.9,
+          "x": 300,
+          "y": 1450,
+          "size": 440,
+          "rot": -10,
+          "fillAt": 999
+        },
+        {
+          "kind": "pip",
+          "at": 21.85,
+          "x": 760,
+          "y": 1370,
+          "size": 540,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "Vou pôr o gabarito — o papel se recompõe e é preenchido",
+      "from": 27.55,
+      "to": 31.1,
+      "bg": "paper",
+      "grid": true,
+      "textY": 470,
+      "exit": "circle",
+      "lines": [
+        {
+          "text": "vou pôr o",
+          "after": 27.85
+        },
+        {
+          "text": "*gabarito* aqui"
+        },
+        {
+          "text": "já estou aqui mesmo",
+          "after": 29.8
+        }
+      ],
+      "objects": [
+        {
+          "kind": "gabarito",
+          "at": 27.6,
+          "x": 420,
+          "y": 1120,
+          "size": 640,
+          "rot": -4,
+          "tearAt": 26.5,
+          "mendAt": 27.95,
+          "fillAt": 28.45
+        },
+        {
+          "kind": "png",
+          "src": "motion-assets/contraste-cinetico/caneta.png",
+          "at": 28.4,
+          "x": 720,
+          "y": 1200,
+          "size": 460,
+          "rot": -6,
+          "write": true
+        },
+        {
+          "kind": "pip",
+          "at": 27.6,
+          "x": 790,
+          "y": 1650,
+          "size": 400,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "Nono colocado nacional / multidão simbólica (sem número inventado)",
+      "from": 31.1,
+      "to": 37.95,
+      "bg": "night",
+      "grid": true,
+      "textY": 470,
+      "exit": "iris",
+      "shakeAt": [
+        32.09
+      ],
+      "lines": [
+        {
+          "text": "já era",
+          "after": 31.7,
+          "until": 34.95
+        },
+        {
+          "text": "*nono* colocado",
+          "until": 34.95
+        },
+        {
+          "text": "*nacional*",
+          "until": 34.95,
+          "size": 0.85
+        },
+        {
+          "text": "concursos",
+          "after": 36.0
+        },
+        {
+          "text": "*milhares*"
+        },
+        {
+          "text": "de inscritos"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "rank",
+          "at": 32.09,
+          "until": 34.95,
+          "x": 540,
+          "y": 1060,
+          "size": 560,
+          "text": "9º"
+        },
+        {
+          "kind": "crowd",
+          "at": 35.21,
+          "x": 540,
+          "y": 1080,
+          "size": 640,
+          "highlightAt": 36.85
+        },
+        {
+          "kind": "pip",
+          "at": 31.15,
+          "x": 540,
+          "y": 1690,
+          "size": 400,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "PIP: outro aluno, outro concurso",
+      "from": 37.95,
+      "to": 42.9,
+      "bg": "night",
+      "grid": true,
+      "textY": 440,
+      "enter": "reveal",
+      "lines": [
+        {
+          "text": "*Outro* aluno",
+          "until": 39.55
+        },
+        {
+          "text": "também",
+          "until": 39.55
+        },
+        {
+          "text": "saiu da *prova*",
+          "after": 39.55,
+          "until": 40.88
+        },
+        {
+          "text": "no outro",
+          "after": 40.88
+        },
+        {
+          "text": "*concurso*"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pip",
+          "at": 38.0,
+          "x": 540,
+          "y": 1290,
+          "size": 680,
+          "h": 800,
+          "shape": "round",
+          "zoom": 1.6
+        },
+        {
+          "kind": "pin",
+          "tone": "paper",
+          "at": 40.99,
+          "x": 840,
+          "y": 1590,
+          "size": 340,
+          "rot": 8,
+          "title": "Concurso B"
+        }
+      ]
+    },
+    {
+      "note": "Outro aluno revoltado",
+      "from": 42.9,
+      "to": 45.05,
+      "bg": "night",
+      "textY": 1600,
+      "exit": "flash",
+      "lines": [
+        {
+          "text": "não deu, *não deu*",
+          "after": 44.2
+        }
+      ],
+      "objects": [
+        {
+          "kind": "persona",
+          "at": 42.92,
+          "x": 540,
+          "y": 860,
+          "size": 980,
+          "head": [
+            {
+              "text": "*Revoltado*",
+              "size": 1.0
+            },
+            {
+              "text": "também",
+              "size": 1.7
+            }
+          ]
+        },
+        {
+          "kind": "pip",
+          "at": 42.92,
+          "x": 850,
+          "y": 230,
+          "size": 300,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "PIP: calma, desesperado, prova difícil",
+      "from": 45.05,
+      "to": 52.55,
+      "bg": "paper",
+      "arc": true,
+      "textY": 560,
+      "enter": "white",
+      "lines": [
+        {
+          "text": "Eu falei,",
+          "until": 47.2
+        },
+        {
+          "text": "*calma*",
+          "until": 47.2
+        },
+        {
+          "text": "nem, nem",
+          "after": 47.2,
+          "until": 48.2
+        },
+        {
+          "text": "estava meio",
+          "after": 48.7,
+          "until": 49.5
+        },
+        {
+          "text": "*desesperado*",
+          "until": 49.5
+        },
+        {
+          "text": "*calma* velho",
+          "after": 49.6,
+          "until": 50.95
+        },
+        {
+          "text": "prova estava",
+          "after": 50.95,
+          "until": 51.95
+        },
+        {
+          "text": "*difícil*",
+          "until": 51.95
+        },
+        {
+          "text": "vamos ver",
+          "after": 51.95
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pip",
+          "at": 45.1,
+          "x": 330,
+          "y": 1400,
+          "size": 520,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "Nem tenta me consolar",
+      "from": 52.55,
+      "to": 57.4,
+      "bg": "paper",
+      "arc": true,
+      "textY": 540,
+      "lines": [
+        {
+          "text": "Nem, não quero",
+          "after": 52.6,
+          "until": 56.2
+        },
+        {
+          "text": "nem *saber*",
+          "until": 56.2
+        },
+        {
+          "text": "nem tenta me",
+          "after": 54.6,
+          "until": 56.2
+        },
+        {
+          "text": "*consolar*",
+          "until": 56.2
+        },
+        {
+          "text": "não deu,",
+          "after": 56.2
+        },
+        {
+          "text": "*não deu*"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pin",
+          "at": 53.83,
+          "x": 540,
+          "y": 1290,
+          "size": 540,
+          "rot": 4,
+          "title": "Calma, velho",
+          "items": [
+            {
+              "at": 53.93,
+              "text": "nem tenta",
+              "mark": "x"
+            },
+            {
+              "at": 56.47,
+              "text": "não deu",
+              "mark": "x"
+            }
+          ]
+        },
+        {
+          "kind": "png",
+          "src": "motion-assets/contraste-cinetico/papel-amassado.png",
+          "at": 56.3,
+          "x": 830,
+          "y": 1640,
+          "size": 480,
+          "rot": -8
+        },
+        {
+          "kind": "pip",
+          "at": 52.6,
+          "x": 240,
+          "y": 1710,
+          "size": 380,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "Aprovado também (conferir palavra na amostra: transcrito 'Provado')",
+      "from": 57.4,
+      "to": 59.8,
+      "bg": "night",
+      "textY": 560,
+      "exit": "flash",
+      "shakeAt": [
+        58.29
+      ],
+      "lines": [
+        {
+          "text": "também,",
+          "after": 58.5
+        },
+        {
+          "text": "super *bem*"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "stamp",
+          "at": 58.29,
+          "x": 540,
+          "y": 980,
+          "size": 720,
+          "text": "APROVADO"
+        },
+        {
+          "kind": "pip",
+          "at": 57.45,
+          "x": 540,
+          "y": 1560,
+          "size": 470,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "Não pode desistir / imagina se tivesse rasgado",
+      "from": 59.8,
+      "to": 65.0,
+      "bg": "paper",
+      "arc": true,
+      "textY": 470,
+      "enter": "white",
+      "lines": [
+        {
+          "text": "a gente não pode",
+          "after": 60.15,
+          "until": 61.72
+        },
+        {
+          "text": "*desistir*",
+          "until": 61.72
+        },
+        {
+          "text": "da prova",
+          "until": 61.72
+        },
+        {
+          "text": "imagina que",
+          "after": 61.75,
+          "until": 64.6
+        },
+        {
+          "text": "tivesse *rasgado*",
+          "after": 62.3,
+          "until": 64.6
+        },
+        {
+          "text": "o *gabarito*",
+          "after": 62.9,
+          "until": 64.6
+        },
+        {
+          "text": "Entendeu?",
+          "after": 64.6
+        }
+      ],
+      "objects": [
+        {
+          "kind": "gabarito",
+          "at": 61.8,
+          "x": 400,
+          "y": 1140,
+          "size": 600,
+          "rot": -5,
+          "fillAt": 61.8,
+          "tearAt": 62.59,
+          "tearAmount": 0.45,
+          "mendAt": 64.67
+        },
+        {
+          "kind": "pip",
+          "at": 59.85,
+          "x": 790,
+          "y": 1640,
+          "size": 420,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ]
+    },
+    {
+      "note": "PIP: olha aí, não pode desistir",
+      "from": 65.0,
+      "to": 68.0,
+      "bg": "night",
+      "grid": true,
+      "textY": 440,
+      "enter": "reveal",
+      "lines": [
+        {
+          "text": "Olha aí",
+          "until": 65.55
+        },
+        {
+          "text": "não pode",
+          "after": 65.85,
+          "until": 66.78
+        },
+        {
+          "text": "*desistir*",
+          "until": 66.78
+        },
+        {
+          "text": "tem que *fazer*",
+          "after": 66.78
+        },
+        {
+          "text": "a prova"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "pip",
+          "at": 65.02,
+          "x": 540,
+          "y": 1300,
+          "size": 680,
+          "h": 780,
+          "shape": "round",
+          "zoom": 1.6
+        }
+      ]
+    },
+    {
+      "note": "Fechamento: cada prova é uma prova",
+      "from": 68.0,
+      "to": 73.233,
+      "bg": "night",
+      "grid": true,
+      "textY": 640,
+      "lines": [
+        {
+          "text": "Cada prova",
+          "until": 68.9
+        },
+        {
+          "text": "é *uma prova*",
+          "until": 68.9
+        },
+        {
+          "text": "a gente não sabe",
+          "after": 68.9,
+          "until": 70.58
+        },
+        {
+          "text": "qual é a *nossa*",
+          "until": 70.58
+        },
+        {
+          "text": "o *importante*",
+          "after": 70.6,
+          "until": 71.98
+        },
+        {
+          "text": "esteja lá",
+          "after": 71.98
+        },
+        {
+          "text": "*fazendo* ela"
+        }
+      ],
+      "objects": [
+        {
+          "kind": "gabarito",
+          "at": 70.65,
+          "x": 400,
+          "y": 1180,
+          "size": 580,
+          "rot": 3,
+          "fillAt": 72.1
+        },
+        {
+          "kind": "png",
+          "src": "motion-assets/contraste-cinetico/caneta.png",
+          "at": 72.15,
+          "x": 640,
+          "y": 1260,
+          "size": 400,
+          "rot": -4,
+          "write": true
+        },
+        {
+          "kind": "pip",
+          "at": 68.05,
+          "x": 790,
+          "y": 1670,
+          "size": 400,
+          "shape": "circle",
+          "zoom": 1.9
+        }
+      ],
+      "exit": "flash"
+    },
+    {
+      "note": "Encerramento com o logotipo",
+      "from": 73.233,
+      "to": 75.4,
+      "bg": "night",
+      "grid": true,
+      "textY": 1330,
+      "enter": "reveal",
+      "lines": [
+        {
+          "text": "*SUA MARCA*@73.6",
+          "size": 0.8
+        },
+        {
+          "text": "DE ELITE@73.8",
+          "size": 0.9
+        }
+      ],
+      "objects": [
+        {
+          "kind": "logo",
+          "src": "",
+          "at": 73.3,
+          "x": 540,
+          "y": 860,
+          "size": 620
+        }
+      ]
+    }
+  ],
+  "_aviso": "Textos, tempos e posições são do corte 05 do aluno (vídeo 16). Refaça tudo pela transcrição do novo corte.",
+  "component": "app/remotion-project/src/MotionContrasteCinetico.tsx",
+  "entry": "app/remotion-project/src/contraste-index.tsx",
+  "renderer": "app/remotion-project/contraste-render.cjs",
+  "preparer": "scripts/preparar-contraste-cinetico.py"
+}

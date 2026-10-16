@@ -1,0 +1,84 @@
+{
+  "name": "Percurso Editorial",
+  "version": 1,
+  "status": "Direção aprovada pelo usuário; legendas abaixadas e encerramento com marca incluídos.",
+  "reference": "https://br.pinterest.com/pin/12947917676306751/",
+  "component": "app/remotion-project/src/MotionPin129Continuo.tsx",
+  "sceneComponent": "app/remotion-project/src/pin129/ContinuousScene.tsx",
+  "entry": "motion/remotion/src/biblioteca/index.tsx",
+  "renderer": "python scripts/biblioteca_motion.py aplicar percurso-editorial.props.json --composicao MotionPin129Continuo --slug NOME",
+  "documentation": "docs/templates/motion/PERCURSO-EDITORIAL.md",
+  "example": "docs/templates/motion/percurso-editorial/exemplo-com-audio-v1.mp4",
+  "exampleProps": "docs/templates/motion/percurso-editorial/props-exemplo-v1.json",
+  "preview": "docs/templates/motion/percurso-editorial/capa-v1.png",
+  "aspectRatio": "9:16",
+  "renderSize": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30
+  },
+  "sequence": [
+    "Pergunta completa com entrevistador",
+    "Início da resposta com a pessoa na tela",
+    "Motion contínuo com deslocamentos de câmera e palavras integradas",
+    "Retorno da pessoa para concluir a fala",
+    "Logotipo do sua marca"
+  ],
+  "style": {
+    "background": "#dcdcdc",
+    "grid": 42,
+    "serif": "Times New Roman Bold Italic",
+    "emphasis": "Impact",
+    "purple": "#803ba5",
+    "activeWord": "#7139a0",
+    "captionTop": 270,
+    "captionSize": 66,
+    "captionWidth": 565,
+    "emphasisTop": 460
+  },
+  "props": [
+    "video",
+    "audio",
+    "duration",
+    "motionFrom",
+    "shots",
+    "scenes",
+    "outro"
+  ],
+  "sceneFields": [
+    "from",
+    "to",
+    "x",
+    "y",
+    "asset",
+    "emphasis",
+    "emphasisAt",
+    "captionTop",
+    "negative",
+    "layout",
+    "groups"
+  ],
+  "outroFields": [
+    "returnFrom",
+    "logoFrom",
+    "logo"
+  ],
+  "camera": "Cenário amplo persistente, deslocamentos horizontais e verticais de 0,77 s, zoom leve na permanência.",
+  "captions": "Grupos de palavras w/s/e dentro da cena; entrada com desfoque e deslocamento curto; palavra atual roxa. Reservar área abaixo da decoração superior e acima do destaque.",
+  "assets": "PNGs temáticos em resolução nativa com alpha. Reaproveitar os pertinentes ou gerar novos para a fala. Dessaturar apenas quando a ideia pedir.",
+  "audio": "Fala contínua, sem mudança de velocidade nem efeitos ou música não solicitados.",
+  "workflow": "Ler transcrição completa, mapear palavras pelos cortes reais, adaptar câmera e assets. Conferir quadros críticos. Prévia com áudio antes do vídeo completo conforme a preferência do usuário.",
+  "exampleDetails": {
+    "source": "exemplo 14.01 — questões e estudo nos intervalos do trabalho",
+    "sourceInterval": [
+      0,
+      66.2
+    ],
+    "duration": 68.4,
+    "motionFrom": 22.18,
+    "returnFrom": 62.9,
+    "logoFrom": 66.2,
+    "note": "Exemplo de funcionamento; não é o corte completo de 130,83 s."
+  },
+  "composition": "MotionPin129Continuo"
+}

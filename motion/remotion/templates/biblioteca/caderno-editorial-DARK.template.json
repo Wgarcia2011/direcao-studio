@@ -1,0 +1,786 @@
+{
+  "slug": "SUBSTITUIR-caderno-DARK-v1",
+  "source": "../VIDEO.mp4",
+  "transcript": "../analise/transcricao-revisada.json",
+  "output": "SUBSTITUIR-caderno-editorial-DARK-9x16-v1.mp4",
+  "composition": "MotionCadernoEditorialDark",
+  "tail": 0.4,
+  "segments": [
+    [
+      0,
+      139.266667
+    ]
+  ],
+  "darkMode": true,
+  "sketchPalette": {
+    "paper": "#060b1f",
+    "ink": "#e4edff",
+    "graph": "#7185a1",
+    "accent": "#00d0b8",
+    "accentInk": "#00d0b8",
+    "red": "#e0483a",
+    "sheet": "#111e3b",
+    "text": "#f1f5ff"
+  },
+  "keywords": [
+    "PDF",
+    "NOME",
+    "CHORAR",
+    "ALEGRIA",
+    "NITERÓI",
+    "BARCAS",
+    "GRATIDÃO",
+    "POSSE",
+    "FELIZ"
+  ],
+  "phrases": [
+    "não acreditei",
+    "valeu a pena",
+    "meu máximo",
+    "24 de agosto",
+    "só alegria"
+  ],
+  "speakerShots": [
+    {
+      "from": 0,
+      "to": 7.366667,
+      "x": 0.485
+    },
+    {
+      "from": 7.366667,
+      "to": "end",
+      "x": 0.79
+    }
+  ],
+  "faceY": 0.3,
+  "punchTimes": [
+    0,
+    3.3,
+    7.4,
+    12.2,
+    35.4,
+    49.5,
+    72,
+    80.9,
+    88.6,
+    100.7,
+    126.8,
+    136.2
+  ],
+  "captionTop": {
+    "video": 1190,
+    "page": 1370
+  },
+  "identity": {
+    "from": 7.6,
+    "to": 13.2,
+    "name": "NOME CONFIRMADO",
+    "detail": "IDENTIFICAÇÃO CONFIRMADA"
+  },
+  "marginRocket": "",
+  "marginRocketScale": 1.2,
+  "rocketTransitions": [
+    19.85,
+    51.5,
+    65.65,
+    105.5
+  ],
+  "brand": {
+    "src": "",
+    "windows": []
+  },
+  "outro": {
+    "duration": 3.2,
+    "src": "",
+    "title": "SUA MARCA"
+  },
+  "sketchBlocks": [
+    {
+      "from": 19.85,
+      "to": 35.1,
+      "photoIn": {
+        "x": 230,
+        "y": 270,
+        "w": 200,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 1520,
+        "y": 1820,
+        "w": 240,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 19.85,
+          "cam": {
+            "x": 560,
+            "y": 860,
+            "z": 1,
+            "rot": -1
+          }
+        },
+        {
+          "at": 24.2,
+          "cam": {
+            "x": 560,
+            "y": 860,
+            "z": 1.06,
+            "rot": 0
+          }
+        },
+        {
+          "at": 27.5,
+          "cam": {
+            "x": 1500,
+            "y": 860,
+            "z": 1,
+            "rot": 1
+          }
+        },
+        {
+          "at": 31.5,
+          "cam": {
+            "x": 1500,
+            "y": 2520,
+            "z": 1,
+            "rot": -1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "pdfScreen",
+          "at": 20,
+          "x": 560,
+          "y": 820,
+          "size": 860,
+          "events": [
+            {
+              "kind": "search",
+              "at": 24.1
+            },
+            {
+              "kind": "highlight",
+              "at": 25.1
+            }
+          ],
+          "personName": "NOME CONFIRMADO"
+        },
+        {
+          "type": "art",
+          "art": "emotion",
+          "at": 27.5,
+          "x": 1500,
+          "y": 800,
+          "size": 780,
+          "label": "não acreditei"
+        },
+        {
+          "type": "art",
+          "art": "phone",
+          "at": 31.5,
+          "x": 1500,
+          "y": 2450,
+          "size": 720,
+          "events": [
+            {
+              "kind": "cards",
+              "at": 32
+            }
+          ]
+        },
+        {
+          "type": "art",
+          "art": "note",
+          "at": 32.3,
+          "x": 1500,
+          "y": 2010,
+          "size": 490,
+          "label": "familiares"
+        }
+      ]
+    },
+    {
+      "from": 40.5,
+      "to": 49.8,
+      "photoIn": {
+        "x": 220,
+        "y": 270,
+        "w": 200,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 1470,
+        "y": 330,
+        "w": 240,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 40.5,
+          "cam": {
+            "x": 560,
+            "y": 860,
+            "z": 1,
+            "rot": -1
+          }
+        },
+        {
+          "at": 46.2,
+          "cam": {
+            "x": 1500,
+            "y": 860,
+            "z": 1,
+            "rot": 1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "pdfScreen",
+          "at": 40.65,
+          "x": 560,
+          "y": 820,
+          "size": 860,
+          "events": [
+            {
+              "kind": "search",
+              "at": 41.2
+            },
+            {
+              "kind": "highlight",
+              "at": 42.3
+            }
+          ],
+          "personName": "NOME CONFIRMADO"
+        },
+        {
+          "type": "art",
+          "art": "emotion",
+          "at": 46.25,
+          "x": 1500,
+          "y": 820,
+          "size": 780,
+          "label": "comecei a chorar"
+        }
+      ]
+    },
+    {
+      "from": 51.5,
+      "to": 65.1,
+      "photoIn": {
+        "x": 230,
+        "y": 300,
+        "w": 215,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 1050,
+        "y": 330,
+        "w": 220,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 51.5,
+          "cam": {
+            "x": 560,
+            "y": 900,
+            "z": 1,
+            "rot": -1
+          }
+        },
+        {
+          "at": 56.2,
+          "cam": {
+            "x": 1500,
+            "y": 900,
+            "z": 1,
+            "rot": 1
+          }
+        },
+        {
+          "at": 62.6,
+          "cam": {
+            "x": 1050,
+            "y": 1050,
+            "z": 0.64,
+            "rot": 0
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "photoCrop",
+          "src": "SUBSTITUIR-FOTO.png",
+          "at": 51.65,
+          "x": 560,
+          "y": 810,
+          "size": 420,
+          "rot": -3,
+          "crop": {
+            "x": 25,
+            "y": 245,
+            "w": 300,
+            "h": 485,
+            "imageW": 1297,
+            "imageH": 825
+          }
+        },
+        {
+          "type": "art",
+          "art": "note",
+          "at": 52.2,
+          "x": 560,
+          "y": 1180,
+          "size": 490,
+          "label": "dedicação"
+        },
+        {
+          "type": "art",
+          "art": "arrow",
+          "at": 55.8,
+          "x": 1030,
+          "y": 800,
+          "size": 330,
+          "bend": 0.3
+        },
+        {
+          "type": "photoCrop",
+          "src": "SUBSTITUIR-FOTO.png",
+          "at": 56.3,
+          "x": 1500,
+          "y": 810,
+          "size": 420,
+          "rot": 3,
+          "crop": {
+            "x": 350,
+            "y": 245,
+            "w": 300,
+            "h": 485,
+            "imageW": 1297,
+            "imageH": 825
+          }
+        },
+        {
+          "type": "art",
+          "art": "note",
+          "at": 56.8,
+          "x": 1500,
+          "y": 1180,
+          "size": 490,
+          "label": "valeu a pena"
+        }
+      ]
+    },
+    {
+      "from": 65.65,
+      "to": 72.5,
+      "photoIn": {
+        "x": 210,
+        "y": 200,
+        "w": 185,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 210,
+        "y": 200,
+        "w": 185,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 65.65,
+          "cam": {
+            "x": 600,
+            "y": 900,
+            "z": 0.94,
+            "rot": -1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "rioMap",
+          "at": 65.8,
+          "x": 600,
+          "y": 780,
+          "size": 950,
+          "events": [
+            {
+              "kind": "route",
+              "at": 69.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": 81.5,
+      "to": 88.3,
+      "photoIn": {
+        "x": 225,
+        "y": 330,
+        "w": 220,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 1470,
+        "y": 330,
+        "w": 230,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 81.5,
+          "cam": {
+            "x": 560,
+            "y": 860,
+            "z": 1,
+            "rot": -1
+          }
+        },
+        {
+          "at": 86.1,
+          "cam": {
+            "x": 1500,
+            "y": 860,
+            "z": 1,
+            "rot": 1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "postits",
+          "at": 81.65,
+          "x": 560,
+          "y": 820,
+          "size": 760,
+          "events": [
+            {
+              "kind": "store",
+              "at": 85.7
+            }
+          ]
+        },
+        {
+          "type": "art",
+          "art": "essay",
+          "at": 86.2,
+          "x": 1500,
+          "y": 820,
+          "size": 760,
+          "label": "fichas",
+          "rows": 5,
+          "events": [
+            {
+              "kind": "write",
+              "at": 86.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": 105.5,
+      "to": 126.5,
+      "photoIn": {
+        "x": 220,
+        "y": 260,
+        "w": 200,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 1500,
+        "y": 260,
+        "w": 210,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 105.5,
+          "cam": {
+            "x": 560,
+            "y": 900,
+            "z": 1,
+            "rot": -1
+          }
+        },
+        {
+          "at": 114.4,
+          "cam": {
+            "x": 1500,
+            "y": 900,
+            "z": 1,
+            "rot": 1
+          }
+        },
+        {
+          "at": 120.9,
+          "cam": {
+            "x": 560,
+            "y": 900,
+            "z": 1.05,
+            "rot": -1
+          }
+        },
+        {
+          "at": 124.3,
+          "cam": {
+            "x": 1050,
+            "y": 970,
+            "z": 0.64,
+            "rot": 0
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "posse",
+          "at": 105.65,
+          "x": 560,
+          "y": 800,
+          "size": 840,
+          "events": [
+            {
+              "kind": "sign",
+              "at": 109.4
+            },
+            {
+              "kind": "celebrate",
+              "at": 122.2
+            }
+          ],
+          "label": "DATA CONFIRMADA"
+        },
+        {
+          "type": "art",
+          "art": "checklist",
+          "at": 114.5,
+          "x": 1500,
+          "y": 780,
+          "size": 750,
+          "rows": 3,
+          "events": [
+            {
+              "kind": "check",
+              "at": 115,
+              "row": 0
+            },
+            {
+              "kind": "check",
+              "at": 116.5,
+              "row": 1
+            },
+            {
+              "kind": "check",
+              "at": 118.2,
+              "row": 2
+            }
+          ]
+        },
+        {
+          "type": "art",
+          "art": "note",
+          "at": 115,
+          "x": 1500,
+          "y": 345,
+          "size": 420,
+          "label": "exames"
+        },
+        {
+          "type": "art",
+          "art": "note",
+          "at": 116.5,
+          "x": 1500,
+          "y": 610,
+          "size": 420,
+          "label": "documentos"
+        },
+        {
+          "type": "art",
+          "art": "note",
+          "at": 118.2,
+          "x": 1500,
+          "y": 875,
+          "size": 420,
+          "label": "certidões"
+        }
+      ]
+    },
+    {
+      "from": 130.3,
+      "to": "end",
+      "photoIn": {
+        "x": 215,
+        "y": 260,
+        "w": 185,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 130.3,
+          "cam": {
+            "x": 600,
+            "y": 900,
+            "z": 1,
+            "rot": -1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "emotion",
+          "at": 130.4,
+          "x": 600,
+          "y": 820,
+          "size": 810,
+          "events": [
+            {
+              "kind": "calm",
+              "at": 132.4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sfxCues": [
+    [
+      19.9,
+      "maximize_003",
+      19.9
+    ],
+    [
+      24.1,
+      "tick_001",
+      12
+    ],
+    [
+      25.1,
+      "confirmation_002",
+      12
+    ],
+    [
+      27.5,
+      "glass_001",
+      14
+    ],
+    [
+      31.6,
+      "maximize_003",
+      12
+    ],
+    [
+      40.6,
+      "maximize_003",
+      12
+    ],
+    [
+      42.3,
+      "confirmation_002",
+      12
+    ],
+    [
+      51.6,
+      "maximize_003",
+      12
+    ],
+    [
+      56.3,
+      "scratch_001",
+      12
+    ],
+    [
+      65.7,
+      "maximize_003",
+      12
+    ],
+    [
+      69.6,
+      "scratch_001",
+      12
+    ],
+    [
+      81.6,
+      "maximize_003",
+      12
+    ],
+    [
+      85.8,
+      "drop_003",
+      12
+    ],
+    [
+      105.6,
+      "maximize_003",
+      19.2
+    ],
+    [
+      109.4,
+      "confirmation_002",
+      12
+    ],
+    [
+      115,
+      "tick_001",
+      12
+    ],
+    [
+      116.5,
+      "tick_001",
+      12
+    ],
+    [
+      118.2,
+      "confirmation_002",
+      12
+    ],
+    [
+      122.2,
+      "confirmation_004",
+      12
+    ],
+    [
+      132.4,
+      "confirmation_002",
+      12
+    ]
+  ],
+  "music": {
+    "kind": "original-ambient",
+    "tempo": 72,
+    "voiceGapDb": 22,
+    "emphasisWindows": [
+      [
+        26,
+        35
+      ],
+      [
+        51,
+        65
+      ],
+      [
+        100.5,
+        110.2
+      ],
+      [
+        120,
+        126.5
+      ],
+      [
+        130,
+        139.5
+      ]
+    ]
+  },
+  "_comentario": "Caderno Editorial DARK v1. Tempos e sequência ilustrativos; reconstruir pela fala real. Identificação, data e fotos devem vir dos materiais do novo vídeo."
+}

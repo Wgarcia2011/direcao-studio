@@ -1,0 +1,36 @@
+import React from 'react';
+import {Easing,Img,OffthreadVideo,interpolate,staticFile,useCurrentFrame,useVideoConfig} from 'remotion';
+import {clamp} from '../contraste/Words';
+import type {Rect,TeleProps,TeleScene} from './types';
+export const pos=(r:Rect):React.CSSProperties=>({position:'absolute',left:r.x,top:r.y,width:r.w,height:r.h,boxSizing:'border-box'});
+const easing=Easing.bezier(.22,1,.36,1);
+export const asset=(p:TeleProps,id:string)=>{const a=p.assets.find(v=>v.id===id);if(!a)throw new Error('Telejornal DARK: asset ausente '+id);return a;};
+export const Section:React.FC<{p:TeleProps;scene:TeleScene}>=({p,scene})=>{
+ const {palette:c,layout:l,fontSizes:s}=p.design;
+ const archive=scene.archive?.enabled?scene.archive.label:null;
+ return <div style={{...pos(l.section),display:'flex',alignItems:'center',gap:18,fontFamily:'TeleLabel',fontSize:s.section,fontWeight:700,letterSpacing:1}}><span style={{background:c.red,padding:'14px 22px'}}>{scene.section||p.broadcast.defaultSection}</span>{archive?<span style={{flex:1,padding:'14px 18px',borderTop:`2px solid ${c.line}`,borderBottom:`2px solid ${c.line}`,fontSize:28,textAlign:'right',whiteSpace:'nowrap'}}>{archive}</span>:null}</div>;
+};
+export const Brand:React.FC<{p:TeleProps}>=({p})=> <div style={{...pos(p.cover?{x:64,y:1540,w:856,h:80}:p.design.layout.brand),display:'flex',alignItems:'center',justifyContent:p.cover?'center':'flex-end',gap:p.cover?22:12,color:p.design.palette.text}}><Img src={staticFile(p.brand.src)} style={{height:p.cover?64:48,width:p.cover?64:48,objectFit:'contain'}}/><div style={{fontFamily:'TeleLabel',fontSize:p.cover?38:20,lineHeight:1.1}}>{p.cover?'DIORAMA POLÍTICA':<>DIORAMA<br/>POLÍTICA</>}</div></div>;
+export const LowerThird:React.FC<{p:TeleProps;scene:TeleScene}>=({p,scene})=>{
+ const f=useCurrentFrame();const {palette:c,layout:l,fontSizes:s,motion:m}=p.design;
+ return <div style={{...pos(l.identity),background:c.panel,borderLeft:`6px solid ${c.red}`,padding:'8px 24px',clipPath:`inset(0 ${100*(1-interpolate(f,[0,m.lowerThirdEnterFrames],[0,1],{...clamp,easing}))}% 0 0)`}}><div style={{fontFamily:'TeleLabel',fontWeight:700,fontSize:s.name,lineHeight:1.05}}>{scene.identity?.name}</div><div style={{fontFamily:'TeleBody',fontWeight:400,fontSize:28,lineHeight:1.1,color:c.muted,marginTop:5}}>{scene.identity?.detail}</div></div>;
+};
+export const Headline:React.FC<{p:TeleProps;text:string}>=({p,text})=> <div style={{...pos(p.design.layout.headline),display:'flex',alignItems:'center',background:p.design.palette.red,padding:'18px 28px',fontFamily:'TeleHeadline',fontSize:p.design.fontSizes.headline,lineHeight:1.07}}>{text}</div>;
+export const Source:React.FC<{p:TeleProps;scene:TeleScene}>=({p,scene})=> <div style={{...pos(p.design.layout.source),fontFamily:'TeleBody',fontSize:p.design.fontSizes.source,color:p.design.palette.muted,lineHeight:1.22,display:'flex',flexDirection:'column',justifyContent:'center'}}><span>{scene.sourceLabel}</span>{scene.simultaneityLabel?<span style={{fontSize:24,marginTop:7}}>{scene.simultaneityLabel}</span>:null}</div>;
+export const Subtitles:React.FC<{p:TeleProps;scene:TeleScene}>=({p,scene})=>{
+ const local=useCurrentFrame()/useVideoConfig().fps;const t=local+scene.from;
+ const page=p.captionPages.find(v=>t*1000>=v.startMs&&t*1000<v.endMs);
+ if(!page)return null;
+ return <div data-subtitle="true" style={{...pos(p.design.layout.captions),background:p.design.palette.panel,borderTop:`2px solid ${p.design.palette.line}`,padding:'17px 24px',fontFamily:'TeleBody',fontSize:p.design.fontSizes.caption,lineHeight:1.25,display:'flex',alignItems:'center',justifyContent:'center',textAlign:'center'}}><div>{page.words.map((w,i)=><React.Fragment key={i}><span style={{color:/desmatamento|desmatado/i.test(w.text)&&t*1000>=w.startMs?p.design.palette.accent:p.design.palette.text}}>{w.text}</span>{i<page.words.length-1?' ':''}</React.Fragment>)}</div></div>;
+};
+export const Speaker:React.FC<{p:TeleProps;scene:TeleScene}>=({p,scene})=> <><div style={{...pos(p.design.layout.media),overflow:'hidden',background:p.design.palette.panel,border:`2px solid ${p.design.palette.line}`}}><OffthreadVideo muted src={staticFile(asset(p,scene.mediaRef!).src)} trimBefore={Math.round((scene.mediaOffset||0)*p.canvas.fps)} style={{width:'100%',height:'100%',objectFit:'cover'}}/></div><LowerThird p={p} scene={scene}/><Source p={p} scene={scene}/><Headline p={p} text={scene.headline!}/><Subtitles p={p} scene={scene}/></>;
+export const Duo:React.FC<{p:TeleProps;scene:TeleScene;context?:boolean}>=({p,scene,context=false})=>{
+ const f=useCurrentFrame();const {palette:c,layout:l,motion:m,fontSizes:s}=p.design;
+ const gap=20;const width=(l.media.w-gap)/2;
+ const revealed=p.cover?1:interpolate(f,[0,m.panelTransitionFrames],[0,1],{...clamp,easing});
+ const t=scene.from+f/p.canvas.fps;
+ const label=context?scene.labels?.filter(v=>v.at<=t).at(-1)?.text:undefined;
+ return <><div style={{...pos(l.media),background:c.panel,border:`2px solid ${c.line}`,overflow:'hidden'}}><div style={{position:'absolute',left:0,right:0,top:0,height:72,padding:'13px 24px',boxSizing:'border-box',fontFamily:'TeleLabel',fontSize:39,fontWeight:700}}>{context?'DIFERENTES POSIÇÕES':scene.headline??'DOIS LADOS'}</div>{scene.panels!.map((panel,i)=><div key={panel.name} style={{position:'absolute',left:i*(width+gap),top:72,width,height:l.media.h-72,overflow:'hidden',clipPath:`inset(0 ${100*(1-revealed)}% 0 0)`}}><Img src={staticFile(asset(p,panel.assetRef).src)} style={{width:'100%',height:'100%',objectFit:'cover',scale:context?interpolate(f,[0,m.contextCameraFrames],[1,Math.min(1.04,m.maxContextZoom)],{...clamp,easing}):1}}/></div>)}</div><div style={{...pos(l.identity),display:'flex',gap,fontFamily:'TeleLabel',fontSize:s.name,fontWeight:700}}>{scene.panels!.map(panel=><div key={panel.name} style={{width,display:'flex',alignItems:'center',justifyContent:'center',background:c.panel,borderBottom:`4px solid ${c.red}`}}>{panel.name}</div>)}</div><Source p={p} scene={scene}/><Headline p={p} text={label||scene.headline!}/>{context?<div style={{...pos(l.captions),padding:'14px 24px',fontFamily:'TeleBody',fontSize:36,lineHeight:1.22,color:c.muted}}>Conheça os cortes do canal<br/>@dioramapolitica</div>:null}</>;
+};
+export const Separator:React.FC<{p:TeleProps;scene:TeleScene}>=({p,scene})=> <><div style={{...pos(p.design.layout.media),background:p.design.palette.panel,display:'flex',flexDirection:'column',justifyContent:'center',padding:54,borderLeft:`8px solid ${p.design.palette.red}`}}><div style={{fontFamily:'TeleHeadline',fontSize:96}}>{scene.headline}</div><div style={{fontFamily:'TeleLabel',fontSize:44,marginTop:22,color:p.design.palette.muted}}>{scene.detail}</div></div><Source p={p} scene={scene}/></>;
+export const Outro:React.FC<{p:TeleProps}>=({p})=> <><Img src={staticFile(p.outro.src)} style={{position:'absolute',left:342,top:415,width:300,height:300,objectFit:'contain'}}/><div style={{position:'absolute',left:64,top:820,width:856,textAlign:'center',fontFamily:'TeleHeadline',fontSize:91,lineHeight:1.1}}>{p.outro.title}</div><div style={{position:'absolute',left:64,top:990,width:856,textAlign:'center',fontFamily:'TeleLabel',fontSize:43,color:p.design.palette.muted}}>{p.outro.handle}</div><Headline p={p} text={p.outro.cta}/></>;

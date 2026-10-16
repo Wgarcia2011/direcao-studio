@@ -1,0 +1,63 @@
+{
+  "paper": "#eeede7",
+  "ink": "#242126",
+  "accent": "#7b20ad",
+  "secondary": "#ffba42",
+  "audio": "",
+  "scenes": [
+    {
+      "duration": 4,
+      "mode": "paper",
+      "art": "target",
+      "lead": "Uma ideia ganha",
+      "emphasis": "DIREÇÃO",
+      "caption": "quando você escolhe o foco.",
+      "asset": "",
+      "labels": []
+    },
+    {
+      "duration": 4,
+      "mode": "accent",
+      "art": "cards",
+      "lead": "O próximo passo pede",
+      "emphasis": "ESTRATÉGIA",
+      "caption": "Organize. Escolha. Avance.",
+      "asset": "",
+      "labels": [
+        "Organize",
+        "Escolha",
+        "Avance"
+      ]
+    },
+    {
+      "duration": 4,
+      "mode": "paper",
+      "art": "graph",
+      "lead": "Torne o caminho",
+      "emphasis": "MAIS CLARO",
+      "caption": "Uma etapa de cada vez.",
+      "asset": "",
+      "labels": []
+    },
+    {
+      "duration": 4,
+      "mode": "accent",
+      "art": "tv",
+      "lead": "Dê movimento à",
+      "emphasis": "SUA HISTÓRIA",
+      "caption": "Uma imagem conecta a ideia.",
+      "asset": "",
+      "labels": []
+    },
+    {
+      "duration": 4,
+      "mode": "paper",
+      "art": "orbit",
+      "lead": "Clareza que vira",
+      "emphasis": "MEMÓRIA",
+      "caption": "Sua mensagem em movimento.",
+      "asset": "",
+      "labels": []
+    }
+  ]
+}

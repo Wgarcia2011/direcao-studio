@@ -1,0 +1,90 @@
+{
+  "id": "editorial-misto-12-combinacoes-v1",
+  "version": 1,
+  "name": "Editorial misto — 12 combinações",
+  "approved_on": "2026-10-11",
+  "approval_scope": "Direção visual da amostra revisão 10 e salvamento como template. Não aprova automaticamente outros vídeos.",
+  "reference_project": "542c955c20ae495883caec9f3204f6be",
+  "reference_revision": 10,
+  "reference_sample": "projetos/542c955c20ae495883caec9f3204f6be/amostras/preview-revisao-10-combinacoes.mp4",
+  "format": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "base_file": "caption-style-base.json",
+  "minimum_distinct_combinations": 10,
+  "target_distinct_combinations": 12,
+  "combinations": [
+    {
+      "id": "TIPO-01",
+      "preset": "editorial-misto",
+      "use": "Recomendação e abertura"
+    },
+    {
+      "id": "TIPO-02",
+      "preset": "tipo-02",
+      "use": "Qualificação e afirmação"
+    },
+    {
+      "id": "TIPO-05",
+      "preset": "tipo-05",
+      "use": "Conceito principal"
+    },
+    {
+      "id": "TIPO-06",
+      "preset": "tipo-06",
+      "use": "Ênfase alinhada à esquerda"
+    },
+    {
+      "id": "TIPO-30",
+      "preset": "tipo-30",
+      "use": "Transição e descanso"
+    },
+    {
+      "id": "TIPO-22",
+      "preset": "tipo-22",
+      "use": "Nome confirmado"
+    },
+    {
+      "id": "TIPO-25",
+      "preset": "tipo-25",
+      "use": "Contraste entre públicos"
+    },
+    {
+      "id": "TIPO-15",
+      "preset": "tipo-15",
+      "use": "Conclusão sublinhada"
+    },
+    {
+      "id": "TIPO-24",
+      "preset": "tipo-24",
+      "use": "Negação ou ressalva"
+    },
+    {
+      "id": "TIPO-11",
+      "preset": "tipo-11",
+      "use": "Ênfase na mesma linha"
+    },
+    {
+      "id": "TIPO-23",
+      "preset": "tipo-23",
+      "use": "Pergunta real"
+    },
+    {
+      "id": "TIPO-27",
+      "preset": "tipo-27",
+      "use": "Informação com complemento"
+    }
+  ],
+  "fonts": [
+    "Manrope Regular",
+    "Manrope Bold",
+    "Georgia Bold Italic",
+    "Sora Bold"
+  ],
+  "palette": {
+    "text": "#FFFFFF",
+    "accent": "#FFF0CF"
+  },
+  "timing_policy": "Reconstruir highlights pelos tempos reais de cada vídeo; não copiar os tempos de referência.",
+  "reference_style_file": "reference/exemplo-b-r10-caption-style.json"
+}

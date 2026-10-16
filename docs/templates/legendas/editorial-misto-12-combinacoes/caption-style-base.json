@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "preset": "editorial-misto",
+  "accent": "#fff0cf",
+  "size": 100,
+  "position": "lower",
+  "words": 3,
+  "case": "original",
+  "punctuation": false,
+  "break_on_punctuation": true,
+  "highlights": []
+}

@@ -366,5 +366,13 @@
     "description": "Template: short vertical de entrevista com muito motion e transições do Concat.",
     "prompt": "Use o template short editorial 9:16 (docs/templates/short-editorial-9x16/README.md) com o vídeo de {videos}. Escolha trechos de 20–40 s com começo forte e fechamento, cortados em pausas da fala. Monte o plano JSON local na pasta MOTION do vídeo, a partir do exemplo motion/remotion/templates/short-editorial-9x16.json: uma cena por trecho (pergunta, mosaico, meta, contraste, fechamento), textos curtos sincronizados com as palavras, planos de câmera conferidos e uma transição do Concat por corte. Rode validar, preparar, renderizar e montar com scripts/short_editorial.py, confira quadros-chave e entregue a amostra para revisão antes de qualquer exportação final.",
     "check": false
+  },
+  {
+    "id": "biblioteca-motion",
+    "category": "Animação",
+    "title": "Biblioteca de templates de motion",
+    "description": "Template: escolha entre 20 estilos de motion (caderno, túnel, contraste, cinético…).",
+    "prompt": "Liste os templates de docs/templates/README.md e da biblioteca (motion/remotion/templates/biblioteca/indice.json), explicando cada um em uma ou duas frases. Depois de eu escolher, aplique o template ao vídeo de {videos} seguindo docs/templates/biblioteca/README.md: plano local na pasta MOTION do vídeo, trechos cortados em pausas, cenas sincronizadas com as palavras, prévia em quadros e amostra para revisão antes de qualquer entrega. Importe o resultado no Concat.",
+    "check": false
   }
 ]

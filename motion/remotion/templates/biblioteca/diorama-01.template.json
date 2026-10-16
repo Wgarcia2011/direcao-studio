@@ -1,0 +1,38 @@
+{
+  "name": "Diorama_Template01",
+  "version": 2,
+  "composition": "DioramaTemplate01emissora",
+  "size": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "durationInFrames": 924,
+  "palette": {
+    "navy": "#071B36",
+    "white": "#FFFFFF",
+    "yellow": "#FFC400"
+  },
+  "font": "Anton",
+  "headlineMaxWords": 4,
+  "realFacesOnly": true,
+  "staticPanelLabel": null,
+  "defaultForNextVideos": true,
+  "layout": {
+    "editorialScale": 0.8,
+    "paperHeight": 220,
+    "videoTop": 790,
+    "videoHeight": [
+      1040,
+      1080
+    ]
+  },
+  "source": "URL-DO-VIDEO-FONTE",
+  "scope": "emissora only",
+  "sourceCrop": {
+    "top": 270,
+    "bottom": 1810
+  },
+  "requestIncludesFinal": true,
+  "previousVersionsPreserved": true
+}

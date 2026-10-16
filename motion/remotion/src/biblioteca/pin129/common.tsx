@@ -1,0 +1,7 @@
+import React from 'react';
+import {Easing, interpolate} from 'remotion';
+export const clamp = {extrapolateLeft:'clamp',extrapolateRight:'clamp'} as const;
+export const ease = {...clamp,easing:Easing.bezier(.16,1,.3,1)};
+export const progress = (t:number, start:number, end:number) => interpolate(t,[start,end],[0,1],ease);
+export const Serif:React.FC<{text:string;at:number;t:number;size?:number;x?:number;y?:number;width?:number}> = ({text,at,t,size=72,x=80,y=200,width=600}) => <div style={{position:'absolute',left:x,top:y,width,fontFamily:'PinSerif',fontSize:size,lineHeight:.94,letterSpacing:-2,scale:'.92 1',transformOrigin:'0 0'}}>{text.split('').map((c,i)=><span key={i} style={{opacity:interpolate(t,[at+i*.012,at+i*.012+.07],[0,1],clamp),filter:`blur(${interpolate(t,[at+i*.012,at+i*.012+.13],[10,0],clamp)}px)`}}>{c}</span>)}</div>;
+export const Star:React.FC<{x:number;y:number;size:number;rot:number;green?:boolean;blur?:number}> = ({x,y,size,rot,green,blur=0}) => <svg viewBox="0 0 200 200" style={{position:'absolute',left:x,top:y,width:size,height:size,rotate:`${rot}deg`,filter:`blur(${blur}px) drop-shadow(5px 8px 5px #0002)`}}><defs><linearGradient id={green?'pin-green-star':'pin-purple-star'} x2=".3" y2="1"><stop stopColor={green?'#e0ffab':'#cc70d0'}/><stop offset="1" stopColor={green?'#b0d87a':'#503c58'}/></linearGradient></defs><path d="M0 0 Q100 60 200 0 Q140 100 200 200 Q100 140 0 200 Q60 100 0 0Z" fill={`url(#${green?'pin-green-star':'pin-purple-star'})`}/></svg>;

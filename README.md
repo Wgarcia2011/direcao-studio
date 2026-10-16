@@ -6,10 +6,10 @@ O editor web Python/Remotion anterior foi retirado desta versão. Seu código
 continua no histórico Git até o commit `4d1f292`.
 
 A [central de ideias](docs/CENTRAL.md) abre com **Abrir-Central.cmd**:
-46 pedidos, busca, pré-montagem por blocos e templates salvos. Escolha
+47 pedidos, busca, pré-montagem por blocos e templates salvos. Escolha
 **Remotion, HyperFrames ou ambos** para criar os motions; os clipes resultantes
 entram na montagem do Concat. Instalação opcional: `PREPARAR-MOTION.ps1 -Engine Ambos`.
-Templates de vídeo: [lower third básico e short editorial 9:16](docs/templates/README.md).
+Templates de vídeo: [índice](docs/templates/README.md) com lower third, short editorial 9:16 e a biblioteca de 20 templates de motion. Escreva "Listar Templates" no chat para ver todos.
 Leia [docs/MOTION.md](docs/MOTION.md) e a [skill adaptada](skills/direcao-studio/SKILL.md).
 
 ## Abrir no Windows

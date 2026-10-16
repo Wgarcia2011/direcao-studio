@@ -1,0 +1,157 @@
+{
+  "slug": "SUBSTITUIR-SLUG-tunel-narrativo",
+  "composition": "MotionTunelNarrativo",
+  "theme": "impacto",
+  "source": "../VIDEO.mp4",
+  "transcript": "transcricao-revisada.json",
+  "output": "SUBSTITUIR-tunel-narrativo-9x16-v1-amostra.mp4",
+  "segments": [
+    [
+      0,
+      40
+    ]
+  ],
+  "tail": 0,
+  "fix": {},
+  "keywords": [
+    "PALAVRA",
+    "FORTE",
+    "DA",
+    "FALA"
+  ],
+  "phrases": [
+    "expressão de duas palavras",
+    "outra expressão"
+  ],
+  "palette": {
+    "accent": "#00d0b8",
+    "ink": "#000068",
+    "assetFilter": "hue-rotate(165deg)"
+  },
+  "brand": {
+    "src": ""
+  },
+  "speakerShots": [
+    {
+      "from": 0,
+      "to": 40,
+      "x": 0.5
+    }
+  ],
+  "punchTimes": [
+    0,
+    12,
+    36
+  ],
+  "cutout": true,
+  "tunnels": [
+    {
+      "from": 4,
+      "to": 12,
+      "beats": [
+        {
+          "at": 4,
+          "kind": "png",
+          "src": "motion-assets/impacto/livro.png"
+        },
+        {
+          "at": 6.5,
+          "kind": "code",
+          "code": "question"
+        },
+        {
+          "at": 9,
+          "kind": "png",
+          "src": "motion-assets/impacto/revisao/lampada-didatica.png"
+        }
+      ]
+    },
+    {
+      "from": 15,
+      "to": 36,
+      "beats": [
+        {
+          "at": 15,
+          "kind": "photo",
+          "src": "motion-assets/tela-cheia/estudo-noturno.png"
+        },
+        {
+          "at": 19,
+          "kind": "code",
+          "code": "bus",
+          "markAt": 21
+        },
+        {
+          "at": 23,
+          "kind": "code",
+          "code": "clock"
+        },
+        {
+          "at": 27,
+          "kind": "png",
+          "src": "motion-assets/impacto/x-riscado.png",
+          "fx": "shake",
+          "keepColor": true
+        },
+        {
+          "at": 31,
+          "kind": "code",
+          "code": "suitcase",
+          "fx": "speed"
+        }
+      ]
+    }
+  ],
+  "tunnelAssets": [
+    "motion-assets/impacto/revisao/aulas-online.png",
+    "motion-assets/impacto/revisao/folha-questoes.png",
+    "motion-assets/impacto/revisao/calendario-estudo.png",
+    "motion-assets/impacto/revisao/lampada-didatica.png",
+    "motion-assets/impacto/revisao/balanca-direito.png",
+    "motion-assets/impacto/revisao/medalha-conquista.png",
+    "motion-assets/impacto/livro.png",
+    "motion-assets/impacto/check.png",
+    "motion-assets/impacto/linha-chegada.png",
+    "motion-assets/impacto/x-riscado.png"
+  ],
+  "outro": {
+    "duration": 3,
+    "small": "frase curta do",
+    "big": "tema",
+    "brandName": "SUA MARCA",
+    "brand": "",
+    "src": "motion-assets/impacto/linha-chegada.png"
+  },
+  "sfxCues": [
+    [
+      4,
+      "open_001",
+      10
+    ],
+    [
+      6.5,
+      "question_001",
+      11
+    ],
+    [
+      15,
+      "open_002",
+      10
+    ],
+    [
+      27,
+      "glitch_001",
+      9
+    ],
+    [
+      "end",
+      "maximize_003",
+      8
+    ],
+    [
+      "end+0.6",
+      "confirmation_001",
+      8
+    ]
+  ]
+}

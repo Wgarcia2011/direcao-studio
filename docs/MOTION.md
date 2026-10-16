@@ -66,3 +66,11 @@ vertical de entrevista com cinco tipos de cena (Remotion: pergunta, meta,
 fechamento; HyperFrames: mosaico, contraste), legenda palavra a palavra e
 transições nativas do Concat, a partir de um plano JSON e de
 `scripts/short_editorial.py`. Veja também o [índice de templates](templates/README.md).
+
+## Biblioteca de templates do editor anterior
+
+A [biblioteca](templates/biblioteca/README.md) traz vinte templates de motion
+portados para `motion/remotion/src/biblioteca/`, com exemplos neutros em
+`motion/remotion/templates/biblioteca/` e o script `scripts/biblioteca_motion.py`
+(listar, assets, preparar, renderizar, contraste, aplicar). Ilustrações, fontes e
+marca ficam em `motion/remotion/public/` local, fora do Git.

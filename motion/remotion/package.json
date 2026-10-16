@@ -9,11 +9,15 @@
     "render:lower-third": "remotion render src/index.ts LowerThirdBasico"
   },
   "dependencies": {
+    "@remotion/captions": "4.0.533",
     "@remotion/cli": "4.0.533",
+    "@remotion/paths": "4.0.533",
     "@remotion/player": "4.0.533",
+    "motion": "14.2.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "4.0.533"
+    "remotion": "4.0.533",
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "@types/react": "19.3.0",

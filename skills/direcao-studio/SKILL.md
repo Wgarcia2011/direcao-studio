@@ -74,3 +74,13 @@ começam e terminam em pausas, confira os cortes de câmera (`shots`) e mantenha
 do episódio como `*.local.json` na pasta MOTION do vídeo. Rode `scripts/short_editorial.py`
 (validar, preparar, renderizar, montar, amostra) e revise quadros-chave antes de entregar.
 Os templates disponíveis estão em `docs/templates/README.md`; ofereça-os quando o pedido combinar.
+
+## Listar Templates
+
+Se o usuário pedir "Listar Templates", leia `docs/templates/README.md` e
+`motion/remotion/templates/biblioteca/indice.json`, liste todos os templates
+agrupados (principais, biblioteca de motion, legendas) e explique cada um em
+1–2 frases: visual, quando usar, formato e se foi testado nesta versão. Para usar
+um template da biblioteca, siga `docs/templates/biblioteca/README.md` e o script
+`scripts/biblioteca_motion.py` (preparar, contraste, aplicar). Assets, fontes e
+marca são locais (`biblioteca_motion.py assets`); nunca versione mídia pessoal.

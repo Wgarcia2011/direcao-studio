@@ -31,3 +31,9 @@ de publicação e a verificação de integridade upstream. Mudanças no motor Ru
 também exigem fmt/clippy/test conforme editor/CONTRIBUTING.md.
 Não versione mídias, modelos, dependências, portable/settings.json, tokens ou
 config.local.json. Preserve atribuições e licenças.
+
+Templates de vídeo: docs/templates/README.md. Quando o usuário escrever
+"Listar Templates", leia esse índice e motion/remotion/templates/biblioteca/indice.json
+(ou rode `python scripts/biblioteca_motion.py listar`) e apresente todos, agrupados,
+explicando cada um em uma ou duas frases (visual, quando usar, formato, se foi
+testado). Termine perguntando qual template e em qual vídeo.

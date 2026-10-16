@@ -1,0 +1,151 @@
+{
+  "slug": "SUBSTITUIR-SLUG-teatro-retro",
+  "source": "../VIDEO.mp4",
+  "transcript": "../analise/transcricao-original.json",
+  "tail": 0.9,
+  "segments": [
+    [
+      0,
+      9
+    ],
+    [
+      10,
+      19
+    ],
+    [
+      20,
+      30
+    ]
+  ],
+  "fix": {},
+  "keywords": [
+    "EXPECTATIVA",
+    "DESAFIO",
+    "VIRADA"
+  ],
+  "scenes": [
+    {
+      "from": "s0",
+      "to": "s1",
+      "shape": "card",
+      "fx": 0.5,
+      "fy": 0.3,
+      "titles": [
+        {
+          "small": "frase de abertura",
+          "smallAt": 0.5,
+          "big": "expectativa",
+          "bigAt": 1.0,
+          "size": 108,
+          "mark": true
+        }
+      ]
+    },
+    {
+      "from": "s1",
+      "to": "s2",
+      "shape": "circle",
+      "fx": 0.5,
+      "fy": 0.3,
+      "dark": true,
+      "mood": "neg",
+      "moodAt": 10.5,
+      "titles": [
+        {
+          "small": "frase do desafio",
+          "smallAt": 10.5,
+          "big": "desafio",
+          "bigAt": 11.0,
+          "size": 108,
+          "mark": true
+        }
+      ],
+      "objects": [
+        {
+          "kind": "x",
+          "src": "motion-assets/impacto/x-riscado.png",
+          "at": 10.5,
+          "x": 880,
+          "y": 1490,
+          "size": 260,
+          "rot": -6
+        }
+      ]
+    },
+    {
+      "from": "s2",
+      "to": "end",
+      "shape": "card",
+      "fx": 0.5,
+      "fy": 0.3,
+      "mood": "pos",
+      "moodAt": 20.5,
+      "titles": [
+        {
+          "small": "frase da virada",
+          "smallAt": 20.5,
+          "big": "virada",
+          "bigAt": 21.0,
+          "size": 108,
+          "mark": true
+        }
+      ],
+      "confettiAt": 21.5,
+      "objects": [
+        {
+          "kind": "check",
+          "src": "motion-assets/impacto/check.png",
+          "at": 21.0,
+          "x": 880,
+          "y": 1490,
+          "size": 300
+        }
+      ]
+    }
+  ],
+  "theme": "impacto",
+  "output": "SUBSTITUIR-NOME-impacto-v1-amostra.mp4",
+  "composition": "MotionTeatroRetro",
+  "palette": {
+    "accent": "#00d0b8",
+    "ink": "#000068",
+    "assetFilter": "hue-rotate(165deg)"
+  },
+  "brand": {
+    "src": "",
+    "windows": [
+      [
+        0,
+        4
+      ]
+    ]
+  },
+  "largeCaptions": true,
+  "selectiveMonochrome": true,
+  "enhancedMotion": true,
+  "motionAccents": {
+    "turns": [
+      10
+    ],
+    "parallax": [
+      {
+        "from": 20,
+        "to": 25
+      }
+    ]
+  },
+  "emphasisMoments": [
+    {
+      "from": 20,
+      "to": 25,
+      "kind": "type",
+      "eyebrow": "SUBSTITUIR PELA IDEIA DA FALA",
+      "headings": [
+        {
+          "at": 20,
+          "text": "PALAVRA-CHAVE"
+        }
+      ]
+    }
+  ]
+}

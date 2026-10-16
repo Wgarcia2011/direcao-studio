@@ -3,6 +3,7 @@ import {Composition} from 'remotion';
 import {Motion, demo} from './Motion';
 import {LowerThirdBasic,lowerThirdDemo,validateLowerThird,LT_WIDTH,LT_HEIGHT,LT_FPS} from './LowerThirdBasic';
 import {EditorialCompositions} from './editorial';
+import {BibliotecaCompositions} from './biblioteca';
 
 export const Root: React.FC = () => <>
   <Composition id="DirecaoMotion" component={Motion} width={1080} height={1920}
@@ -14,4 +15,5 @@ export const Root: React.FC = () => <>
       return {durationInFrames:props.durationInFrames};
     }}/>
   <EditorialCompositions/>
+  <BibliotecaCompositions/>
 </>;

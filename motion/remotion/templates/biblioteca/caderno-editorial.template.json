@@ -1,0 +1,385 @@
+{
+  "_comentario": "Modelo genérico Caderno Editorial (MotionCadernoEditorial). Todos os tempos e textos abaixo são ILUSTRATIVOS: refaça pela transcrição real. Tempos em segundos do arquivo-fonte; 'sN' = início do trecho N; 'end' = fim do corte. Veja CADERNO-EDITORIAL.md.",
+  "slug": "SUBSTITUIR-SLUG-caderno-v1",
+  "source": "../VIDEO.mp4",
+  "transcript": "../analise/transcricao-original.json",
+  "output": "SUBSTITUIR-NOME-caderno-editorial-9x16-v1.mp4",
+  "composition": "MotionCadernoEditorial",
+  "tail": 0.4,
+  "segments": [
+    [
+      0,
+      20
+    ],
+    [
+      30,
+      50
+    ],
+    [
+      60,
+      80
+    ]
+  ],
+  "fix": {},
+  "keywords": [
+    "PALAVRA1",
+    "PALAVRA2"
+  ],
+  "phrases": [
+    "expressão de duas palavras",
+    "outra expressão"
+  ],
+  "speakerShots": [
+    {
+      "from": "s0",
+      "to": "end",
+      "x": 0.5
+    }
+  ],
+  "faceY": 0.3,
+  "punchTimes": [
+    0,
+    3,
+    6
+  ],
+  "captionTop": {
+    "video": 1190,
+    "page": 1350
+  },
+  "brand": {
+    "src": "",
+    "windows": []
+  },
+  "sketchBlocks": [
+    {
+      "from": 6,
+      "to": 18,
+      "photoIn": {
+        "x": 240,
+        "y": 430,
+        "w": 300,
+        "rot": -5
+      },
+      "photoOut": {
+        "x": 230,
+        "y": 2560,
+        "w": 270,
+        "rot": 4
+      },
+      "shake": [
+        16
+      ],
+      "scenes": [
+        {
+          "at": 6,
+          "cam": {
+            "x": 540,
+            "y": 860,
+            "z": 1.0,
+            "rot": -1.5
+          }
+        },
+        {
+          "at": 11,
+          "cam": {
+            "x": 540,
+            "y": 3150,
+            "z": 1.0,
+            "rot": 1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "path",
+          "at": 6.2,
+          "x": 540,
+          "y": 830,
+          "size": 900,
+          "events": [
+            {
+              "kind": "loop",
+              "at": 8
+            }
+          ]
+        },
+        {
+          "type": "png",
+          "src": "motion-assets/estudio/bandeira-chegada.png",
+          "at": 7.5,
+          "x": 850,
+          "y": 400,
+          "size": 300,
+          "rot": 6,
+          "depth": 0.85
+        },
+        {
+          "type": "art",
+          "art": "answerCard",
+          "at": 11.1,
+          "x": 540,
+          "y": 3060,
+          "size": 900,
+          "label": "rótulo da fala",
+          "rows": 5,
+          "events": [
+            {
+              "kind": "mark",
+              "at": 12,
+              "row": 0,
+              "col": 2
+            },
+            {
+              "kind": "wrong",
+              "at": 13,
+              "row": 2,
+              "col": 1
+            },
+            {
+              "kind": "erase",
+              "at": 14,
+              "row": 2,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "type": "png",
+          "src": "motion-assets/impacto/x-riscado.png",
+          "at": 16,
+          "x": 600,
+          "y": 3040,
+          "size": 520,
+          "rot": -6
+        }
+      ]
+    },
+    {
+      "from": 35,
+      "to": "s2",
+      "photoIn": {
+        "x": 230,
+        "y": 420,
+        "w": 280,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 1080,
+        "y": 1400,
+        "w": 500,
+        "rot": 3
+      },
+      "scenes": [
+        {
+          "at": 35,
+          "cam": {
+            "x": 540,
+            "y": 860,
+            "z": 1.0,
+            "rot": 1
+          }
+        },
+        {
+          "at": 40,
+          "cam": {
+            "x": 1500,
+            "y": 900,
+            "z": 1.0,
+            "rot": -1.2
+          }
+        },
+        {
+          "at": 46,
+          "cam": {
+            "x": 1080,
+            "y": 1480,
+            "z": 0.55,
+            "rot": 0
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "door",
+          "at": 35.1,
+          "x": 580,
+          "y": 840,
+          "size": 820,
+          "label": "rótulo",
+          "events": [
+            {
+              "kind": "arrow",
+              "at": 36
+            }
+          ]
+        },
+        {
+          "type": "art",
+          "art": "arrow",
+          "at": 39.8,
+          "x": 1040,
+          "y": 640,
+          "size": 440,
+          "bend": 0.4
+        },
+        {
+          "type": "art",
+          "art": "clock",
+          "at": 40.1,
+          "x": 1500,
+          "y": 800,
+          "size": 760,
+          "events": [
+            {
+              "kind": "hands",
+              "at": 40.1,
+              "h": 9
+            },
+            {
+              "kind": "hands",
+              "at": 41,
+              "h": 14
+            },
+            {
+              "kind": "label",
+              "at": 41.2,
+              "text": "rótulo"
+            },
+            {
+              "kind": "calm",
+              "at": 44
+            }
+          ]
+        },
+        {
+          "type": "png",
+          "src": "motion-assets/impacto/check.png",
+          "at": 44.5,
+          "x": 1500,
+          "y": 1960,
+          "size": 520,
+          "filter": "hue-rotate(185deg) saturate(1.1)"
+        }
+      ]
+    },
+    {
+      "from": 65,
+      "to": "end",
+      "photoIn": {
+        "x": 250,
+        "y": 430,
+        "w": 300,
+        "rot": -5
+      },
+      "scenes": [
+        {
+          "at": 65,
+          "cam": {
+            "x": 600,
+            "y": 900,
+            "z": 1.0,
+            "rot": -1
+          }
+        },
+        {
+          "at": 70,
+          "cam": {
+            "x": 600,
+            "y": 940,
+            "z": 1.2,
+            "rot": 0
+          }
+        },
+        {
+          "at": 74,
+          "cam": {
+            "x": 1450,
+            "y": 950,
+            "z": 1.0,
+            "rot": 1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "phone",
+          "at": 65.2,
+          "x": 600,
+          "y": 860,
+          "size": 820,
+          "events": [
+            {
+              "kind": "cards",
+              "at": 67
+            },
+            {
+              "kind": "scroll",
+              "at": 70.1
+            }
+          ]
+        },
+        {
+          "type": "png",
+          "src": "motion-assets/editorial/fichas.png",
+          "at": 66,
+          "until": 67.5,
+          "x": 210,
+          "y": 1180,
+          "size": 300,
+          "rot": -8,
+          "depth": 0.8
+        },
+        {
+          "type": "art",
+          "art": "checklist",
+          "at": 74.1,
+          "x": 1600,
+          "y": 1120,
+          "size": 520,
+          "events": [
+            {
+              "kind": "check",
+              "at": 75,
+              "row": 0
+            },
+            {
+              "kind": "check",
+              "at": 76,
+              "row": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sfxCues": [
+    [
+      6.05,
+      "maximize_003",
+      11
+    ],
+    [
+      11.2,
+      "scratch_001",
+      11
+    ],
+    [
+      16.05,
+      "drop_003",
+      10
+    ],
+    [
+      35.05,
+      "maximize_003",
+      11
+    ],
+    [
+      44.5,
+      "confirmation_002",
+      10
+    ]
+  ]
+}

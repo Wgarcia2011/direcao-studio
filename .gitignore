@@ -47,3 +47,9 @@ editor/src/crates/concat-media/fixtures/*.ts
 # Assets/configuracoes pessoais usados nos templates de motion.
 /motion/remotion/public/local/
 /motion/remotion/templates/*.local.json
+
+# Biblioteca de motion: ilustracoes, fontes e projetos locais (fora do Git).
+/motion/remotion/public/motion-assets/
+/motion/remotion/public/fonts/
+/motion/remotion/public/projects/
+/motion/remotion/templates/biblioteca/qa/

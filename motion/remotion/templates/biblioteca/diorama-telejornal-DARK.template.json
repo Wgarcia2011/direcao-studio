@@ -1,0 +1,359 @@
+{
+  "templateId": "diorama-telejornal-dark",
+  "templateVersion": "1.0.0",
+  "derivedFrom": "caderno-editorial-DARK.template.json",
+  "implementation": {
+    "status": "implemented-requires-filled-configuration",
+    "compositionRegisteredByThisPackage": true,
+    "legacyPreparerCompatible": false,
+    "requiredNewProps": [
+      "design",
+      "broadcast",
+      "assets",
+      "timeline"
+    ],
+    "rejectUnresolvedPlaceholders": true,
+    "rejectUnknownSceneTypes": true,
+    "instructions": "Ler DIORAMA-TELEJORNAL-DARK.md antes de preparar ou renderizar."
+  },
+  "slug": "SUBSTITUIR-diorama-telejornal-dark-v1",
+  "source": "../SUBSTITUIR-VIDEO.mp4",
+  "transcript": "../analise/SUBSTITUIR-transcricao-revisada.json",
+  "output": "SUBSTITUIR-diorama-telejornal-dark-9x16-v1.mp4",
+  "composition": "MotionDioramaTelejornalDark",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "timebase": {
+    "segments": "source-seconds",
+    "transcript": "source-seconds-words-w-s-e",
+    "timeline": "output-seconds-before-outro",
+    "assetSourceInOut": "original-source-seconds",
+    "exampleOnly": true
+  },
+  "segments": [
+    [
+      0,
+      30
+    ]
+  ],
+  "tail": 0,
+  "darkMode": true,
+  "design": {
+    "palette": {
+      "background": "#071426",
+      "panel": "#10243D",
+      "line": "#29415F",
+      "text": "#F5F7FA",
+      "muted": "#B9C7D8",
+      "red": "#F50026",
+      "accent": "#FFC400"
+    },
+    "fonts": {
+      "headline": {
+        "family": "Anton",
+        "src": "SUBSTITUIR-fonts/Anton-Regular.ttf",
+        "weight": 400
+      },
+      "label": {
+        "family": "Manrope",
+        "src": "SUBSTITUIR-fonts/Manrope-700.ttf",
+        "weight": 700
+      },
+      "body": {
+        "family": "Manrope",
+        "src": "SUBSTITUIR-fonts/Manrope-500.ttf",
+        "weight": 500
+      }
+    },
+    "fontSizes": {
+      "headline": 72,
+      "name": 42,
+      "caption": 44,
+      "source": 28,
+      "section": 30
+    },
+    "safeRect": {
+      "x": 64,
+      "y": 160,
+      "w": 856,
+      "h": 1460
+    },
+    "layout": {
+      "section": {
+        "x": 64,
+        "y": 170,
+        "w": 856,
+        "h": 60
+      },
+      "media": {
+        "x": 64,
+        "y": 250,
+        "w": 856,
+        "h": 750
+      },
+      "identity": {
+        "x": 64,
+        "y": 1016,
+        "w": 856,
+        "h": 102
+      },
+      "source": {
+        "x": 64,
+        "y": 1130,
+        "w": 856,
+        "h": 64
+      },
+      "headline": {
+        "x": 64,
+        "y": 1210,
+        "w": 856,
+        "h": 140
+      },
+      "captions": {
+        "x": 64,
+        "y": 1370,
+        "w": 856,
+        "h": 146
+      },
+      "brand": {
+        "x": 680,
+        "y": 1540,
+        "w": 240,
+        "h": 64
+      }
+    },
+    "motion": {
+      "lowerThirdEnterFrames": 8,
+      "panelTransitionFrames": 10,
+      "contextCameraFrames": 18,
+      "easing": "cubic-bezier(0.22,1,0.36,1)",
+      "maxContextZoom": 1.06,
+      "rotationDegrees": 0,
+      "bounce": false,
+      "randomSeed": 20261010,
+      "oneDominantMovement": true
+    }
+  },
+  "broadcast": {
+    "brandName": "DIORAMA POLÍTICA",
+    "handle": "@dioramapolitica",
+    "defaultSection": "POLÍTICA",
+    "live": false,
+    "breaking": false,
+    "ticker": {
+      "enabled": false,
+      "items": []
+    },
+    "archive": {
+      "enabled": false,
+      "label": null,
+      "date": null
+    },
+    "captions": {
+      "maxLines": 2,
+      "verbatim": true,
+      "highlight": "keyword-only"
+    },
+    "headlineMaxWords": 4,
+    "fairComparison": {
+      "equalVisualWeight": true,
+      "equalAudioTreatment": true,
+      "preserveConversationOrder": true,
+      "forceEqualDuration": false
+    },
+    "editorial": {
+      "realFacesOnly": true,
+      "originalSpeechSpeed": 1,
+      "noFabricatedReactions": true,
+      "verifyQuotes": true,
+      "requireSourceForFacts": true,
+      "requireArchiveLabelForHistoricalClips": true
+    }
+  },
+  "brand": {
+    "src": "SUBSTITUIR-assets/diorama-logo.png",
+    "windows": [
+      [
+        0,
+        30
+      ]
+    ]
+  },
+  "outro": {
+    "duration": 3.2,
+    "src": "SUBSTITUIR-assets/diorama-logo.png",
+    "title": "DIORAMA POLÍTICA",
+    "handle": "@dioramapolitica",
+    "cta": "ASSISTA A MAIS CORTES"
+  },
+  "assets": [
+    {
+      "id": "context-image",
+      "type": "png",
+      "src": "SUBSTITUIR-assets/contexto.png",
+      "method": "code-generated-illustration",
+      "illustrative": true,
+      "sourceUrl": null,
+      "sourceIn": null,
+      "sourceOut": null,
+      "rights": "SUBSTITUIR-status",
+      "notes": "Objeto gráfico ou frame real documentado; nunca rosto sintético."
+    }
+  ],
+  "timeline": [
+    {
+      "id": "fala-inicial",
+      "from": 0,
+      "to": 8,
+      "type": "speaker",
+      "mediaRef": "source-cut",
+      "section": "POLÍTICA",
+      "headline": "SUBSTITUIR CHAMADA",
+      "identity": {
+        "name": "SUBSTITUIR NOME",
+        "detail": "SUBSTITUIR IDENTIFICAÇÃO"
+      },
+      "sourceLabel": "SUBSTITUIR FONTE E DATA",
+      "sourceUrl": "SUBSTITUIR-URL",
+      "archive": {
+        "enabled": false,
+        "label": null
+      },
+      "captions": true,
+      "audio": "original",
+      "crop": {
+        "mode": "review-per-shot",
+        "focusX": 0.5,
+        "focusY": 0.4
+      }
+    },
+    {
+      "id": "painel-contexto",
+      "from": 8,
+      "to": 13,
+      "type": "context",
+      "assetRef": "context-image",
+      "illustrationLabel": "ILUSTRAÇÃO",
+      "headline": "SUBSTITUIR CONTEXTO",
+      "sourceLabel": "SUBSTITUIR FONTE",
+      "captions": true,
+      "audio": "original-continuous",
+      "animate": {
+        "reveal": "mask-left",
+        "zoomStart": 1,
+        "zoomEnd": 1.04
+      }
+    },
+    {
+      "id": "retorno-fala",
+      "from": 13,
+      "to": 30,
+      "type": "speaker",
+      "mediaRef": "source-cut",
+      "section": "POLÍTICA",
+      "headline": "SUBSTITUIR CHAMADA",
+      "identity": {
+        "name": "SUBSTITUIR NOME",
+        "detail": "SUBSTITUIR IDENTIFICAÇÃO"
+      },
+      "sourceLabel": "SUBSTITUIR FONTE E DATA",
+      "sourceUrl": "SUBSTITUIR-URL",
+      "archive": {
+        "enabled": false,
+        "label": null
+      },
+      "captions": true,
+      "audio": "original",
+      "crop": {
+        "mode": "review-per-shot",
+        "focusX": 0.5,
+        "focusY": 0.4
+      }
+    }
+  ],
+  "componentContracts": {
+    "speaker": [
+      "mediaRef",
+      "identity",
+      "sourceLabel"
+    ],
+    "duo": [
+      "panels",
+      "sourceLabel",
+      "simultaneityLabel"
+    ],
+    "headline": [
+      "headline"
+    ],
+    "quote": [
+      "quoteText",
+      "attribution",
+      "sourceUrl",
+      "sourceIn",
+      "sourceOut"
+    ],
+    "document": [
+      "assetRef",
+      "sourceUrl",
+      "page",
+      "date",
+      "highlightRect"
+    ],
+    "timeline": [
+      "events",
+      "sourceUrl"
+    ],
+    "data": [
+      "values",
+      "unit",
+      "period",
+      "sourceUrl",
+      "scale",
+      "methodology"
+    ],
+    "context": [
+      "assetRef",
+      "sourceLabel"
+    ],
+    "outro": [
+      "src",
+      "title",
+      "cta"
+    ]
+  },
+  "audio": {
+    "voicePriority": true,
+    "preserveSpeechSpeed": true,
+    "music": {
+      "enabled": false,
+      "src": null,
+      "voiceGapDb": 22,
+      "ducking": true
+    },
+    "sfx": {
+      "enabled": false,
+      "cues": [],
+      "maxRelativeDb": -12
+    },
+    "requireListeningReview": true
+  },
+  "delivery": {
+    "codec": "h264",
+    "audioCodec": "aac",
+    "subtitles": "srt",
+    "cover": [
+      1080,
+      1920
+    ],
+    "coverPreviewWidth": 160,
+    "editableProject": true,
+    "sourceManifest": true,
+    "qaReport": true,
+    "publish": false,
+    "activateAds": false
+  },
+  "_comentario": "Especificação nova derivada do Caderno DARK; placeholders e tempos são exemplos. Requer implementação e validação no projeto de edição."
+}

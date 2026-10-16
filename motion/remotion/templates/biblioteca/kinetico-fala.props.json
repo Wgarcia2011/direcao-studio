@@ -1,0 +1,66 @@
+{
+  "video": "projects/SUBSTITUIR-SLUG/video.mp4",
+  "audio": "projects/SUBSTITUIR-SLUG/voz.wav",
+  "duration": 30,
+  "previewFrom": 0,
+  "previewDuration": 0,
+  "palette": {
+    "ink": "#242126",
+    "scenes": [],
+    "paper": "#eeede7",
+    "accent": "#7b20ad",
+    "audio": "",
+    "secondary": "#ffba42"
+  },
+  "shots": [
+    {
+      "to": 30,
+      "x": 0.5,
+      "from": 0
+    }
+  ],
+  "inserts": [
+    {
+      "to": 8,
+      "scene": {
+        "duration": 4,
+        "mode": "paper",
+        "art": "cards",
+        "emphasis": "PALAVRA-ÂNCORA",
+        "labels": [],
+        "asset": "motion-assets/kinetico-estrategico/fichas-lapis-v1.png",
+        "lead": "Frase da fala",
+        "caption": ""
+      },
+      "from": 4
+    },
+    {
+      "to": 16,
+      "scene": {
+        "duration": 4,
+        "mode": "accent",
+        "art": "tv",
+        "emphasis": "DESTAQUE",
+        "labels": [],
+        "asset": "motion-assets/kinetico-estrategico/videoaula-pausa-v1.png",
+        "lead": "Outra ideia",
+        "caption": ""
+      },
+      "from": 12
+    },
+    {
+      "to": 27,
+      "scene": {
+        "duration": 5,
+        "mode": "paper",
+        "art": "orbit",
+        "emphasis": "RETA FINAL",
+        "labels": [],
+        "asset": "motion-assets/kinetico-estrategico/tempo-fichas-v1.png",
+        "lead": "Fechamento da ideia",
+        "caption": ""
+      },
+      "from": 22
+    }
+  ]
+}

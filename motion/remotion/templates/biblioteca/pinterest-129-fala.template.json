@@ -1,0 +1,50 @@
+{
+  "name": "Pinterest 129 V4 — fala e assets temáticos",
+  "reference": "https://br.pinterest.com/pin/12947917676306751/",
+  "component": "app/remotion-project/src/MotionPin129Fala.tsx",
+  "entry": "motion/remotion/src/biblioteca/index.tsx",
+  "renderer": "python scripts/biblioteca_motion.py aplicar PROPS.json --composicao MotionPin129Fala --slug NOME",
+  "aspectRatio": "9:16",
+  "preview": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30
+  },
+  "final": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "style": {
+    "background": "#dcdcdc",
+    "grid": 42,
+    "emphasis": "#79568a",
+    "serif": "Times New Roman Bold Italic",
+    "impact": "Impact",
+    "decoration": "Estrelas lilás e verde claro"
+  },
+  "props": [
+    "video",
+    "audio",
+    "duration",
+    "previewFrom",
+    "previewDuration",
+    "shots",
+    "inserts"
+  ],
+  "insertFields": [
+    "from",
+    "to",
+    "title",
+    "emphasis",
+    "footer",
+    "asset",
+    "negative",
+    "kind",
+    "steps"
+  ],
+  "target": "Reutiliza o alvo corrigido da V4: o alvo aparece antes da flecha; impacto no centro.",
+  "workflow": "Ler fala com tempos por palavra, escolher apoios pontuais, reaproveitar PNGs pertinentes ou gerar novos, revisar prévia com áudio antes de render completo.",
+  "firstApplication": "PASTA-DA-EDICAO",
+  "composition": "MotionPin129Fala"
+}

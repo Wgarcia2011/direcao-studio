@@ -1,0 +1,230 @@
+{
+  "duration": 30,
+  "fps": 30,
+  "video": "INPUT_VIDEO.mp4",
+  "audioMix": null,
+  "captionGroups": [],
+  "cards": [
+    {
+      "from": 1.3333333333333333,
+      "to": 5.266666666666667,
+      "text": "Revisar com questões"
+    },
+    {
+      "from": 16.966666666666665,
+      "to": 20.4,
+      "text": "Revisão essencial"
+    },
+    {
+      "from": 27.4,
+      "to": 29.933333333333334,
+      "text": "Revisão na reta final"
+    }
+  ],
+  "paths": [
+    {
+      "from": 5.6,
+      "to": 9.933333333333334,
+      "items": [
+        "Aulas",
+        "YouTube",
+        "Direcionadas"
+      ],
+      "item_times": [
+        0,
+        0.6,
+        2.8
+      ]
+    }
+  ],
+  "notebookBlocks": [
+    {
+      "from": 10,
+      "to": 16.3,
+      "photoIn": {
+        "x": 220,
+        "y": 240,
+        "w": 225,
+        "rot": -5
+      },
+      "photoOut": {
+        "x": 1220,
+        "y": 240,
+        "w": 225,
+        "rot": 3
+      },
+      "scenes": [
+        {
+          "at": 10,
+          "cam": {
+            "x": 560,
+            "y": 850,
+            "z": 1,
+            "rot": -1
+          }
+        },
+        {
+          "at": 13.25,
+          "cam": {
+            "x": 1500,
+            "y": 850,
+            "z": 1,
+            "rot": 1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "phone",
+          "at": 10.45,
+          "x": 560,
+          "y": 1000,
+          "size": 620,
+          "events": [
+            {
+              "kind": "cards",
+              "at": 11.15
+            }
+          ]
+        },
+        {
+          "type": "art",
+          "art": "answerCard",
+          "at": 13.25,
+          "x": 1500,
+          "y": 1000,
+          "size": 670,
+          "label": "questões",
+          "rows": 3,
+          "events": [
+            {
+              "kind": "mark",
+              "at": 14.2,
+              "row": 0,
+              "col": 2
+            },
+            {
+              "kind": "mark",
+              "at": 14.8,
+              "row": 1,
+              "col": 3
+            },
+            {
+              "kind": "mark",
+              "at": 15.4,
+              "row": 2,
+              "col": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": 20.6,
+      "to": 25.7,
+      "photoIn": {
+        "x": 220,
+        "y": 240,
+        "w": 225,
+        "rot": -4
+      },
+      "photoOut": {
+        "x": 220,
+        "y": 240,
+        "w": 225,
+        "rot": -4
+      },
+      "scenes": [
+        {
+          "at": 20.6,
+          "cam": {
+            "x": 560,
+            "y": 850,
+            "z": 1,
+            "rot": 0
+          }
+        },
+        {
+          "at": 23.35,
+          "cam": {
+            "x": 560,
+            "y": 850,
+            "z": 1.035,
+            "rot": -1
+          }
+        }
+      ],
+      "items": [
+        {
+          "type": "art",
+          "art": "postits",
+          "at": 21.05,
+          "x": 560,
+          "y": 1000,
+          "size": 740,
+          "events": [
+            {
+              "kind": "store",
+              "at": 24.5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pageHeadings": [
+    {
+      "from": 10,
+      "to": 16.3,
+      "at": 10.4,
+      "text": "Mais aulas",
+      "x": 330,
+      "y": 550
+    },
+    {
+      "from": 10,
+      "to": 16.3,
+      "at": 13.3,
+      "text": "Mais questões",
+      "accentWord": "questões",
+      "x": 1150,
+      "y": 550
+    },
+    {
+      "from": 20.6,
+      "to": 23.3,
+      "at": 21.05,
+      "text": "TÍTULO DO CONTEÚDO",
+      "x": 330,
+      "y": 550
+    },
+    {
+      "from": 23.3,
+      "to": 24.5,
+      "at": 21.05,
+      "text": "Conteúdo de qualidade",
+      "x": 330,
+      "y": 550
+    },
+    {
+      "from": 24.5,
+      "to": 25.7,
+      "at": 21.05,
+      "text": "Questões atualizadas",
+      "x": 330,
+      "y": 550
+    }
+  ],
+  "captionStyle": {
+    "fontSize": 86,
+    "color": "#FFFFFF",
+    "activeColor": "#FFE368",
+    "zoom": 1.12,
+    "videoTop": 1400,
+    "pageTop": 1450
+  },
+  "_comment": "TEMPOS E TEXTOS ILUSTRATIVOS. Adapte duration, todos os intervalos e palavras a transcricao real. Tempos em segundos da montagem final, nao da fonte original. Use render.cjs deste pacote; nao preparar-motion-template.py.",
+  "schemaVersion": 1,
+  "composition": "ConcatCardsCadernoDark"
+}
