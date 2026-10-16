@@ -1,0 +1,47 @@
+name: Verificar integracao Concat
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - run: python scripts/auditar-publicacao.py
+      - run: python scripts/verificar-upstream.py
+      - name: Validar sintaxe PowerShell
+        shell: pwsh
+        run: |
+          foreach ($file in @('INICIAR.ps1', 'INSTALAR.ps1', 'ABRIR-CENTRAL.ps1', 'PREPARAR-MOTION.ps1')) {
+            $parseErrors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD $file), [ref]$null, [ref]$parseErrors)
+            if ($parseErrors.Count) { throw ($parseErrors | Out-String) }
+          }
+  remotion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+        working-directory: motion/remotion
+      - run: npm run lint
+        working-directory: motion/remotion
+      - run: node build-player.cjs
+        working-directory: motion/remotion
+  rust-document:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - run: cargo fmt --check
+        working-directory: editor/src
+      - run: cargo test --locked -p concat-core -p concat-project
+        working-directory: editor/src

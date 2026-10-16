@@ -1,77 +1,89 @@
-# Direção Studio
+# Direção Studio · editor Concat
 
-Editor de vídeo local para Windows, com interface no navegador e comandos para
-Claude Code. FFmpeg corta e monta; Faster Whisper transcreve em CPU; Remotion
-e HyperFrames compõem prévias e MP4. Originais ficam preservados e a timeline
-tem histórico. DeepSeek é opcional na interface; a CLI funciona sem sua chave.
+O **Concat é o único editor ativo** deste projeto: aplicativo nativo, timeline
+multipista, edição na tela, prévia e exportação pelo mesmo motor Rust/Slint.
+O editor web Python/Remotion anterior foi retirado desta versão. Seu código
+continua no histórico Git até o commit `4d1f292`.
 
-## Instalação em outro PC
+A [central de ideias](docs/CENTRAL.md) abre com **Abrir-Central.cmd**:
+44 pedidos, busca, pré-montagem por blocos e templates salvos. Escolha
+**Remotion, HyperFrames ou ambos** para criar os motions; os clipes resultantes
+entram na montagem do Concat. Instalação opcional: `PREPARAR-MOTION.ps1 -Engine Ambos`.
+Leia [docs/MOTION.md](docs/MOTION.md) e a [skill adaptada](skills/direcao-studio/SKILL.md).
 
-Instale Git, Python 3.11 ou superior (recomendado 3.11), Node 22 ou superior e
-FFmpeg com FFprobe no PATH. Reabra o PowerShell e confira `python --version`,
-`node --version`, `ffmpeg -version` e `ffprobe -version`.
+## Abrir no Windows
+
+Em um clone novo:
 
 ```powershell
 git clone https://github.com/Wgarcia2011/direcao-studio.git
 cd direcao-studio
-powershell -ExecutionPolicy Bypass -File .\INSTALAR.ps1 -BaixarWhisper
+powershell -ExecutionPolicy Bypass -File .\INSTALAR.ps1
 powershell -ExecutionPolicy Bypass -File .\INICIAR.ps1
 ```
 
-Abra http://127.0.0.1:8765/editor. Ctrl+C encerra. O instalador cria `.venv`,
-instala dependências Python e dos dois projetos Node, prepara fontes e o Player.
-É necessária internet para instalar dependências e baixar modelos/navegador.
-Whisper é baixado explicitamente com `-BaixarWhisper`; os vídeos ficam locais.
-
-Se já tiver o modelo Whisper, dispense o download e configure
-`VIDEO_EDITOR_WHISPER_MODEL` com a pasta que contém `model.bin`, `config.json`
-e `tokenizer.json`. Também é procurado o cache local de faster-whisper-small.
-Para baixar depois: `.venv/Scripts/python.exe scripts/baixar-whisper.py`.
-
-Remoção de fundo usa MODNet e pode exigir um download na primeira execução.
-Para baixar antes: `node app/remotion-project/download-model.mjs` ou a opção
-`-BaixarMODNet` do instalador. CPU é o caminho padrão disponível; GPU é opcional.
-O navegador do renderer pode ser baixado na primeira renderização.
-
-## Uso pela interface e Claude Code
-
-Importe um vídeo, transcreva, faça os cortes, revise as legendas, gere uma amostra,
-aprove e exporte. Limite atual: 2 GB e 10 minutos por vídeo. A API é local.
-
-Abra esta pasta no Claude Code e peça a edição. `CLAUDE.md` orienta o agente;
-`docs/CLI.md` descreve os comandos. Inicie o servidor num terminal separado.
-O agente usa `.venv/Scripts/python.exe app/cli.py` e ações validadas localmente.
-As skills de briefing, legendas/enquadramento, revisão e Remotion acompanham o
-repositório em `.agents/skills/`, com entradas para Claude Code em `.claude/skills/`.
-Leia a skill completa e os arquivos de apoio indicados antes de aplicá-la.
-Para outra porta: `INICIAR.ps1 -Port 8876`; na CLI: `--port 8876` antes do comando.
-
-## Arquivos locais
-
-`projetos/ID/brutos`: original; `edit`: transcrição e montagem; `amostras`:
-prévia; `final`: exportação. `templates-salvos`: estilos; `.models`: Whisper.
-Nenhum vídeo, render, backup, modelo ou dependência instalada acompanha o Git.
-O catálogo público inicia sem mídias ou materiais do curso; importe seus assets.
-Clonar o aplicativo não transfere os projetos feitos em outro computador.
-
-## Verificações
+O instalador baixa o MSI oficial **Concat 0.2.7 Windows x86_64**, verifica SHA256
+e extrai em `vendor/concat`, sem instalar serviços nem exigir o antigo servidor.
+Para usar uma distribuição já existente, mantendo suas configurações:
 
 ```powershell
-.venv/Scripts/python.exe -m unittest discover -s app/tests -p 'test_*.py'
-cd app/remotion-project
-npm run lint
+.\INSTALAR.ps1 -ExecutavelLocal 'D:\Wagner\Capcut-concat\vendor\concat\PFiles64\Concat\concat.exe'
+.\INICIAR.ps1
 ```
 
-Antes de publicar: `python scripts/auditar-publicacao.py` na raiz do repositório.
-As dependências Node estão fixadas nos lockfiles; dependências Python diretas
-estão declaradas em requirements.txt; a instalação usa requirements-lock.txt, com as versões diretas e transitivas validadas. Use `npm ci` para restaurar cada projeto Node.
+Também pode abrir `Iniciar-Direcao-Studio.cmd`. A janela do Concat é o editor;
+nenhum servidor web em `localhost:8765` é necessário. O caminho instalado fica
+em `config.local.json`, ignorado pelo Git. Modelos opcionais são instalados
+pelas configurações do Concat. Python 3.11+ só é necessário para controle por
+chat e verificações; Node/Remotion não são dependências deste editor.
 
-## Limitações e atribuições
+## Editar na tela e pelo chat
 
-A transcrição pode errar nomes e os planos precisam de revisão. Não há garantia
-de seleção narrativa automática sem conferência. O adaptador DeepSeek possui
-testes simulados; a conta, disponibilidade do modelo e chamadas reais precisam
-de configuração própria. Esta distribuição foi preparada para Windows.
+Importe suas mídias na janela, organize os clipes na timeline e ajuste textos,
+efeitos e keyframes no monitor. Projetos nativos usam uma pasta com `concat.json`.
+Salve projetos e exportações da API dentro da pasta do usuário, por exemplo
+`C:\Users\SEU_USUARIO\Videos\Concat`; a API restringe caminhos de escrita.
+Arquivos de mídia podem ser lidos de outras unidades.
 
-Veja `app/THIRD_PARTY_NOTICES.txt` e licenças junto às fontes. Dependências mantêm
-suas próprias licenças; o pacote Remotion está marcado como UNLICENSED.
+Para o chat, habilite a API local nas configurações do Concat. Mantenha a janela
+na tela inicial e feche nela o projeto antes de abrir uma sessão pela API.
+Depois use `python scripts/concat_rpc.py version`. Leia [docs/CLI.md](docs/CLI.md)
+para importar, editar, salvar, revisar e entregar de volta à janela.
+Não existe sincronização simultânea do mesmo projeto entre API e janela.
+
+Gere uma amostra e revise antes da exportação final pelo chat. A aprovação
+continua humana; o aplicativo nativo também oferece exportação manual.
+
+## Código e verificações
+
+`editor/` contém 887 arquivos de código, recursos e documentação do Concat,
+copiados do commit `afe8383cef9ec0ce17b4c8f438292d848fbfaf21`, com hashes em
+`editor/UPSTREAM.json`. O código foi preservado, normalizando finais de linha
+de texto para LF; o manifesto registra hashes originais e publicados. O executável oficial 0.2.7
+é uma distribuição independente e **não foi compilado a partir desse snapshot**.
+
+```powershell
+python -m unittest discover -s tests -p 'test_*.py'
+python scripts/auditar-publicacao.py
+python scripts/verificar-upstream.py
+```
+
+Para compilar o editor: Rust 1.93+, CMake, compilador C++ e bibliotecas de
+desenvolvimento FFmpeg 7+. Execute `python scripts/preparar-modelo.py` primeiro
+para obter o pequeno modelo embutido sem versioná-lo. Consulte
+[editor/src/README.md](editor/src/README.md). Em `editor/src`, execute
+`cargo fmt --check`, `cargo clippy --all-targets -- -D warnings` e `cargo test`.
+A CI verifica o cliente, os fontes importados e os testes Rust de core/projeto.
+
+## Migração e licença
+
+As mídias e projetos locais antigos não são enviados ao GitHub nem convertidos
+automaticamente. Estilos de legenda, motions e arquivos `projeto.json` do editor
+anterior precisam ser recriados no Concat. Detalhes em
+[docs/MIGRACAO-CONCAT.md](docs/MIGRACAO-CONCAT.md).
+
+Código do Concat: **AGPL-3.0-or-later**, copyright Jareer e contribuidores.
+Veja [LICENSE](LICENSE), [avisos de terceiros](editor/THIRD_PARTY_NOTICES.md) e
+[política de marca](editor/TRADEMARK.md). Direção Studio é a integração local
+com a distribuição oficial do Concat; não é o CapCut nem uma distribuição
+oficial própria do Concat.

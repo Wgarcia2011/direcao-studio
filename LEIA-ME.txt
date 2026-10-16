@@ -1,1 +1,3 @@
-Instalação e uso: README.md. Claude Code: CLAUDE.md e docs/CLI.md.
+Editor unico: Concat. Abra Iniciar-Direcao-Studio.cmd.
+Primeira instalacao: INSTALAR.ps1. Detalhes: README.md.
+Controle pelo chat: CLAUDE.md e docs/CLI.md.

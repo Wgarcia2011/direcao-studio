@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T00:00:00-03:00",
+  "title": "Design System: Direção Studio — Central",
+  "extensions": {
+    "source": "central/style.css; central/index.html; central/app.js",
+    "tokenAuthority": "DESIGN.md frontmatter; valores extraídos do CSS atual. Metadados e snippets usam literais portáveis; não substituir os tokens CSS.",
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Fundo profundo",
+        "canonical": "#0b0716"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Painel",
+        "canonical": "#151020"
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Superfície elevada",
+        "canonical": "#1d152b"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divisória",
+        "canonical": "#342442"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Texto",
+        "canonical": "#f5f0ff"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto auxiliar",
+        "canonical": "#b3a4c5"
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Lavanda",
+        "canonical": "#d1b4ff"
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Violeta de ação",
+        "canonical": "#a56bff"
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Verde água",
+        "canonical": "#8edbc4"
+      },
+      "primary-ink": {
+        "role": "primary",
+        "displayName": "Texto da ação",
+        "canonical": "#130a22"
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Hover primário",
+        "canonical": "#c2a6ff"
+      },
+      "quiet-hover": {
+        "role": "neutral",
+        "displayName": "Hover secundário",
+        "canonical": "#302240"
+      },
+      "selected": {
+        "role": "neutral",
+        "displayName": "Seleção tonal",
+        "canonical": "#2a1c3b"
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Seleção de texto",
+        "canonical": "#68429a"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Título principal",
+        "purpose": "Sora local em h1; 24px até 680px."
+      },
+      "title": {
+        "displayName": "Título de linha",
+        "purpose": "Manrope, h3. H2 não define entrelinha própria."
+      },
+      "body": {
+        "displayName": "Leitura",
+        "purpose": "Parágrafos e textareas; o corpo base define 14px, parágrafos definem 1.65."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Formulários e edição de ideias."
+      },
+      "metadata": {
+        "displayName": "Metadados",
+        "purpose": "Contagens, categorias e orientação curta."
+      }
+    },
+    "spacingMeta": {
+      "tight": {
+        "purpose": "Categorias e afastamento de label/campo"
+      },
+      "small": {
+        "purpose": "Padding de campo, gap de ações"
+      },
+      "control": {
+        "purpose": "Padding horizontal dos botões"
+      },
+      "field-gap": {
+        "purpose": "Gap vertical de materiais"
+      },
+      "group": {
+        "purpose": "Gap horizontal de materiais e linhas"
+      },
+      "panel": {
+        "purpose": "Padding lateral do pedido"
+      },
+      "heading": {
+        "purpose": "Margem abaixo do cabeçalho da região"
+      }
+    },
+    "shadows": [
+      {
+        "name": "toast",
+        "value": "0 10px 30px #0006",
+        "purpose": "Feedback temporário flutuante; painéis não usam sombra."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-background",
+        "value": "background .15s",
+        "purpose": "Hover de botões."
+      },
+      {
+        "name": "toast-enter",
+        "value": "opacity .18s,transform .18s",
+        "purpose": "Deslocamento de 15px a 0 e opacidade de 0 a 1."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}",
+        "purpose": "Regra existente."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-desktop",
+        "value": "min-width:1500px",
+        "purpose": "Colunas 220px / flexível / 390px; main com 48px laterais."
+      },
+      {
+        "name": "compact-window",
+        "value": "max-width:1150px",
+        "purpose": "Navegação 175px e pedido como aba dedicada."
+      },
+      {
+        "name": "narrow-window",
+        "value": "max-width:680px",
+        "purpose": "Pilha, navegação horizontal e campos em uma coluna no PC Windows."
+      }
+    ],
+    "layout": {
+      "header": "76px",
+      "maximumWidth": "1920px",
+      "columns": "205px minmax(0,1fr) 350px",
+      "mainPadding": "35px 32px",
+      "requestPadding": "28px 24px",
+      "requestScroll": "sticky; top:0; height:100vh; overflow-y:auto"
+    },
+    "inheritedDrift": [
+      "surface local equivale a panel no DESIGN de origem; raised local equivale a surface.",
+      "Foco e caret são lavanda; o sistema de origem documenta âmbar.",
+      "Título h1 usa 27px/1.3; raios locais são 7px, 6px e 5px.",
+      "Verde água sinaliza estado local e adicionado; não representa áudio.",
+      "Breakpoints locais são 1500px, 1150px e 680px; uso de produto permanece PC Windows."
+    ],
+    "tonalRampPolicy": "Não foram geradas rampas sintéticas: o projeto não define rampas; inventá-las ampliaria a paleta herdada."
+  },
+  "components": [
+    {
+      "name": "Ação principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Copiar pedido ou adicionar bloco.",
+      "html": "<button class=\"ds-primary\">Copiar pedido completo</button>",
+      "css": ".ds-primary{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;border:1px solid #342442;border-radius:7px;padding:10px 14px;cursor:pointer;transition:background .15s;background:#a56bff;border-color:transparent;color:#130a22;font-weight:700}.ds-primary:hover{background:#c2a6ff}.ds-primary:disabled{opacity:.5;cursor:wait}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    },
+    {
+      "name": "Ação secundária",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Baixar plano e ações auxiliares.",
+      "html": "<button class=\"ds-secondary\">Baixar plano</button>",
+      "css": ".ds-secondary{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;border:1px solid #342442;border-radius:7px;padding:10px 14px;cursor:pointer;transition:background .15s;background:#1d152b;color:#f5f0ff}.ds-secondary:hover{background:#302240}.ds-secondary:disabled{opacity:.5;cursor:wait}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    },
+    {
+      "name": "Campo de material",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Caminho ou direção em um formulário.",
+      "html": "<label class=\"ds-label\">Produto ou assunto<input class=\"ds-input\" placeholder=\"O que você quer comunicar?\"></label>",
+      "css": ".ds-label{display:block;font-family:Manrope,\"Segoe UI\",sans-serif;font-size:12px;color:#b3a4c5}.ds-input{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;display:block;width:100%;min-width:0;margin-top:7px;padding:10px;background:#0b0716;border:1px solid #342442;border-radius:6px;color:#f5f0ff;caret-color:#d1b4ff}.ds-input::placeholder{color:#b3a4c5;opacity:.9}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    },
+    {
+      "name": "Navegação ativa",
+      "kind": "nav",
+      "description": "Região atual com contagem.",
+      "html": "<button class=\"ds-nav\" aria-current=\"page\">Biblioteca <span>44</span></button>",
+      "css": ".ds-nav{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;display:flex;align-items:center;justify-content:space-between;gap:20px;width:205px;border:0;border-radius:7px;background:#2a1c3b;color:#d1b4ff;text-align:left;padding:13px 10px;cursor:pointer;transition:background .15s}.ds-nav span{font-size:11px;color:#b3a4c5}.ds-nav:hover{background:#302240}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    },
+    {
+      "name": "Categoria ativa",
+      "kind": "chip",
+      "refersTo": "category-active",
+      "description": "Filtro de biblioteca selecionado.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">Todos</button>",
+      "css": ".ds-chip{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;border:0;border-radius:5px;font-size:12px;padding:7px 10px;background:#2a1c3b;color:#d1b4ff;cursor:pointer;transition:background .15s}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    },
+    {
+      "name": "Linha da biblioteca",
+      "kind": "custom",
+      "description": "Pedido com descrição e ação de seleção.",
+      "html": "<article class=\"ds-command\"><div><h3>Organizar a abertura</h3><p>Defina a intenção antes de montar.</p><div class=\"ds-meta\">Direção</div></div><button>Adicionar</button></article>",
+      "css": ".ds-command{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;color:#f5f0ff;background:#0b0716;border-top:1px solid #342442;border-bottom:1px solid #342442;padding:21px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;align-items:start}.ds-command h3{margin:0;font-size:16px;line-height:1.4}.ds-command p{margin:7px 0 0;color:#b3a4c5;font-size:13px;line-height:1.65;max-width:65ch}.ds-meta{margin-top:12px;font-size:11px;color:#d1b4ff}.ds-command button{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;border:1px solid #342442;border-radius:7px;padding:10px 14px;cursor:pointer;transition:background .15s;font-size:12px;min-width:83px;background:#1d152b;color:#f5f0ff}.ds-command button:hover{background:#302240}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    },
+    {
+      "name": "Materiais recolhíveis",
+      "kind": "custom",
+      "description": "Disclosure que agrupa entradas compartilhadas.",
+      "html": "<details class=\"ds-materials\"><summary>Materiais e direção <span>Preencha uma vez para todos os pedidos</span></summary><p>Materiais locais do projeto.</p></details>",
+      "css": ".ds-materials{font-family:Manrope,\"Segoe UI\",sans-serif;font-size:14px;background:#0b0716;color:#f5f0ff;border-block:1px solid #342442;padding:17px 0 20px}.ds-materials summary{font-weight:700;cursor:pointer}.ds-materials summary span{display:block;margin:7px 0 0 16px;font-weight:400;font-size:12px;color:#b3a4c5}.ds-materials p{margin:22px 0 0;color:#b3a4c5;line-height:1.65}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-input:focus-visible,.ds-nav:focus-visible,.ds-chip:focus-visible,.ds-command button:focus-visible,.ds-materials summary:focus-visible{outline:2px solid #d1b4ff;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Modo Operate",
+    "overview": "A central estende a identidade existente do Direção Studio: roxo, superfícies escuras, Sora nos títulos e Manrope na leitura e nos controles. A estrutura organiza decisões locais antes da montagem. A documentação descreve o código atual de `central/style.css`, `central/index.html` e `central/app.js`; não registra uma nova aprovação visual nem substitui o DESIGN.md do sistema de origem.\n\nO produto destina-se a PC Windows. Concat é o único editor de montagem. A central prepara materiais, pedidos, blocos e templates; Remotion, HyperFrames ou ambos produzem motions importáveis no Concat. O pedido compilado permanece acessível durante o planejamento, sem apresentar seleção ou cópia como edição executada.",
+    "keyCharacteristics": [
+      "Superfícies violetas escuras delimitadas por linhas finas.",
+      "Ações roxas e seleção lavanda com texto explícito.",
+      "Biblioteca em linhas, navegação estreita e pedido lateral no desktop amplo.",
+      "Densidade funcional com formulários e disclosures."
+    ],
+    "rules": [
+      {
+        "name": "The Inherited Palette Rule",
+        "body": "Preserve a paleta roxa e escura herdada; a central não introduz outra identidade.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do reutilizar a paleta herdada e a dupla Sora/Manrope.",
+      "Do preservar foco visível, texto de estados e ordem de leitura nas janelas estreitas do PC.",
+      "Do representar planos como intenções e manter Concat como editor de montagem.",
+      "Do conferir o CSS da central ao estender esta superfície: os valores locais são os documentados aqui."
+    ],
+    "donts": [
+      "Don't criar outra identidade visual para a central.",
+      "Don't converter linhas e divisórias em uma coleção de cards com sombra.",
+      "Don't apresentar o pedido copiado como edição ou exportação executada.",
+      "Don't importar sem conferência tokens homônimos do sistema de origem: surface e foco têm papéis locais diferentes."
+    ]
+  }
+}

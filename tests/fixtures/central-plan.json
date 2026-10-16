@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "name": "Plano sintético importado",
+  "format": "16:9",
+  "duration": "4 segundos",
+  "engine": "hyperframes",
+  "fields": {},
+  "selected": [],
+  "notes": "",
+  "blocks": [],
+  "patterns": [
+    {
+      "id": "synthetic-backup",
+      "name": "Template sintético restaurado",
+      "plan": {
+        "version": 1,
+        "name": "Plano sintético importado",
+        "format": "16:9",
+        "duration": "4 segundos",
+        "engine": "hyperframes",
+        "fields": {},
+        "selected": [],
+        "notes": "",
+        "blocks": [],
+        "patterns": []
+      }
+    }
+  ]
+}

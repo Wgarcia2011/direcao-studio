@@ -1,77 +1,33 @@
-# Direção Studio — operação pelo chat
+# Direção Studio — Concat
 
-Responda em português. Este projeto edita vídeos locais pela interface e pela
-CLI Python. Use os mesmos motores e validações; DeepSeek é opcional. Você pode
-montar o JSON de ações diretamente, sem conectar outra IA.
+Responda em português. Leia README.md e docs/CLI.md antes de operar.
+Concat é o único editor. Abra com INICIAR.ps1; pelo chat use
+`python scripts/concat_rpc.py`. Não inicie o antigo app/server.py.
 
-## Instalação e início
+Central: ABRIR-CENTRAL.ps1. Para criação de motions use a escolha explícita
+do usuário/plano: Remotion, HyperFrames ou ambos, por meio da skill
+skills/direcao-studio/SKILL.md e docs/MOTION.md. A montagem principal continua
+no Concat. A cópia comercial em skills-locais é privada e não acompanha o Git.
 
-Leia README.md. No Windows, execute `./INSTALAR.ps1 -BaixarWhisper` uma vez.
-Execute `./INICIAR.ps1` em um terminal persistente. Use o Python de
-`.venv/Scripts/python.exe` para a CLI e os testes. As instruções pressupõem
-Windows, Python 3.11+, Node 22+ e FFmpeg/FFprobe no PATH.
+Preserve originais e contexto da fala. Nunca envie mídias ou tokens a serviços
+externos. Nunca leia ou imprima o token em saídas; o cliente autentica internamente.
+Não edite o mesmo projeto simultaneamente pela janela e API. Salve e feche a
+sessão API antes de abrir o projeto na janela. Não repita mutações após timeout
+sem conferir o estado: timeout não cancela a operação.
 
-## Operação
+Gere uma amostra com --sample, apresente ao usuário e obtenha aprovação explícita
+da versão atual antes de exportar pelo chat com --reviewed. Esses argumentos
+registram a intenção do operador, não são uma aprovação automática ou uma
+barreira do motor nativo. A cada alteração, revise novamente. Não afirme ter
+assistido ou ouvido mídia sem inspecioná-la.
 
-`python app/cli.py --help` lista os comandos. A saída padrão é JSON; progresso
-vai para stderr; falhas retornam código 1. O servidor escuta apenas loopback.
-Para outra porta: `INICIAR.ps1 -Port 8876` e `cli.py --port 8876 ...`.
+Os comandos e templates do editor antigo não existem nesta versão.
+Antes de escolher comandos, leia editor/src/crates/concat-api/src/message.rs e
+editor/src/crates/concat-project/src/commands/mod.rs. A distribuição instalada pode
+diferir dos fontes: chame version e respeite erros/capacidades reais.
 
-1. Confira `health`, importe com `import CAMINHO` e anote o ID retornado.
-2. Consulte `show ID`. `run ID legendar --wait` transcreve o original.
-   `run ID cortar --wait` limpa pausas; `run ID editar --wait` ativa a timeline.
-   Depois de ativar a timeline, use ações para os ajustes manuais.
-3. Leia `docs/CLI.md`. Grave ações em arquivo JSON, com a revisão atual,
-   e aplique `actions ID ARQUIVO`. Use intervalos baseados na transcrição real.
-   Revise `show ID` após cada operação. A revisão evita sobrescrita concorrente.
-4. Gere `run ID amostra --wait`. Apresente o arquivo local
-   `projetos/ID/amostras/preview.mp4`. Corrija segundo a revisão do usuário.
-5. Somente após aprovação explícita da amostra atual, execute
-   `approve ID --reviewed`, depois `run ID exportar --wait`.
-   Entregue `projetos/ID/final/video.mp4`.
-
-Não altere `brutos/`. Não aprovar automaticamente nem afirmar que assistiu
-ou ouviu um vídeo sem inspecioná-lo. Preserve sentido, ressalvas e contexto da
-fala; dúvidas de nomes e transcrição devem ser conferidas na amostra.
-Não retire pausas de uma montagem aprovada sem o pedido correspondente.
-Não envie vídeos nem chaves a serviços externos. Não registre chaves no código.
-
-## Motion dinâmico
-
-Para cenas de Motion, use `motion-presets`, `motion-show`, `motion-upload`,
-`motion-preset` e `motion-render` da CLI, conforme docs/CLI.md. A renderização de
-Motion usa um fluxo próprio; `run ID amostra` é o fluxo de edição comum.
-Sincronize `start` e `item_times` à fala real. Ao mover o apresentador para o lado,
-ajuste a largura dos cards e o foco do recorte para preservar o rosto.
-Apresente `amostras/motion-preview.mp4`; após aprovação explícita, execute
-`motion-approve ID --reviewed` antes de `motion-render ID --full`.
-
-## Skills de direção
-
-As cinco skills estão em `.agents/skills/`, com os arquivos de apoio completos.
-Entradas em `.claude/skills/` apontam para elas para uso no Claude Code. Leia a
-skill completa e suas referências relevantes, não apenas a entrada curta.
-
-- Briefing: `.agents/skills/meia-briefing-de-edicao/SKILL.md`.
-- Legendas/enquadramento: `.agents/skills/meia-legendas-e-enquadramento/SKILL.md`.
-- Revisão/retrabalho: `.agents/skills/meia-revisao-economia/SKILL.md`.
-- Shorts com motion em código (≈30 s, 16:9 ou 9:16): `.agents/skills/meia-motion-shorts/SKILL.md`;
-  ideias e decisões em `docs/MOTION-IDEIAS.md`.
-- Remotion: `.agents/skills/remotion-best-practices/SKILL.md`; seu roteador indica
-  as referências para composição, Player, renderização, legendas e outros temas.
-
-Selecione conforme o pedido. Estas orientações não instalam serviços ou modelos
-automaticamente e não autorizam chamadas pagas, mudanças de escopo ou exportação
-sem a aprovação já exigida pelo fluxo do editor.
-
-## Código e verificações
-
-`app/server.py`: API, jobs e validação; `editing_actions.py`: timeline e histórico;
-`assembly_flow.py`: tempos e fades; `remotion_engine.py` e `remotion-project/`:
-composição por frames; `motion_studio.py`: cenas; `kit/.../transcribe.py`: Whisper.
-
-`python -m unittest discover -s app/tests -p 'test_*.py'`
-e `npm run lint` em `app/remotion-project` verificam alterações.
-`python scripts/auditar-publicacao.py` verifica os arquivos rastreados no Git.
-Nenhum vídeo, render, modelo, backup, mídia do usuário ou material do curso
-pode entrar no repositório. Modelos e dependências são instalados localmente.
+Use fixtures sintéticas nos testes. Rode a suíte Python em tests, a auditoria
+de publicação e a verificação de integridade upstream. Mudanças no motor Rust
+também exigem fmt/clippy/test conforme editor/CONTRIBUTING.md.
+Não versione mídias, modelos, dependências, portable/settings.json, tokens ou
+config.local.json. Preserve atribuições e licenças.

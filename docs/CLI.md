@@ -1,106 +1,72 @@
-# Edição pelo terminal
+# Controle do Concat pelo chat
 
-Inicie o servidor com INICIAR.ps1 antes dos comandos. Nos exemplos, substitua
-`python` por `.venv/Scripts/python.exe` e `ID` pelo identificador retornado.
+Abra `INICIAR.ps1`, habilite o servidor nas configurações do Concat e mantenha
+o projeto fechado na janela enquanto a API o edita. A conexão é JSON-RPC 2.0
+sobre TCP local autenticado, não HTTP. O cliente lê o token de
+`portable/settings.json` ao lado do executável e nunca o imprime.
+Para instalações não portáteis, passe `--settings CAMINHO_SETTINGS`.
 
 ```powershell
-python app/cli.py health
-python app/cli.py import 'C:/Videos/meu-video.mp4'
-python app/cli.py projects
-python app/cli.py show ID
-python app/cli.py run ID legendar --wait
-python app/cli.py run ID cortar --wait
-python app/cli.py run ID editar --wait
+python scripts/concat_rpc.py version
+python scripts/concat_rpc.py project.list
+python scripts/concat_rpc.py project.create --params criar.json
 ```
 
-O comando `show` retorna configurações, legendas e, quando ativa, `edit_state`.
-Leia `edit_state.revision` e os IDs dos clipes antes de editar. Os tempos de
-seleção são os segundos da base da timeline; use as legendas dessa base para
-escolher falas. Não confunda esses tempos com a posição de saída após cortes.
-
-Grave `acoes.json` (exemplo; substitua a revisão e intervalos pelos reais):
+`criar.json` (troque o usuário; escritas da API ficam dentro da pasta do usuário):
 
 ```json
-{"revision":0,"actions":[
-  {"type":"timeline.select_ranges","params":{"ranges":[{"start":0,"end":5},{"start":8,"end":12}]}},
-  {"type":"overlay.add","params":{"kind":"text","text":"Meu título","start":0,"duration":3}}
-]}
+{"location":"C:/Users/SEU_USUARIO/Videos/Concat","name":"Meu corte"}
 ```
+
+Cada chamada recebe um arquivo JSON UTF-8 com os parâmetros. Use os campos
+definidos em `editor/src/crates/concat-api/src/message.rs`. Exemplos:
+
+| Método | Parâmetros |
+| --- | --- |
+| `project.open` | `{"path":"C:/Users/SEU_USUARIO/Videos/Concat/Meu corte"}` |
+| `media.import` | `{"path":"…/Meu corte","file":"D:/Videos/original.mp4"}` |
+| `project.get` / `project.document` | `{"path":"…/Meu corte"}` |
+| `edit.apply` | `{"path":"…/Meu corte","command":{"op":"addTextClip","start":1.5}}` |
+| `edit.undo` / `edit.redo` | `{"path":"…/Meu corte"}` |
+| `project.save` | `{"path":"…/Meu corte"}` |
+| `preview.frame` | `{"path":"…/Meu corte","time":1.5,"output":"C:/Users/SEU_USUARIO/Videos/Concat/frame.png"}` |
+| `project.close` | `{"path":"…/Meu corte","save":true}` |
+
+As reticências na tabela abreviam o caminho; substitua por caminhos completos.
+Leia IDs e tempos reais em `project.document` antes de alterar clipes.
+O vocabulário de edição está em `editor/src/crates/concat-project/src/commands/mod.rs`.
+Não escreva diretamente em `concat.json` para contornar o histórico ou o lock.
+O motor valida cada comando e registra undo/redo. Não há transação de lote no
+cliente; confira o documento após cada alteração.
+
+## Revisão e exportação
+
+Monte uma timeline curta para a amostra e exporte para um caminho separado.
+`--sample` **não corta a duração**: exporta a timeline ativa inteira. Para
+preservar o projeto completo, prepare o trecho em outro projeto/timeline na
+janela. Não encurte uma montagem aprovada sem pedido.
 
 ```powershell
-python app/cli.py actions ID acoes.json
-python app/cli.py show ID
-python app/cli.py history ID 1 undo
+python scripts/concat_rpc.py export.run --params amostra.json --sample --wait --timeout 300
+# Apresente o arquivo e obtenha aprovacao humana da versao atual.
+python scripts/concat_rpc.py export.run --params final.json --reviewed --wait --timeout 1800
+python scripts/concat_rpc.py project.close --params fechar.json
 ```
 
-Outras ações e parâmetros são validados em `app/editing_actions.py`.
-Consulte a implementação antes de gerar um tipo de ação diferente. Todas as
-ações de um lote precisam ser válidas; um lote rejeitado não publica alterações.
+Arquivos de exportação recebem `path` do projeto e `output` do MP4, por exemplo
+`{"path":"C:/Users/SEU_USUARIO/Videos/Concat/Meu corte","output":"C:/Users/SEU_USUARIO/Videos/Concat/amostra.mp4"}`.
+Não substitua originais nem sobrescreva uma entrega sem pedido. O cliente exige
+`--sample` ou `--reviewed` para `export.run`; é uma verificação do operador e
+não verifica hashes ou vincula a aprovação ao documento. Alterações exigem
+nova revisão. A janela nativa mantém seu próprio fluxo manual de exportação.
 
-Para configurar um projeto antes de ativar a timeline, copie `settings` de
-`show` para `config.json`, ajuste e execute `settings ID config.json`.
-Para projeto com timeline, use a ação `settings.set` com os parâmetros
-definidos em editing_actions.py, mantendo o histórico.
-`run` preserva a configuração atual; `--settings config.json` permite informar
-uma configuração específica. Remotion: `engine: "remotion"`; CPU:
-`acceleration: "cpu"`. HyperFrames: `engine: "hyperframes"`.
+Sem `--wait`, a API devolve o job imediatamente. Com `--wait`, o cliente aguarda
+`export.done` ou `export.failed`, inclusive se o evento chegar antes da resposta.
+Timeout e desconexão **não cancelam jobs nem desfazem comandos**. Consulte o
+estado/log local antes de repetir; `export.cancel` recebe `{"job":"ID_REAL"}`.
+Falhas retornam exit code 1, argumentos inválidos retornam 2. O cliente não
+repete chamadas automaticamente.
 
-```powershell
-python app/cli.py run ID amostra --wait
-# Apresente o MP4 e aguarde a aprovação do usuário.
-python app/cli.py approve ID --reviewed
-python app/cli.py run ID exportar --wait
-```
-
-Alterações invalidam a aprovação anterior. `--reviewed` registra a ação do
-operador; não substitui a revisão humana. O servidor verifica o hash da amostra.
-Sem `--wait`, `run` retorna o ID do job; consulte `job ID_DO_JOB` depois.
-Tempo esgotado da CLI não cancela o job. Falhas retornam código 1 e JSON em stderr.
-
-`captions ID arquivo.json` recebe `index`, `text` e `revision` se houver timeline.
-`motion ID arquivo.json` recebe `revision`, `scenes` e `captions`; leia
-`motion_studio.normalize` para os campos e limites. A CLI não chama DeepSeek.
-
-Para limpar apenas respirações ou escolher perfis de ritmo, use a interface ou
-`run ID automatico --automatic etapas.json --wait` após consultar o esquema em
-`automatic_edit.validate`. Não invente parâmetros ou opções ausentes.
-
-## Motion dinâmico pelo chat
-
-```powershell
-python app/cli.py motion-presets
-python app/cli.py motion-show ID
-python app/cli.py motion-upload ID 'C:/Imagens/apoio.png'
-python app/cli.py motion-preset ID preset.json
-python app/cli.py motion-render ID --start 0 --seconds 20 --wait
-# Apresente projetos/ID/amostras/motion-preview.mp4 e aguarde aprovação.
-python app/cli.py motion-approve ID --reviewed
-python app/cli.py motion-render ID --full --wait
-```
-
-Os seis presets: `dynamic-title`, `impact-word`, `image-card`, `checklist`,
-`comparison`, `flow`. A adição preserva os outros motions e o histórico.
-O arquivo preset.json recebe a revisão atual do documento Motion (independente
-da revisão da timeline), retornada por `motion-show`:
-
-```json
-{"revision":0,"preset":"checklist","start":3,"duration":4,
- "items":["Preparar","Praticar","Revisar"],"item_times":[0,1,2],
- "intensity":"energetic","x":76,"y":42,"box_width":40,
- "accent":"#4ee2c0","accent2":"#b798ff"}
-```
-
-`item_times` são segundos relativos ao início da inserção; escolha os valores
-pelas palavras da transcrição. Se vazio, o preset distribui entradas automáticas.
-Use `soft`, `balanced` ou `energetic` para intensidade. Os campos `x`, `y` e
-`box_width` são percentuais. Comparações aceitam dois `labels` personalizáveis.
-O preset `image-card` exige o ID de um asset previamente importado.
-
-Para colocar o apresentador de lado, salve o documento completo com `motion ID
-arquivo.json`, incluindo uma cena `kind: "layout"`, `layout: "panel"`, os tempos,
-`presenter_width` (25–70%), `fit`, `focusX` e `focusY`. Identificadores de cena
-precisam ter 12 caracteres hexadecimais; preserve os existentes.
-
-O caminho final é `projetos/ID/final/motion-video.mp4`. Motion possui aprovação
-própria: mudanças na edição, nos textos, assets ou legendas exigem nova amostra.
-Falhas de render retornam erro pela CLI e não substituem o arquivo anterior.
+Depois de `project.close` com `save:true`, abra a pasta na janela:
+`INICIAR.ps1 -Projeto 'C:\Users\SEU_USUARIO\Videos\Concat\Meu corte'`.
+Não há ponte automática entre a timeline antiga e esse documento nativo.

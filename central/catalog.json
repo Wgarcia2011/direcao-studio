@@ -1,0 +1,354 @@
+[
+  {
+    "id": "pedido-01",
+    "category": "Começar",
+    "title": "Primeiro vídeo",
+    "description": "Um ponto de partida para organizar a edição.",
+    "prompt": "Analise o material em {videos}, sobre {produto}. Proponha um corte que preserve a mensagem e termine com {cta}, quando fizer sentido na fala.",
+    "check": false
+  },
+  {
+    "id": "pedido-02",
+    "category": "Começar",
+    "title": "Conferir instalação",
+    "description": "Confira o editor antes de usar material real.",
+    "prompt": "Verifique instalação, abertura e API do Concat. Use um projeto vazio ou fixture sintética; não processe meus vídeos para testar.",
+    "check": false
+  },
+  {
+    "id": "pedido-03",
+    "category": "Editar",
+    "title": "Anúncio para redes sociais",
+    "description": "Gancho, argumento e chamada em um corte curto.",
+    "prompt": "Planeje um anúncio de 20 a 40 segundos a partir de {videos}. Tema: {produto}. Use {cta} como direção da chamada. Marque gancho, argumento, prova disponível e encerramento.",
+    "check": false
+  },
+  {
+    "id": "pedido-04",
+    "category": "Editar",
+    "title": "Reels de conteúdo",
+    "description": "Uma ideia clara, com foco na fala.",
+    "prompt": "Selecione uma ideia completa do material {videos} para um Reels. Evite acrescentar oferta comercial. Proponha legendas e mudanças de enquadramento nos pontos de ênfase.",
+    "check": false
+  },
+  {
+    "id": "pedido-05",
+    "category": "Editar",
+    "title": "Imagem e apresentador",
+    "description": "Associe materiais de apoio aos trechos certos.",
+    "prompt": "Em {videos}, indique as frases que podem receber imagens de {imagens}. Planeje o apresentador em uma região e a imagem em outra, mantendo leitura e rosto livres.",
+    "check": false
+  },
+  {
+    "id": "pedido-06",
+    "category": "Editar",
+    "title": "Trocar o fundo",
+    "description": "Avalie o recorte antes de compor a cena.",
+    "prompt": "Faça um teste curto de remoção de fundo no Concat com o material {videos}. Use imagens de {imagens} apenas se o teste preservar contornos e movimento.",
+    "check": false
+  },
+  {
+    "id": "pedido-07",
+    "category": "Editar",
+    "title": "Selecionar tomadas",
+    "description": "Encontre a melhor versão de cada frase.",
+    "prompt": "Compare as gravações em {videos}. Selecione tomadas completas, registre arquivo e intervalo de origem e proponha uma sequência coerente.",
+    "check": false
+  },
+  {
+    "id": "pedido-08",
+    "category": "Animação",
+    "title": "Criativo com movimento",
+    "description": "Planeje entradas junto às palavras importantes.",
+    "prompt": "Crie um plano de anúncio para {produto} com o material {videos}. Indique onde entram títulos, imagens de {imagens} e sons, usando tempos conferidos na fala. Termine com {cta}.",
+    "check": true
+  },
+  {
+    "id": "pedido-09",
+    "category": "Animação",
+    "title": "Reels com ritmo",
+    "description": "Variação visual sem disputar atenção com a fala.",
+    "prompt": "Proponha para {videos} mudanças de escala, títulos e efeitos do motor escolhido que ajudem a acompanhar a explicação. Preserve os momentos de pausa que sustentam o sentido.",
+    "check": true
+  },
+  {
+    "id": "pedido-10",
+    "category": "Animação",
+    "title": "Vídeo de vendas curto",
+    "description": "Estruture argumento e demonstração.",
+    "prompt": "Organize {videos} em abertura, problema, demonstração, oferta existente e chamada {cta}. Use apenas dados e promessas que o material sustenta.",
+    "check": true
+  },
+  {
+    "id": "pedido-11",
+    "category": "Animação",
+    "title": "Abertura para aula",
+    "description": "Destaque o início e simplifique o restante.",
+    "prompt": "Planeje uma abertura expressiva para a aula em {videos}. Depois, priorize leitura e continuidade. Preserve áudio de demonstrações reproduzidas durante a gravação.",
+    "check": true
+  },
+  {
+    "id": "pedido-12",
+    "category": "Animação",
+    "title": "Prova em destaque",
+    "description": "Mostre evidência enquanto a pessoa explica.",
+    "prompt": "Identifique em {videos} uma afirmação sustentada pelas imagens de {imagens}. Planeje a prova maior no quadro e o apresentador menor, com retorno ao plano original ao concluir.",
+    "check": true
+  },
+  {
+    "id": "pedido-13",
+    "category": "Animação",
+    "title": "Destaques da fala",
+    "description": "Dê hierarquia às expressões principais.",
+    "prompt": "Liste expressões realmente ditas em {videos} que merecem destaque tipográfico. Proponha uma por vez, em posição livre do rosto, e confira a técnica no motor escolhido.",
+    "check": true
+  },
+  {
+    "id": "pedido-14",
+    "category": "Animação",
+    "title": "Explicação visual",
+    "description": "Descreva uma cena que esclareça um conceito.",
+    "prompt": "No intervalo [INÍCIO–FIM] de {videos}, mantenha a voz e proponha uma explicação visual de [CONCEITO]. Separe o que pode ser feito com títulos e keyframes do que exige técnica ainda não disponível.",
+    "check": true
+  },
+  {
+    "id": "pedido-15",
+    "category": "Animação",
+    "title": "Card de apoio",
+    "description": "Um dado ou uma ideia pequena junto ao apresentador.",
+    "prompt": "Associe a frase [FRASE] de {videos} a um card com [CONTEÚDO]. Defina posição livre do rosto e duração suficiente para ler.",
+    "check": true
+  },
+  {
+    "id": "pedido-16",
+    "category": "Animação",
+    "title": "Pedido sendo digitado",
+    "description": "Uma representação visual de um comando falado.",
+    "prompt": "Proponha uma barra com o pedido [TEXTO], revelado junto à fala em {videos}. Marque a entrada do resultado [RESULTADO] como ilustração, sem simular prova de execução.",
+    "check": true
+  },
+  {
+    "id": "pedido-17",
+    "category": "Animação",
+    "title": "Medidor de valor",
+    "description": "Uma escala ancorada nos dados do vídeo.",
+    "prompt": "Planeje uma escala para [MEDIDA] no trecho [TEMPO] de {videos}. Use o valor [VALOR] apenas quando estiver comprovado no material. Use o motor de motion selecionado.",
+    "check": true
+  },
+  {
+    "id": "pedido-18",
+    "category": "Animação",
+    "title": "Busca ilustrada",
+    "description": "Termo, resultado e chamada em sequência.",
+    "prompt": "Represente visualmente a busca por [TERMO] durante a fala em {videos}. Mostre [RESULTADO] e [CHAMADA] como uma ilustração, sem alegar uma busca real.",
+    "check": true
+  },
+  {
+    "id": "pedido-19",
+    "category": "Animação",
+    "title": "Lista progressiva",
+    "description": "Revele cada ponto quando ele for mencionado.",
+    "prompt": "Monte uma lista com [ITENS] a partir de {videos}. Associe cada entrada à palavra correspondente. Marque conclusão apenas quando a fala indicar que a etapa terminou.",
+    "check": true
+  },
+  {
+    "id": "pedido-20",
+    "category": "Animação",
+    "title": "Escolher direção visual",
+    "description": "Defina uma identidade antes de espalhar efeitos.",
+    "prompt": "Proponha uma direção visual para {videos}: [ESCURO COM LARANJA / CLARO / AZUL-MARINHO / OUTRO]. Especifique cores, hierarquia de texto e ritmo usando o motor de motion escolhido.",
+    "check": true
+  },
+  {
+    "id": "pedido-21",
+    "category": "Referência",
+    "title": "Ler uma referência",
+    "description": "Traduza ritmo e composição em decisões.",
+    "prompt": "Analise {referencia}: cortes, enquadramento, texto, paleta e som. Entregue uma síntese com exemplos observados e indique o que cabe no Concat.",
+    "check": true
+  },
+  {
+    "id": "pedido-22",
+    "category": "Referência",
+    "title": "Aplicar direção da referência",
+    "description": "Adapte a linguagem ao conteúdo atual.",
+    "prompt": "Use a análise de {referencia} para planejar {videos}. Preserve minha fala e meus materiais. Adapte a linguagem visual sem copiar o conteúdo da referência.",
+    "check": true
+  },
+  {
+    "id": "pedido-23",
+    "category": "Ajustar",
+    "title": "Corrigir um intervalo",
+    "description": "Uma alteração localizada.",
+    "prompt": "No projeto atual do Concat, altere apenas [INÍCIO–FIM]: [CORREÇÃO]. Preserve a montagem aprovada nos outros intervalos e mostre o trecho alterado.",
+    "check": false
+  },
+  {
+    "id": "pedido-24",
+    "category": "Ajustar",
+    "title": "Rever pausas restantes",
+    "description": "Aperte emendas sem cortar palavras.",
+    "prompt": "Revise as pausas que sobraram no projeto atual. Meça o áudio, proponha os cortes e preserve finais de palavras e respirações necessárias à naturalidade.",
+    "check": false
+  },
+  {
+    "id": "pedido-25",
+    "category": "Ajustar",
+    "title": "Reduzir a duração",
+    "description": "Retire repetições mantendo o argumento.",
+    "prompt": "Proponha uma versão de até [SEGUNDOS] segundos. Liste os trechos redundantes que podem sair e preserve premissas, ressalvas e conclusão.",
+    "check": false
+  },
+  {
+    "id": "pedido-26",
+    "category": "Ajustar",
+    "title": "Alterar o gancho",
+    "description": "Mude a abertura preservando o restante.",
+    "prompt": "Substitua o título de abertura por [NOVO TEXTO]. Mantenha clipes, som, legendas e demais elementos aprovados.",
+    "check": false
+  },
+  {
+    "id": "pedido-27",
+    "category": "Ajustar",
+    "title": "Mais variação visual",
+    "description": "Movimento com função narrativa.",
+    "prompt": "Revise os trechos estáticos. Proponha aproximações e mudanças visuais nos momentos de ênfase, sem inserir informação que não esteja na fala.",
+    "check": false
+  },
+  {
+    "id": "pedido-28",
+    "category": "Ajustar",
+    "title": "Simplificar a composição",
+    "description": "Defina o que deve receber atenção.",
+    "prompt": "Faça uma leitura da composição e identifique os elementos que competem entre si. Proponha uma versão com uma prioridade visual em cada momento.",
+    "check": false
+  },
+  {
+    "id": "pedido-29",
+    "category": "Ajustar",
+    "title": "Liberar o rosto",
+    "description": "Reposicione elementos no quadro.",
+    "prompt": "No trecho [TEMPO], revise a posição de títulos e legendas em relação ao rosto real. Ajuste o elemento que estiver cobrindo olhos ou boca e confira o movimento.",
+    "check": false
+  },
+  {
+    "id": "pedido-30",
+    "category": "Ajustar",
+    "title": "Corrigir uma palavra",
+    "description": "Revise nomes, marcas e números.",
+    "prompt": "Corrija [FORMA ERRADA] para [FORMA CERTA] na legenda do projeto atual. Confira o áudio e preserve a sincronização ao revisar outras ocorrências.",
+    "check": false
+  },
+  {
+    "id": "pedido-31",
+    "category": "Ajustar",
+    "title": "Movimento em uma palavra",
+    "description": "Sincronize um elemento com a fala.",
+    "prompt": "Quando for dita [PALAVRA] no trecho [TEMPO], planeje [ELEMENTO] com uma entrada coerente. Meça o tempo na fala e confira a técnica disponível no Concat.",
+    "check": false
+  },
+  {
+    "id": "pedido-32",
+    "category": "Ajustar",
+    "title": "Adaptar o formato",
+    "description": "Recomponha para outra proporção.",
+    "prompt": "Prepare uma versão em [FORMATO]. Reposicione textos e enquadramento a partir do rosto e dos elementos presentes, preservando a versão aprovada de origem.",
+    "check": false
+  },
+  {
+    "id": "pedido-33",
+    "category": "Som",
+    "title": "Reduzir efeitos sonoros",
+    "description": "Reserve os sons para as ênfases.",
+    "prompt": "Revise os efeitos e preserve apenas os que ajudam a perceber as mudanças principais. Proponha até [QUANTIDADE] entradas com tempo e justificativa.",
+    "check": false
+  },
+  {
+    "id": "pedido-34",
+    "category": "Som",
+    "title": "Sincronizar sons e entradas",
+    "description": "Associe o som ao movimento.",
+    "prompt": "Confira as entradas visuais do projeto. Proponha sons locais adequados e alinhe cada pico ao momento da ação, sem cobrir a inteligibilidade da voz.",
+    "check": false
+  },
+  {
+    "id": "pedido-35",
+    "category": "Som",
+    "title": "Equilibrar a trilha",
+    "description": "A voz orienta a mixagem.",
+    "prompt": "Meça a relação entre trilha e voz. Ajuste para aproximadamente [DIFERENÇA EM DB] abaixo da fala e confira o resultado com audição, sem prometer um valor medido antes da análise.",
+    "check": false
+  },
+  {
+    "id": "pedido-36",
+    "category": "Som",
+    "title": "Usar uma música própria",
+    "description": "Planeje trilha com material autorizado.",
+    "prompt": "Use [ARQUIVO DE MÚSICA] como trilha se eu tiver direito de uso. Proponha nível e fades adequados à voz, usando a mixagem disponível no Concat.",
+    "check": false
+  },
+  {
+    "id": "pedido-37",
+    "category": "Som",
+    "title": "Tratar ruído da voz",
+    "description": "Compare um teste antes de tratar tudo.",
+    "prompt": "Avalie o ruído da gravação e prepare um teste curto de tratamento. Compare com o original no mesmo volume e preserve a identidade da voz.",
+    "check": false
+  },
+  {
+    "id": "pedido-38",
+    "category": "Reutilizar",
+    "title": "Continuar após revisão",
+    "description": "Avance a partir de uma aprovação real.",
+    "prompt": "Confira a aprovação humana registrada para a amostra atual antes de continuar. Se ela corresponder ao documento atual, siga o padrão e registre as escolhas reutilizáveis.",
+    "check": false
+  },
+  {
+    "id": "pedido-39",
+    "category": "Reutilizar",
+    "title": "Reaproveitar um padrão",
+    "description": "Adapte o estilo aos novos tempos.",
+    "prompt": "Leia o padrão aprovado de [PROJETO DE REFERÊNCIA] e aplique sua direção a {videos}. Recalcule tempos, palavras e enquadramento para o material novo.",
+    "check": false
+  },
+  {
+    "id": "pedido-40",
+    "category": "Reutilizar",
+    "title": "Variações de abertura",
+    "description": "Teste ganchos com o mesmo corpo.",
+    "prompt": "Planeje versões a partir dos ganchos de {ganchos} e do corpo de {videos}. Identifique cada hipótese e mantenha o corpo e o encerramento equivalentes.",
+    "check": false
+  },
+  {
+    "id": "pedido-41",
+    "category": "Reutilizar",
+    "title": "Retomar um projeto",
+    "description": "Recupere o estado salvo antes de avançar.",
+    "prompt": "Leia o plano e o documento salvo de {videos}. Resuma o que foi concluído, a última revisão e o próximo passo, sem refazer decisões aprovadas.",
+    "check": false
+  },
+  {
+    "id": "pedido-42",
+    "category": "Materiais",
+    "title": "Organizar um vídeo anexado",
+    "description": "Prepare o material recebido para edição local.",
+    "prompt": "Analise o vídeo anexado sobre {produto}. Prepare um plano para importação local no Concat e revisão do corte. Não envie o material a serviços externos.",
+    "check": false
+  },
+  {
+    "id": "pedido-43",
+    "category": "Materiais",
+    "title": "Definir texto e legenda",
+    "description": "Registre uma direção de estilo pelo nome.",
+    "prompt": "Para a versão atual, proponha legenda [ESTILO], título [TEXTO] e destaque [COR]. Confira quais escolhas têm equivalente no Concat antes de aplicá-las.",
+    "check": false
+  },
+  {
+    "id": "pedido-44",
+    "category": "Conferir",
+    "title": "Revisar antes de publicar",
+    "description": "Cheque conteúdo, leitura e evidências.",
+    "prompt": "Revise o arquivo final de {videos}: ortografia, sincronização, rosto, dados pessoais e afirmações sustentadas pelo material. Liste problemas com tempo e correção. Para análise de regras de plataforma, consulte a documentação oficial atual.",
+    "check": false
+  }
+]
