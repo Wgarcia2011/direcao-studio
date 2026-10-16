@@ -355,8 +355,16 @@
     "id": "lower-third-basico",
     "category": "Identificação",
     "title": "Lower third básico",
-    "description": "Nomes e cargos com logo e foguete discreto, em 16:9.",
+    "description": "Template: nomes e cargos com logo e foguete discreto, em 16:9.",
     "prompt": "Use o template básico motion/remotion/templates/lower-third-basico.json e a composição LowerThirdBasico. Consulte docs/templates/lower-third-basico/README.md. Preencha nomes, cargos, especialidades, logo, foguete e tempos a partir deste projeto. Preserve a imagem em tela cheia e uma direção formal; não adicione legendas corridas. O template é Remotion; se o plano escolher outro motor, confirme a escolha antes de executar. Monte o resultado no Concat e gere uma amostra para revisão.",
+    "check": false
+  },
+  {
+    "id": "short-editorial-9x16",
+    "category": "Animação",
+    "title": "Short editorial 9:16",
+    "description": "Template: short vertical de entrevista com muito motion e transições do Concat.",
+    "prompt": "Use o template short editorial 9:16 (docs/templates/short-editorial-9x16/README.md) com o vídeo de {videos}. Escolha trechos de 20–40 s com começo forte e fechamento, cortados em pausas da fala. Monte o plano JSON local na pasta MOTION do vídeo, a partir do exemplo motion/remotion/templates/short-editorial-9x16.json: uma cena por trecho (pergunta, mosaico, meta, contraste, fechamento), textos curtos sincronizados com as palavras, planos de câmera conferidos e uma transição do Concat por corte. Rode validar, preparar, renderizar e montar com scripts/short_editorial.py, confira quadros-chave e entregue a amostra para revisão antes de qualquer exportação final.",
     "check": false
   }
 ]

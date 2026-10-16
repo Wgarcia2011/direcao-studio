@@ -65,3 +65,12 @@ e `motion/remotion/templates/lower-third-basico.json`, composição Remotion
 A identificação principal aceita uma linha de especialidade; convidados têm
 faixas independentes. Preserve quadro inteiro, rosto livre e voz única.
 O exemplo é sintético: não reutilize nomes ou tempos de outro episódio.
+
+## Short editorial 9:16
+
+Para shorts verticais de entrevista com motion, use `docs/templates/short-editorial-9x16/README.md`
+e o exemplo `motion/remotion/templates/short-editorial-9x16.json`. Escolha trechos que
+começam e terminam em pausas, confira os cortes de câmera (`shots`) e mantenha o plano
+do episódio como `*.local.json` na pasta MOTION do vídeo. Rode `scripts/short_editorial.py`
+(validar, preparar, renderizar, montar, amostra) e revise quadros-chave antes de entregar.
+Os templates disponíveis estão em `docs/templates/README.md`; ofereça-os quando o pedido combinar.

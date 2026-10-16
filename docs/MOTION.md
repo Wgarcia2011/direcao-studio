@@ -58,3 +58,11 @@ Use [Lower third básico](templates/lower-third-basico/README.md) como padrão
 formal 16:9 para nomes, cargos, logo e foguete discreto. O componente Remotion
 `LowerThirdBasico` recebe os parâmetros do JSON; a central inclui um pedido
 específico na categoria Identificação. Assets e dados pessoais ficam locais.
+
+## Template short editorial 9:16
+
+[Short editorial 9:16](templates/short-editorial-9x16/README.md) monta um short
+vertical de entrevista com cinco tipos de cena (Remotion: pergunta, meta,
+fechamento; HyperFrames: mosaico, contraste), legenda palavra a palavra e
+transições nativas do Concat, a partir de um plano JSON e de
+`scripts/short_editorial.py`. Veja também o [índice de templates](templates/README.md).

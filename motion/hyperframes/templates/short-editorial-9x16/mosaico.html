@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Short editorial 9x16 - mosaico</title>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="templates/short-editorial-9x16/common.js"></script>
+<script>const SCENE=__SCENE__;const CTX=__CTX__;ED.setup(CTX.fonts);</script>
+<style>
+#vwrap{left:90px;top:240px;width:900px;height:820px;border-radius:56px;z-index:3}
+.tile{position:absolute;width:210px;height:180px;border-radius:24px;background:linear-gradient(150deg,#1d2350,#0a1150);box-shadow:0 14px 30px #14151630;overflow:hidden;z-index:2}
+.tile .play{position:absolute;left:50%;top:44%;width:0;height:0;border-top:24px solid transparent;border-bottom:24px solid transparent;border-left:38px solid #f3eee4;transform:translate(-40%,-50%)}
+.tile .bar{position:absolute;left:16px;right:16px;bottom:18px;height:8px;border-radius:4px;background:#ffffff33}
+.tile .bar b{display:block;height:100%;width:0;border-radius:4px;background:#00b3a0}
+#text{position:absolute;left:90px;right:60px;top:1150px;z-index:4}
+#lead{font-size:66px;color:#7a7469}
+#big{font-size:150px;line-height:1.02;letter-spacing:-6px;color:#0a1150}
+#badge{position:absolute;left:560px;top:800px;padding:20px 36px 20px 30px;border-radius:999px;background:#e62117;color:#fff;font-size:46px;display:flex;align-items:center;gap:18px;box-shadow:0 16px 34px #e6211755;z-index:5;transform-origin:left center;opacity:0}
+#badge i{width:0;height:0;border-top:16px solid transparent;border-bottom:16px solid transparent;border-left:26px solid #fff;display:block}
+#counter{position:absolute;right:70px;top:110px;font:700 30px EdLabel,Arial,sans-serif;letter-spacing:3px;color:#0a1150;z-index:5;opacity:0}
+</style></head>
+<body><div id="mosaico" data-composition-id="mosaico" data-width="1080" data-height="1920" data-duration="__DUR__">
+<div class="paper"></div><div class="vignette"></div><div id="arcs"></div>
+<div class="label"><i></i><span id="label"></span></div>
+<div id="counter"></div>
+<div id="tiles"></div>
+<div id="vwrap" class="vcard"><video id="vid" class="clip" src="__VIDEO__" data-start="0" data-duration="__DUR__" data-track-index="0" muted data-volume="0"></video></div>
+<div id="badge" class="sans"><i></i><span id="badge-t"></span></div>
+<div id="text"><div id="lead" class="serif"></div><div id="big" class="sans"></div></div>
+<div id="caps" class="caps"></div>
+<script>
+// Mosaico: o cartao encolhe e vira a aula central de um mosaico de aulas.
+const S=SCENE,dur=__DUR__;
+document.getElementById('arcs').innerHTML=ED.arcs();
+document.getElementById('label').textContent=S.label;
+document.getElementById('counter').textContent=S.counter||'';
+const spots=[[60,250],[435,210],[810,250],[40,560],[830,560],[60,880],[435,930],[810,880]];
+const tilesEl=document.getElementById('tiles');
+spots.forEach(([x,y])=>{const t=document.createElement('div');t.className='tile';t.style.left=x+'px';t.style.top=y+'px';t.innerHTML='<div class="play"></div><div class="bar"><b></b></div>';tilesEl.appendChild(t);});
+const tl=gsap.timeline({paused:true});
+ED.spinArcs(tl,dur);
+ED.focus(tl,'#vid',S.shots,CTX.sourceSize,900,820);
+tl.fromTo('#vwrap',{scale:.86,rotation:3,opacity:0},{scale:1,rotation:0,opacity:1,duration:.5,ease:'back.out(1.4)'},0);
+tl.to('#vwrap',{scale:.53,y:5,boxShadow:'0 0 0 16px #00b3a0, 0 30px 70px #1415163a',duration:.7,ease:'expo.inOut'},S.shrinkAt);
+tl.fromTo('.tile',{scale:0,rotation:i=>[-22,14,-9,18,-16,11,-20,8][i],x:i=>(435-spots[i][0])*.6,y:i=>(565-spots[i][1])*.6},
+ {scale:1,rotation:i=>[-5,3,-2,4,-4,2,-3,5][i],x:0,y:0,duration:.55,ease:'back.out(1.6)',stagger:.06},S.shrinkAt+.25);
+tl.to('.tile .bar b',{width:'100%',duration:1.1,ease:'power2.inOut',stagger:.05},S.shrinkAt+1.2);
+tl.fromTo('#counter',{opacity:0,y:-20},{opacity:1,y:0,duration:.4,ease:'expo.out'},S.shrinkAt+.6);
+ED.cues(document.getElementById('lead'),S.lead,tl);
+ED.cues(document.getElementById('big'),S.big,tl,'\n');
+document.getElementById('big').style.whiteSpace='pre-line';
+document.getElementById('big').style.fontSize=ED.fit(S.big.reduce((a,w)=>w.t.length>a.length?w.t:a,''),150,930)+'px';
+if(S.badge){document.getElementById('badge-t').textContent=S.badge.t;
+ tl.fromTo('#badge',{scale:2.4,opacity:0,rotation:-14},{scale:1,opacity:1,rotation:-6,duration:.32,ease:'power4.in'},S.badge.at-.05);
+ tl.to('#vwrap',{x:-8,y:6,duration:.05,yoyo:true,repeat:3,ease:'none'},S.badge.at+.27);}
+ED.captions(tl,document.getElementById('caps'),S.words);
+window.__timelines=window.__timelines||{};window.__timelines.mosaico=tl;
+</script></div></body></html>

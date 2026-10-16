@@ -4,7 +4,7 @@ Abra `Abrir-Central.cmd` ou `ABRIR-CENTRAL.ps1`. Python 3.11+ é necessário.
 O servidor escuta somente em `127.0.0.1:8790`; `-Port` permite outra porta.
 O botão Abrir Concat usa o caminho local configurado pelo instalador.
 
-Os 45 modelos são textos próprios de planejamento, com categorias inspiradas
+Os 46 modelos são textos próprios de planejamento, com categorias inspiradas
 no painel EDIT IA PRO fornecido pelo usuário. Não são uma cópia do software
 comercial nem uma promessa de executar automaticamente suas técnicas.
 
