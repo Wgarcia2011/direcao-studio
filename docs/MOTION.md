@@ -51,3 +51,10 @@ compor sobre um apresentador, valide codec com alfa e suporte de importação;
 não trate preto como transparência. Evite repetir voz, trilha ou legenda ao
 combinar cenas de motores diferentes. Recursos e licenças dos frameworks
 continuam sujeitos aos termos dos seus distribuidores.
+
+## Template básico de lower thirds
+
+Use [Lower third básico](templates/lower-third-basico/README.md) como padrão
+formal 16:9 para nomes, cargos, logo e foguete discreto. O componente Remotion
+`LowerThirdBasico` recebe os parâmetros do JSON; a central inclui um pedido
+específico na categoria Identificação. Assets e dados pessoais ficam locais.

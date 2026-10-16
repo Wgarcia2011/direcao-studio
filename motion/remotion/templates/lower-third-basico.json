@@ -1,0 +1,51 @@
+{
+  "templateId": "lower-third-basico",
+  "version": 1,
+  "durationInFrames": 600,
+  "backgroundMode": "synthetic",
+  "videoSrc": "",
+  "sourceStartFrame": 0,
+  "logoSrc": "",
+  "rocketSrc": "",
+  "fontSrc": "",
+  "rocketMask": null,
+  "colors": {
+    "background": "rgba(5,9,55,.96)",
+    "accent": "#00c9b1",
+    "text": "#ffffff",
+    "role": "#57e4ce"
+  },
+  "credits": [
+    {
+      "id": "apresentador",
+      "name": "Nome do apresentador",
+      "role": "Cargo principal",
+      "detail": "Especialidade ou contexto",
+      "x": 72,
+      "width": 1110,
+      "from": 0.7,
+      "to": 9.3,
+      "primary": true
+    },
+    {
+      "id": "convidado-esquerda",
+      "name": "Nome do convidado",
+      "role": "Cargo ou especialidade",
+      "x": 72,
+      "width": 853,
+      "from": 12,
+      "to": 19.1,
+      "primary": false
+    },
+    {
+      "id": "convidado-direita",
+      "name": "Nome da convidada",
+      "role": "Cargo ou especialidade",
+      "x": 995,
+      "width": 853,
+      "from": 12.4,
+      "to": 19.4,
+      "primary": false
+    }
+  ]
+}

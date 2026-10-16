@@ -43,3 +43,7 @@
 !motion/**/*.ts
 editor/src/crates/concat-media/fixtures/*.ts
 /central/motion-player.js
+
+# Assets/configuracoes pessoais usados nos templates de motion.
+/motion/remotion/public/local/
+/motion/remotion/templates/*.local.json

@@ -56,3 +56,12 @@ tomadas são decisões a conferir na fala, não remoções automáticas universa
 Apresente plano e amostra. Após aprovação explícita da amostra atual, conclua a
 montagem no Concat, confira a entrega e exporte. Use fixtures sintéticas para
 testes de código. Nunca versione vídeos, modelos, tokens ou materiais privados.
+
+## Lower thirds básicos
+
+Para identificações formais, comece por `docs/templates/lower-third-basico/README.md`
+e `motion/remotion/templates/lower-third-basico.json`, composição Remotion
+`LowerThirdBasico`. Adapte nomes, cargos, logo, foguete e tempos ao projeto.
+A identificação principal aceita uma linha de especialidade; convidados têm
+faixas independentes. Preserve quadro inteiro, rosto livre e voz única.
+O exemplo é sintético: não reutilize nomes ou tempos de outro episódio.

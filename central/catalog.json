@@ -350,5 +350,13 @@
     "description": "Cheque conteúdo, leitura e evidências.",
     "prompt": "Revise o arquivo final de {videos}: ortografia, sincronização, rosto, dados pessoais e afirmações sustentadas pelo material. Liste problemas com tempo e correção. Para análise de regras de plataforma, consulte a documentação oficial atual.",
     "check": false
+  },
+  {
+    "id": "lower-third-basico",
+    "category": "Identificação",
+    "title": "Lower third básico",
+    "description": "Nomes e cargos com logo e foguete discreto, em 16:9.",
+    "prompt": "Use o template básico motion/remotion/templates/lower-third-basico.json e a composição LowerThirdBasico. Consulte docs/templates/lower-third-basico/README.md. Preencha nomes, cargos, especialidades, logo, foguete e tempos a partir deste projeto. Preserve a imagem em tela cheia e uma direção formal; não adicione legendas corridas. O template é Remotion; se o plano escolher outro motor, confirme a escolha antes de executar. Monte o resultado no Concat e gere uma amostra para revisão.",
+    "check": false
   }
 ]
