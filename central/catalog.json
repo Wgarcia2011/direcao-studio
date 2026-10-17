@@ -368,6 +368,14 @@
     "check": false
   },
   {
+    "id": "editorial-film",
+    "category": "Animação",
+    "title": "Editorial Film",
+    "description": "Template local: película, tipografia serifada, legendas por palavra e painel com fotos.",
+    "prompt": "Use o template Editorial Film (docs/templates/editorial-film/README.md). Copie motion/hyperframes/templates/editorial-film/demo.json para um plano local, adapte textos, fotos e tempos a {videos}, e execute scripts/editorial_film.py validar, preparar, verificar e renderizar. Este template usa HyperFrames e depende do pacote privado local. Se houver escolha explícita de outro motor, resolva essa escolha antes de executar. Importe a peça opaca no Concat, preserve o áudio original na montagem e apresente uma amostra antes da entrega final.",
+    "check": false
+  },
+  {
     "id": "biblioteca-motion",
     "category": "Animação",
     "title": "Biblioteca de templates de motion",

@@ -57,6 +57,19 @@ Apresente plano e amostra. Após aprovação explícita da amostra atual, conclu
 montagem no Concat, confira a entrega e exporte. Use fixtures sintéticas para
 testes de código. Nunca versione vídeos, modelos, tokens ou materiais privados.
 
+## Direção editorial de película
+
+Para pedidos de visual editorial de arquivo, película, grão, bloom, tipografia
+cinética ou apresentador em tela dividida, consulte
+[references/editorial-film-edit.md](references/editorial-film-edit.md).
+O pacote local `skills-locais/editorial-film-edit/` é uma referência parcial:
+não contém os guias e mídias citados em seu SKILL.md nem um projeto renderizável.
+Para executar, use `docs/templates/editorial-film/README.md`,
+`motion/hyperframes/templates/editorial-film/demo.json` e `scripts/editorial_film.py`.
+O preparador gera um projeto HyperFrames local a partir dos módulos privados;
+renderize a amostra e importe o MP4 opaco no Concat. Aceita fotos, não vídeo,
+nos painéis. Preserve o briefing, o áudio da montagem e a revisão humana.
+
 ## Lower thirds básicos
 
 Para identificações formais, comece por `docs/templates/lower-third-basico/README.md`

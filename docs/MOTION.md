@@ -52,6 +52,13 @@ não trate preto como transparência. Evite repetir voz, trilha ou legenda ao
 combinar cenas de motores diferentes. Recursos e licenças dos frameworks
 continuam sujeitos aos termos dos seus distribuidores.
 
+## Direção editorial de película
+
+Para direção editorial de arquivo, película, tipografia sincronizada e tela
+dividida, consulte a [adaptação editorial](../skills/direcao-studio/references/editorial-film-edit.md).
+O [template Editorial Film](templates/editorial-film/README.md) prepara cópias
+adaptadas dos módulos privados e renderiza a peça para importação no Concat.
+
 ## Template básico de lower thirds
 
 Use [Lower third básico](templates/lower-third-basico/README.md) como padrão

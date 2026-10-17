@@ -9,6 +9,7 @@ repositório, exemplo sintético e um caminho para usar pela central ou pelo cha
 | --- | --- | --- | --- | --- |
 | [Lower third básico](lower-third-basico/README.md) | 16:9 | identificar nomes e cargos em vídeos formais | Remotion | Identificação → Lower third básico |
 | [Short editorial 9:16](short-editorial-9x16/README.md) | 9:16 | short de 20–40 s de entrevista com muito motion e transições do Concat | Remotion + HyperFrames | Animação → Short editorial 9:16 |
+| [Editorial Film](editorial-film/README.md) | 9:16 | película, tipografia, legendas e painel com fotos; amostra sintética de 12 s | HyperFrames; requer pacote privado local | Animação → Editorial Film |
 
 ## Biblioteca de motion
 

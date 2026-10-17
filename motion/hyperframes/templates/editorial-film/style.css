@@ -1,0 +1,15 @@
+@font-face{font-family:EditorialSans;src:url('assets/sans.ttf')}@font-face{font-family:EditorialSerif;src:url('assets/serif.ttf')}@font-face{font-family:EditorialSerif;src:url('assets/italic.ttf');font-style:italic}@font-face{font-family:EditorialMono;src:url('assets/mono.ttf')}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#28271f}
+#editorial-film{position:relative;width:100%;height:100%;overflow:hidden}
+#visual-track,#picture{position:absolute;inset:0;width:100%;height:100%}
+#design-plane{position:absolute;width:1080px;height:1920px;transform-origin:0 0;color:var(--ink);--f-sans:EditorialSans;--f-serif:EditorialSerif;--f-mono:EditorialMono;--g7:EditorialSans;--d7:EditorialSerif}
+.plane{position:absolute;inset:0;pointer-events:none}
+.folio,.bottom{position:absolute;left:80px;right:80px;display:flex;justify-content:space-between;font:22px EditorialMono;letter-spacing:1px;z-index:4}
+.folio{top:75px;padding-bottom:28px;border-bottom:1px solid currentColor}.bottom{bottom:86px;font-size:19px}
+.progress{position:absolute;bottom:49px;left:80px;width:920px;height:2px;background:#a49d8e}
+#progress-fill{height:100%;width:100%;background:var(--accent);transform-origin:left}
+.ty{position:absolute;line-height:1.02;white-space:nowrap;will-change:transform,opacity}
+.ty>span{display:block}.ty7-serif{font-family:EditorialSerif;font-weight:400;letter-spacing:-5px}
+.ty7-sans{font-family:EditorialSans;font-weight:400}.ty7-credit{font-family:EditorialMono;letter-spacing:2px}
+.ty .it{font-style:italic}.cap7{position:absolute;font-family:EditorialSans;line-height:1.25;white-space:nowrap}
+.cap7-line{display:flex;align-items:baseline;gap:12px}.cap7-line .acc{font-family:EditorialSerif;font-style:italic;font-size:1.12em}

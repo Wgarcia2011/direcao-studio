@@ -1,0 +1,13 @@
+{
+  "templateId": "editorial-film", "version": 1,
+  "width": 1080, "height": 1920, "fps": 24,
+  "label": "DIREÇÃO STUDIO / ESTUDOS VISUAIS",
+  "footer": "AMOSTRA SINTÉTICA · 01",
+  "paper": "#eee8dc", "ink": "#28271f", "accent": "#b94a29",
+  "grain": 0.032, "bloom": 0.18,
+  "scenes": [
+    {"kind": "title", "duration": 4, "eyebrow": "01 / MATÉRIA", "title": ["Toda ideia", "deixa uma", "marca."], "caption": [{"w":"Forma.","at":0.7},{"w":"Textura.","at":1.5},{"w":"Presença.","at":2.4}]},
+    {"kind": "split", "duration": 4, "eyebrow": "02 / DIÁLOGO", "title": ["A imagem", "também", "fala."], "caption": [{"w":"Uma", "at":0.7},{"w":"ideia.","at":1.1},{"w":"Dois", "at":1.8},{"w":"olhares.","at":2.2}]},
+    {"kind": "closing", "duration": 4, "eyebrow": "03 / RESPIRO", "title": ["Dê tempo", "à imagem."], "caption": [{"w":"Deixe", "at":0.8},{"w":"o", "at":1.1},{"w":"essencial", "at":1.5},{"w":"ficar.","at":2.1}]}
+  ]
+}
