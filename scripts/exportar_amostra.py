@@ -1,9 +1,23 @@
 """Exporta somente amostra da montagem registrada, com documento conferido."""
 import argparse
+import math
 from pathlib import Path
 
 import concat_rpc as rpc
 import manifesto_analise as ma
+
+
+def documentos_equivalentes(a, b):
+    """Tolera apenas ruído de roundtrip f64, sem ignorar chaves, textos ou ordem."""
+    if type(a) in (int, float) and type(b) in (int, float):
+        return math.isfinite(a) and math.isfinite(b) and math.isclose(a, b, abs_tol=1e-9, rel_tol=0)
+    if type(a) is not type(b):
+        return False
+    if isinstance(a, dict):
+        return a.keys() == b.keys() and all(documentos_equivalentes(a[k], b[k]) for k in a)
+    if isinstance(a, list):
+        return len(a) == len(b) and all(documentos_equivalentes(x, y) for x, y in zip(a, b))
+    return a == b
 
 
 def exportar(evidence, settings, filename='amostra.mp4'):
@@ -19,7 +33,7 @@ def exportar(evidence, settings, filename='amostra.mp4'):
         raise ValueError('Amostra já existe ou operação anterior incerta; conferir antes de repetir')
     rpc.invoke(settings, 'project.open', {'path': str(project)})
     doc = rpc.invoke(settings, 'project.document', {'path': str(project)})['result']
-    if ma.hash_json(doc) != ma.hash_json(ma.ler(evidence / 'documento.json')):
+    if not documentos_equivalentes(doc, ma.ler(evidence / 'documento.json')):
         raise ValueError('Documento mudou; preparar nova revisão')
     ma.salvar(evidence / 'amostra-pending.json', {'project': str(project), 'output': str(output),
               'document_sha256': ma.hash_json(doc), 'intent': 'sample', 'review': 'pending'})

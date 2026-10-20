@@ -1,5 +1,19 @@
 # Registro de implementação
 
+## Semântica e diarização locais — configuração e validação
+
+Configurado ambiente isolado `.models/local-ai/.venv` com sherpa-onnx 1.13.8 e NumPy 2.4.6, sem alterar o Python global. Instalação local portátil llama.cpp b11756, Qwen3-4B Q4_K_M (checksum oficial conferido), segmentação pyannote-3.0 ONNX e Wespeaker ResNet34-LM; modelos/licenças/artefatos ficam ignorados pelo Git. Código inclui preparador reproduzível e launcher CPU/loopback com parada restrita por PID, executável e início registrado.
+
+Semântica tem provider llama.cpp com JSON Schema, limite de resposta, redirecionamentos/proxies recusados, proveniência/hash do modelo e filtragem dos campos de saída. Mantém backend Ollama. Qwen2.5 1,5B não atingiu o critério; Qwen3 4B inicial acertou 3/4, rubrica final acertou 4/4 e mais 2/2 casos novos. Não se afirma precisão geral, calibração de score ou compreensão de vídeo inteiro.
+
+Diarização CPU usa segmentação de fala, embeddings Wespeaker e average-linkage cosseno, com quantidade inferida por limiar ou fornecida explicitamente. Retorna hashes, parâmetros, turnos e alinhamento separado por palavra, com ambiguidades nulas. CampPlus/agrupamento inicial falharam; Wespeaker + agrupamento explícito inferiu duas vozes, preservando alternância Daniel/Maria em quatro turnos. Métrica de fixture: 89,06% de cobertura/acerto e zero confusão nos trechos cobertos; 82/85 palavras rotuladas. Não é DER padronizado nem valida sobreposição/entrevistas reais. A fixture foi gerada localmente por SAPI/OneCore sem modificar o registro.
+
+Análises adicionais podem ser passadas ao adaptador Concat por `--semantica`/`--diarizacao`; exigem hashes correspondentes e ficam no plano de revisão sem trocar seleção ou aprovação. Guia completo em `docs/LOCAL_AI.md`.
+
+Na validação adicional sobre dois cortes transcritos, a semântica apresentou um falso negativo de independência (7/8 concordâncias no total pequeno, incluindo os quatro casos de desenvolvimento). Isso limita seu uso a apoio editorial; não é filtro automático confiável. A montagem dos dois cortes com as duas anotações foi concluída no Concat real. A primeira tentativa de amostra foi recusada antes de iniciar exportação devido a diferença de roundtrip f64 de ~2e-15 na duração; diagnóstico de documento confirmou ausência de alteração material. Comparação passou a tolerar apenas números finitos dentro de 1e-9, preservando chaves, tipos booleanos, textos e ordem. Adicionado teste de regressão para garantir que mudanças reais continuam recusadas.
+
+Após a correção, amostra PT-BR com duas vozes exportada pelo Concat: H.264/AAC, 1080×1920, 30fps, 19,6s. Decodificação completa sem erros e quadro com legenda conferido. Nenhuma aprovação humana ou exportação final registrada. Suíte isolada da branch: 49 testes passaram, incluindo novos contratos e regressão de roundtrip. Artefatos/modelos/runtimes permanecem locais e ignorados; somente código/documentação/testes entram no Git.
+
 ## Continuação — fluxo completo local e validação real
 
 Adicionados pipeline_video.py (probe, transcrição CPU local, silêncio/cenas, tópicos lexicais, ranking e manifesto com checkpoints atômicos), fila_video.py (worker serial persistente), analise_opcional.py (rostos e adaptadores locais experimentais), exportar_amostra.py (somente amostra vinculada ao documento) e extensões da montagem para presets, legendas, remoção conservadora de silêncio e recorte opcional. Guia em docs/VIDEO_AI_PIPELINE.md.

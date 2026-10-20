@@ -1,5 +1,7 @@
 # Pipeline local de análise e montagem
 
+Semântica e diarização agora têm configuração CPU isolada: consulte [LOCAL_AI.md](LOCAL_AI.md) para instalação, contratos, testes de qualidade e limites. O backend validado usa llama.cpp/Qwen e sherpa-onnx/Wespeaker; Ollama e Pyannote/PyTorch permanecem alternativas opcionais.
+
 Fluxo implementado: vídeo → probe → transcrição local ou JSON existente → silêncios/cenas → tópicos lexicais → ranking explicável → manifesto → seleção de IDs → montagem no Concat → amostra → revisão humana. A Central continua sendo planejamento. Não há upload de mídia ou uso de APIs pagas.
 
 ## 1. Analisar e retomar
@@ -53,13 +55,13 @@ Worker serial explícito, sem daemon, sem n8n e sem servidor pesado na Central. 
 ```powershell
 python scripts/analise_opcional.py rostos Renders/analise-01/manifesto.json --saida Renders/rostos-01.json
 python scripts/montar_manifesto.py Renders/analise-01/manifesto.json --cortes cut-0001 --nome Revisao-02 --evidencias Renders/revisao-02 --preset shorts --enquadramentos Renders/rostos-01.json --legendas
-python scripts/analise_opcional.py semantica Renders/analise-01/manifesto.json --modelo NOME_OLLAMA_LOCAL --saida Renders/semantica-01.json
-python scripts/analise_opcional.py diarizacao Renders/analise-01/manifesto.json --modelo C:/Modelos/pyannote/config.yaml --saida Renders/falantes-01.json
+python scripts/analise_opcional.py semantica Renders/analise-01/manifesto.json --config .models/local-ai/config.json --saida Renders/semantica-01.json
+.models/local-ai/.venv/Scripts/python.exe scripts/analise_opcional.py diarizacao Renders/analise-01/manifesto.json --config .models/local-ai/config.json --saida Renders/falantes-01.json
 ```
 
 - **Rostos:** OpenCV Haar em cinco instantes por candidato. Só sugere centro quando há exatamente um rosto em todas as amostras; caso contrário mantém enquadramento manual. Montagem opcional aplica recorte horizontal relativo ao preset. Isso não identifica quem fala nem rastreia todos os frames; revisar movimentos e presença de outras pessoas. Teste real realizado apenas para ausência de faces na fixture; recorte validado em teste de contrato.
-- **Semântica:** adaptador Ollama em localhost, sem proxies, resposta JSON limitada e validada. Anota tópico, independência contextual, gancho, clareza e justificativa por candidato; não altera ranking/timestamps nem aprova exportação. Disponível em código e testado com respostas sintéticas; **sem modelo Ollama servindo nesta execução**, portanto não validado com inferência real ou vídeo longo.
-- **Diarização:** adaptador experimental pyannote offline; exige pacote e pipeline/modelos locais compatíveis e licenciados. Rótulos de falantes não são identidade. **Pyannote/torch/modelos ausentes nesta máquina; não executado nem validado.** Pode exigir mais memória e aceitação de termos de modelos; nenhum download foi iniciado. Ainda não alimenta automaticamente recorte/legendas por falante.
+- **Semântica:** Qwen local por llama.cpp em loopback, JSON Schema e validação. Anota tópico, independência contextual, gancho, clareza e justificativa; mantém ranking/timestamps e revisão. Configuração e resultados de inferência real estão em `LOCAL_AI.md`. Ollama continua compatível como backend alternativo.
+- **Diarização:** backend CPU sherpa-onnx com modelos ONNX locais e agrupamento auditável; rótulos ligados às palavras como anotação separada. Validado em conversa sintética de duas vozes com pausas; limites e métricas em `LOCAL_AI.md`. O adaptador legado Pyannote/PyTorch permanece opcional e não foi validado.
 
 ## Validação desta execução — 20/10/2026
 

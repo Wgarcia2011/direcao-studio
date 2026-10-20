@@ -1,6 +1,8 @@
 # Roadmap de vídeo assistido por IA
 
-Estado atualizado em 20/10/2026: transcrição local, análise retomável, fila, detecção de silêncios/cenas, ranking, manifesto, montagem com legendas/presets e exportação de amostra implementados. Fluxo real validado com Whisper Small CPU e Concat 0.2.7 em fixture sintética. `docs/VIDEO_AI_PIPELINE.md` registra uso e evidências. Semântica Ollama e diarização pyannote são adaptadores opcionais ainda sem validação real por falta de runtime/modelos; segmentação semântica de vídeos longos e enquadramento guiado por falante continuam pendentes. Não considerar todas as linhas deste roadmap concluídas.
+Continuação de semântica/diarização: configurados runtimes locais de CPU, modelos com licenças e hashes e fixture de duas vozes. Resultados e limitações em `docs/LOCAL_AI.md`. Essas anotações podem acompanhar o plano Concat com `--semantica`/`--diarizacao`, sem conceder aprovação ou trocar automaticamente os cortes.
+
+Estado atualizado em 20/10/2026: transcrição local, análise retomável, fila, detecção de silêncios/cenas, ranking, manifesto, montagem com legendas/presets e exportação de amostra implementados. Fluxo real validado com Whisper Small CPU e Concat 0.2.7 em fixture sintética. Semântica Qwen3-4B e diarização sherpa-onnx/Wespeaker agora foram configuradas e testadas com inferência real em fixtures locais; resultados e limites em `docs/LOCAL_AI.md`. Segmentação semântica de vídeos longos, sobreposição de vozes e enquadramento guiado por falante continuam pendentes. Não considerar todas as linhas deste roadmap concluídas.
 
 Este roadmap preserva Concat como editor único e a Central como planejamento. Custos são qualitativos até haver benchmark controlado em fixtures sintéticas na máquina-alvo.
 

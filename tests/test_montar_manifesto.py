@@ -134,6 +134,22 @@ class MontageTests(unittest.TestCase):
         self.assertEqual([w['w'] for c in result['clips'] for w in c['words']], ['Pergunta?', 'Resposta.'])
         self.assertEqual(result['clips'][1]['source_in'], 7.85)
 
+    def test_annotations_are_bound_to_manifest_before_rpc(self):
+        fake = SyntheticConcat(self.source)
+        semantic = {'manifest_sha256': 'different', 'review': 'pending', 'annotations': []}
+        with self.assertRaises(ValueError):
+            mm.montar(self.manifest, ['cut-0001'], self.base, 'Revisao', self.base / 'evidence',
+                      fake.call, semantic=semantic)
+        self.assertFalse(fake.calls)
+        semantic['manifest_sha256'] = ma.hash_json(self.manifest)
+        diarization = {'source_sha256': self.manifest['source']['sha256'],
+                       'turns': [{'start': 2, 'end': 5, 'speaker': 'speaker_00'}]}
+        mm.montar(self.manifest, ['cut-0001'], self.base, 'Revisao', self.base / 'evidence',
+                  fake.call, semantic=semantic, diarization=diarization)
+        plan = ma.ler(self.base / 'evidence/plano.json')
+        self.assertEqual(plan['speaker_review']['words'][0]['speaker'], 'speaker_00')
+        self.assertEqual(plan['review']['status'], 'pending')
+
     def test_preflight_refuses_changed_source_and_existing_project(self):
         fake = SyntheticConcat(self.source)
         (self.base / 'Revisao').mkdir()

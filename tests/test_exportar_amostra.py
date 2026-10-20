@@ -11,6 +11,13 @@ import manifesto_analise as ma
 
 
 class SampleTests(unittest.TestCase):
+    def test_only_float_roundtrip_noise_is_tolerated(self):
+        self.assertTrue(ea.documentos_equivalentes({'duration': 10.659999999999993}, {'duration': 10.659999999999991}))
+        self.assertFalse(ea.documentos_equivalentes({'duration': 10.66}, {'duration': 10.67}))
+        self.assertFalse(ea.documentos_equivalentes({'duration': True}, {'duration': 1}))
+        self.assertFalse(ea.documentos_equivalentes({'text': 'a'}, {'text': 'b'}))
+        self.assertFalse(ea.documentos_equivalentes({'duration': 10}, {'duration': 10, 'other': True}))
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

@@ -66,8 +66,19 @@ def perto(actual, expected):
     return type(actual) in (int, float) and math.isfinite(actual) and abs(actual - expected) <= 1e-6
 
 
-def montar(manifesto, ids, location, name, evidence, call, preset=None, captions=False, framing=None, remove_silence=False):
+def montar(manifesto, ids, location, name, evidence, call, preset=None, captions=False, framing=None, remove_silence=False,
+           semantic=None, diarization=None):
     plan = ma.plano_concat(manifesto, ids)
+    if semantic is not None:
+        if semantic['manifest_sha256'] != ma.hash_json(manifesto) or semantic['review'] != 'pending':
+            raise ValueError('Semântica não corresponde à revisão do manifesto')
+        known = {c['id'] for c in manifesto['candidates']}
+        if any(a['candidate_id'] not in known for a in semantic['annotations']):
+            raise ValueError('Anotação semântica aponta para candidato desconhecido')
+        plan['semantic_review'] = semantic
+    if diarization is not None:
+        from analise_opcional import associar_palavras
+        plan['speaker_review'] = associar_palavras(manifesto, diarization)
     if remove_silence:
         plan = retirar_silencios(plan, manifesto)
     if preset is not None and preset not in PRESETS:
@@ -208,6 +219,8 @@ def main(argv=None):
     p.add_argument('--legendas', action='store_true', help='Adicionar legendas simples para revisão no Concat')
     p.add_argument('--enquadramentos', type=Path, help='Sugestões locais de rostos; aplicar só centros sem ambiguidade')
     p.add_argument('--remover-silencios', action='store_true', help='Remover apenas silêncios confirmados entre palavras')
+    p.add_argument('--semantica', type=Path, help='Anotações semânticas para revisão; não selecionam cortes automaticamente')
+    p.add_argument('--diarizacao', type=Path, help='Turnos locais vinculados à mesma fonte para revisão de falantes')
     args = p.parse_args(argv)
     try:
         settings = ma.ler(args.settings or rpc.settings_path())
@@ -215,7 +228,8 @@ def main(argv=None):
             return rpc.invoke(settings, method, params)['result']
         path = montar(ma.ler(args.manifesto), args.cortes, args.local, args.nome, args.evidencias, call,
                       args.preset, args.legendas, ma.ler(args.enquadramentos) if args.enquadramentos else None,
-                      args.remover_silencios)
+                      args.remover_silencios, ma.ler(args.semantica) if args.semantica else None,
+                      ma.ler(args.diarizacao) if args.diarizacao else None)
         print(f'Montagem salva e fechada: {path}. Revisão da amostra pendente; leia docs/CLI.md.')
         return 0
     except (OSError, ValueError, KeyError, TypeError, StopIteration, rpc.RpcError):

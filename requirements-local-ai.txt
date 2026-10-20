@@ -1,0 +1,3 @@
+# Ambiente opcional isolado em .models/local-ai/.venv; Python 3.11, CPU Windows x64 validado.
+numpy==2.4.6
+sherpa-onnx==1.13.8
