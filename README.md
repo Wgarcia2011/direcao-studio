@@ -59,6 +59,8 @@ continua humana; o aplicativo nativo também oferece exportação manual.
 
 ## Código e verificações
 
+Pipeline assistido por IA: [análise local, retomada, fila, manifesto, montagem e amostra](docs/VIDEO_AI_PIPELINE.md). Concat continua sendo o único editor; a aprovação humana da amostra precede a exportação final. Consulte o guia para distinguir funcionalidades validadas de adaptadores opcionais.
+
 `editor/` contém 887 arquivos de código, recursos e documentação do Concat,
 copiados do commit `afe8383cef9ec0ce17b4c8f438292d848fbfaf21`, com hashes em
 `editor/UPSTREAM.json`. O código foi preservado, normalizando finais de linha
