@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>{title}</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{{font-family:ArialLocal;src:url('assets/arialbd.ttf');font-weight:700}}
+html,body{{margin:0;width:100%;height:100%;overflow:hidden;background:#050914}}
+#caderno3d{{position:relative;width:100%;height:100%;overflow:hidden;background:#050914;font-family:ArialLocal,Arial,sans-serif}}
+#back,#front{{position:absolute;inset:0}}
+#photo{{position:absolute;left:0;top:0;transform-origin:0 0;z-index:1}}
+#photo .border{{position:absolute;background:#eef2fb;opacity:0}}
+#photo .clipbox{{position:absolute;left:0;top:0;overflow:hidden;background:#050914}}
+#photo video{{position:absolute;left:0;top:0;width:{src_w}px;height:{src_h}px;display:block}}
+#photo .tape{{position:absolute;background:rgba(239,226,180,.82);transform:rotate(-3deg);opacity:0}}
+#inserts{{position:absolute;inset:0;z-index:2;pointer-events:none}}
+.insert{{position:absolute;inset:0;overflow:hidden;background:#0b1430}}
+.insert-cam{{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}}
+.insert-cam img,.insert-cam svg{{position:absolute;left:0;top:0;width:1080px;height:1920px;display:block}}
+.insert-flash{{position:absolute;inset:0;background:#fff;opacity:0}}
+#gradient{{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:3;background:linear-gradient(180deg,rgba(5,9,20,0) 58%,rgba(5,9,20,.45) 74%,rgba(5,9,20,.82) 100%)}}
+#front{{z-index:4}}
+#captions{{position:absolute;left:50px;width:980px;bottom:236px;z-index:5;display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;row-gap:4px;
+  font-size:76px;line-height:1.2;font-weight:700;color:#fff;text-align:center;
+  text-shadow:0 4px 12px rgba(0,0,0,.9),0 0 3px #000,2px 2px 1px #0b0b14,-2px -2px 1px #0b0b14}}
+#captions span{{display:inline-block;transform-origin:50% 60%;white-space:nowrap}}
+</style></head>
+<body>
+<div id="caderno3d" data-composition-id="caderno3d" data-width="1080" data-height="1920" data-fps="30" data-duration="{duration}">
+  <div id="back"></div>
+  <div id="photo"><div class="border"></div><div class="clipbox">
+    <video id="montagem" class="clip" src="assets/montagem.mp4" playsinline data-has-audio="true"
+      data-start="0" data-duration="{video_duration}" data-media-start="{start}" data-track-index="1"></video>
+  </div><div class="tape"></div></div>
+  <div id="inserts"></div>
+  <div id="gradient"></div>
+  <div id="front"></div>
+  <div id="captions" aria-label="Legendas"></div>
+</div>
+<script type="module">
+import {{criarCena}} from './assets/cena.js';
+import {{LEGENDAS}} from './assets/legendas.js';
+const range = {{start: {start}, duration: {duration}}};
+const ready = criarCena({{
+  backHost: document.getElementById('back'), frontHost: document.getElementById('front'),
+  photo: document.getElementById('photo'), clipBox: document.querySelector('#photo .clipbox'),
+  video: document.getElementById('montagem'), gradient: document.getElementById('gradient'),
+  captionsEl: document.getElementById('captions'), insertsHost: document.getElementById('inserts'), legendas: LEGENDAS, range}});
+window.__hf = window.__hf || {{}}; window.__hf.buildReady = window.__hf.buildReady || {{}};
+window.__hf.buildReady['caderno3d-cena'] = ready;
+const cena = await ready;
+const clock = {{_t: 0}};
+Object.defineProperty(clock, 't', {{get() {{ return this._t; }}, set(v) {{ this._t = v; cena.renderAt(v); }}}});
+const tl = gsap.timeline({{paused: true}});
+tl.to(clock, {{t: range.duration, duration: range.duration, ease: 'none'}});
+cena.renderAt(0);
+window.__timelines['caderno3d'] = tl;
+window.__caderno3d = cena;
+</script>
+</body></html>

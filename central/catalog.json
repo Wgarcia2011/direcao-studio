@@ -384,6 +384,38 @@
     "check": false
   },
   {
+    "id": "titulo-editorial",
+    "category": "Animação",
+    "title": "Título editorial · identidade v1",
+    "description": "Título serifado, papel claro e sinal vermelho; peça de tela cheia.",
+    "prompt": "Use o Título editorial de docs/templates/editorial-kit/README.md e o exemplo motion/hyperframes/templates/editorial-kit/titulo-editorial.json. Adapte a identidade compartilhada de motion/identity/editorial-v1/tokens.json e os textos ao material {videos}. Este template usa HyperFrames; respeite a escolha de motor do plano antes de executar. Prepare com scripts/editorial_kit.py preparar, confira com verificar e gere uma amostra. Importe o MP4 opaco e silencioso no Concat, posicione no intervalo planejado e preserve os fontes. Aguarde revisão humana antes da entrega final.",
+    "check": false
+  },
+  {
+    "id": "card-dados",
+    "category": "Animação",
+    "title": "Card de dados · identidade v1",
+    "description": "Percentual em destaque e duas barras de comparação; fonte obrigatória.",
+    "prompt": "Use o Card de dados de docs/templates/editorial-kit/README.md e motion/hyperframes/templates/editorial-kit/card-dados.json. Substitua os percentuais fictícios por dados conferidos no material {videos}, identificando a fonte. Mantenha fixture true enquanto usar dados sintéticos. O template é HyperFrames e usa a identidade compartilhada editorial-v1; respeite o motor escolhido. Prepare, verifique e gere amostra com scripts/editorial_kit.py. Monte o clipe opaco e silencioso no Concat, sem duplicar a voz, e apresente para revisão humana.",
+    "check": false
+  },
+  {
+    "id": "encerramento-editorial",
+    "category": "Animação",
+    "title": "Encerramento · identidade v1",
+    "description": "Assinatura tipográfica em verde escuro com chamada curta.",
+    "prompt": "Use o Encerramento de docs/templates/editorial-kit/README.md e motion/hyperframes/templates/editorial-kit/encerramento.json. Adapte marca, mensagem e chamada {cta}, mantendo a identidade editorial-v1. Este template usa HyperFrames; resolva qualquer escolha diferente de motor antes de executar. Prepare, verifique e gere amostra com scripts/editorial_kit.py. Importe no Concat como cena opaca e silenciosa; mantenha montagem e exportação final no Concat e aguarde aprovação humana da amostra atual.",
+    "check": false
+  },
+  {
+    "id": "caderno-3d-threejs",
+    "category": "Animação",
+    "title": "Caderno 3D · Three.js",
+    "description": "Cards 3D, caderno azul-escuro com foto viva, legendas e logo final, em 9:16.",
+    "prompt": "Use o template de docs/templates/caderno-3d-threejs/README.md em {videos}. Selecione e corte os trechos no Concat (voz original, sem acelerar nem pausas artificiais) e registre o plano de cortes. Corrija a transcrição contra o áudio e gere as legendas com scripts/caderno_3d.py legendas. Meça os rostos e defina os planos verticais conferindo cada troca de câmera. Adapte cards, cenas de caderno e encerramento à fala deste vídeo, sem reutilizar textos ou tempos de outra aplicação. Valide, prepare e gere uma amostra de 20–30 s; exporte pelo Concat e aguarde minha aprovação da versão atual antes da versão completa.",
+    "check": false
+  },
+  {
     "id": "interface-explicativa",
     "category": "Animação",
     "title": "Interface Explicativa · fala + UI violeta 3D",

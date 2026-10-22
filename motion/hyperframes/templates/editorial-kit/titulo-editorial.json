@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "templateId": "titulo-editorial",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 6,
+  "brand": "DIREÇÃO STUDIO",
+  "eyebrow": "CADERNO DE IDEIAS / 01",
+  "title": "Uma ideia.\nOutra perspectiva.",
+  "subtitle": "O movimento começa com uma boa direção.",
+  "footer": "DEMONSTRAÇÃO SINTÉTICA",
+  "fixture": true
+}

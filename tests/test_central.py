@@ -13,8 +13,8 @@ class CentralTests(unittest.TestCase):
     def test_catalog_has_unique_templates_and_no_private_values(self):
         raw = (ROOT / 'central/catalog.json').read_text(encoding='utf-8')
         data = json.loads(raw)
-        self.assertEqual(len(data), 49)
-        self.assertEqual(len({x['id'] for x in data}), 49)
+        self.assertEqual(len(data), 53)
+        self.assertEqual(len({x['id'] for x in data}), 53)
         self.assertNotIn('wagnergarcia2011', raw)
         self.assertNotIn('D:\\Wagner', raw)
         self.assertTrue(all(x['prompt'] and x['title'] for x in data))

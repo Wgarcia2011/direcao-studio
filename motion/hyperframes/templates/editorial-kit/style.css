@@ -1,0 +1,57 @@
+/*FONTS*/
+:root{/*TOKENS*/}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--paper)}
+#editorial-kit{position:relative;width:100%;height:100%;overflow:hidden;color:var(--ink)}
+.stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(SCALE);transform-origin:top left;padding:144px 81px 180px;font-family:DirecaoSans,sans-serif;display:flex;flex-direction:column}
+header,footer{display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:DirecaoMono,monospace;font-size:22px;letter-spacing:1px;line-height:1.5}
+.brand{font-family:DirecaoSans,sans-serif;font-weight:700;font-size:26px;letter-spacing:3px}
+.edition{font-size:19px}
+.top-rule{height:2px;flex-shrink:0;background:var(--ink);margin-top:36px;transform-origin:left center}
+.content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:80px 0}
+.eyebrow,.metric,.source{font-family:DirecaoMono,monospace;font-size:23px;letter-spacing:2px;line-height:1.5;margin:0;color:var(--muted)}
+h1{font-family:DirecaoDisplay,serif;font-weight:400;font-size:112px;letter-spacing:-4px;line-height:1.06;margin:0;overflow-wrap:anywhere}
+h1 .line{display:block}
+.subtitle{font-size:32px;line-height:1.5;max-width:760px;margin:0;color:var(--muted)}
+.signal{height:140px;display:flex;align-items:center;gap:24px;margin-bottom:35px}
+.signal span{width:24px;height:100%;background:var(--accent);display:block;transform-origin:center bottom}
+.signal span:nth-child(2){height:68%}.signal span:nth-child(3){height:40%}
+footer{padding-top:30px;border-top:2px solid var(--rule);font-size:19px;color:var(--muted)}
+.review{position:absolute;bottom:95px;left:81px;font:18px DirecaoMono,monospace;letter-spacing:1.5px;color:var(--muted)}
+.card-dados h1{font-size:85px;letter-spacing:-3px}
+.card-dados .content{gap:30px;padding:65px 0}
+.stat{display:flex;align-items:baseline;gap:8px;line-height:1;color:var(--accent);font-family:DirecaoSans,sans-serif;font-variant-numeric:tabular-nums}
+.number{font-size:228px;font-weight:700;letter-spacing:-12px;display:block;min-width:290px}
+.unit{font-size:72px}
+.metric{color:var(--ink);margin-top:-10px}
+.chart{display:flex;flex-direction:column;gap:22px;margin:20px 0 10px}
+.bar-row{display:grid;grid-template-columns:170px 1fr 90px;gap:22px;align-items:center;font-size:26px;line-height:1.5}
+.bar-track{height:24px;background:var(--rule);overflow:hidden}
+.bar{height:100%;background:var(--ink);transform-origin:left center}
+.bar.current{background:var(--accent)}
+.bar-value{font-family:DirecaoMono,monospace;text-align:right}
+.source{font-size:20px;color:var(--accent)}
+.encerramento,.encerramento #editorial-kit{background:var(--ink);color:var(--paper)}
+.encerramento .top-rule{background:var(--paper)}
+.encerramento .eyebrow,.encerramento .subtitle,.encerramento footer,.encerramento .review{color:var(--paper)}
+.encerramento h1{font-size:106px}
+.signature{font-family:DirecaoSans,sans-serif;font-weight:700;font-size:38px;letter-spacing:6px;line-height:1.3;margin:10px 0 20px}
+.cta{display:flex;align-items:center;gap:32px;font-size:30px;margin:20px 0 0}
+.arrow{display:block;color:var(--paper);font-size:44px}
+.cta-line{height:6px;width:150px;background:var(--paper);transform-origin:left center;margin-top:20px}
+.landscape .stage{width:1920px;height:1080px;padding:81px 144px 100px}
+.landscape .content{padding:30px 0;gap:24px}
+.landscape h1{font-size:108px;max-width:1320px}
+.landscape .signal{position:absolute;right:160px;top:360px;height:150px}
+.landscape .subtitle{font-size:30px;max-width:1150px}
+.landscape .review{bottom:40px;left:144px}
+.landscape.card-dados .content{position:relative;padding-right:710px;gap:28px}
+.landscape.card-dados h1{font-size:92px}
+.landscape.card-dados .stat{position:absolute;right:20px;top:130px}
+.landscape.card-dados .metric{position:absolute;right:10px;top:380px;font-size:21px}
+.landscape.card-dados .chart{max-width:850px;margin:0}
+.landscape.card-dados .source{font-size:18px}
+.landscape.encerramento h1{font-size:108px}
+.landscape.encerramento .signature{font-size:30px;margin:0}
+.landscape.encerramento .cta{position:absolute;right:160px;bottom:220px}
+.landscape.encerramento .cta-line{position:absolute;right:160px;bottom:180px}

@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "template": "caderno-3d-threejs",
+ "fixture": true,
+ "titulo": "Caderno 3D exemplo sintético",
+ "video": "montagem-sintetica.mp4",
+ "legendas": "legendas-sinteticas.json",
+ "duracao": 13.6,
+ "fonteVideo": {"largura": 1920, "altura": 1080},
+ "planos": [
+  {"from": 0, "to": 6.0, "cx": 720, "cy": 140, "zoom": 1.0},
+  {"from": 6.0, "to": 13.6, "cx": 1310, "cy": 190, "zoom": 1.05}
+ ],
+ "cards": [
+  {"from": 0.6, "to": 3.2, "y": 1150, "frente": {"texto": ["Primeira ideia"], "icone": "setaBaixo"},
+   "verso": {"texto": ["Segunda ideia"], "icone": "setaCima"}, "vira": 1.8}
+ ],
+ "blocos": [
+  {"id": "A", "from": 3.6, "to": 7.8, "photo": {"x": 0, "y": 5.25, "w": 8.6, "rot": -2},
+   "cams": [{"at": 3.6, "x": 0, "y": 0.2, "dist": 1, "roll": -0.5}],
+   "itens": [
+    {"tipo": "titulo", "texto": "Título do caderno", "destaque": "caderno", "at": 4.2},
+    {"tipo": "disco", "x": 0, "y": 0.75, "at": 4.4},
+    {"tipo": "caminho", "pontos": [[0, 0.75], [-0.6, 0.1], [-1.9, -0.5], [-2.4, -1.25]], "at": 4.6, "dur": 0.7},
+    {"tipo": "icone", "icone": "predio", "material": "turquesa", "x": -2.45, "y": -2.25, "z": 0.5, "escala": 1.5, "at": 5.0},
+    {"tipo": "rotulo", "texto": "item A", "x": -2.45, "y": -3.6, "at": 5.2},
+    {"tipo": "caminho", "pontos": [[0, 0.75], [0.6, 0.1], [1.9, -0.5], [2.4, -1.25]], "at": 5.4, "dur": 0.7, "cor": "dourado"},
+    {"tipo": "icone", "icone": "livro", "material": "dourado", "x": 2.45, "y": -2.25, "z": 0.5, "escala": 1.5, "at": 5.8},
+    {"tipo": "rotulo", "texto": "item B", "x": 2.45, "y": -3.6, "at": 6.0},
+    {"tipo": "no", "x": 3.55, "y": -1.4, "at": 6.3},
+    {"tipo": "brilho", "x": 2.45, "y": -2.0, "cor": "dourado", "at": 6.6}
+   ]},
+  {"id": "B", "from": 8.0, "to": 11.9, "photo": {"x": 0, "y": 5.25, "w": 8.6, "rot": 1.5},
+   "cams": [{"at": 8.0, "x": 0, "y": 0.2, "dist": 1, "roll": 0.4}],
+   "itens": [
+    {"tipo": "titulo", "texto": "Comparação", "at": 8.5},
+    {"tipo": "balanca", "x": -0.45, "y": -1.15, "at": 8.7, "iguala": 10.6,
+     "esquerda": {"icone": "folha", "material": "turquesa", "escala": 1.25, "altura": 0.78, "at": 9.2, "rotulo": "opção 1"},
+     "direita": {"icone": "martelo", "escala": 1.35, "altura": 0.62, "at": 9.8, "rotulo": "opção 2"}}
+   ]}
+ ],
+ "encerramento": {"from": 12.1, "saidaFoto": 12.85, "logoAt": 13.2, "extra": 3.6, "rede": "instagram", "transforma": 14.6, "logo": "logo-sintetico.png", "chamada": "Siga", "perfil": "@perfil.exemplo"},
+ "amostra": {"inicio": 0, "fim": 17.2}
+}

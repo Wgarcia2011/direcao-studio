@@ -2,7 +2,7 @@
 
 Fala em tela cheia com **legenda central** e uma palavra-chave em degradê violeta. A cada 2–4 s ela é interrompida por **inserts de interface** em fundo branco ou lavanda: perfil de canal, barra de busca, card de pergunta e checklist. Entre fala e insert há transições de **luz**, **whip**, **cartão**, **branco** e **zoom**. A estrutura vem do Pin 984106956076960638; veja a análise em `docs/templates/motion/pinterest-984106956076960638/ANALISE.md`, na pasta do workspace. O objetivo é **trocar só o tema**: os textos mudam, e a estrutura, o ritmo e a composição continuam os mesmos.
 
-**Primeira aplicação:** Gaby 21, reels de 60 s (22/10/2026), com cortes no Concat, três planos de câmera, quatro B-rolls 3D e encerramento `@cursoesquadrao`. Amostra aprovada e versão final exportada pelo Concat com `--reviewed`: `Renders/NOVOS/podcast/21 - POR QUAL GOSTAVA DE REVISAR-GABY/MOTION/INTERFACE-EXPLICATIVA/`.
+**Primeira aplicação:** reels de 60 s de um podcast (22/10/2026), com cortes no Concat, três planos de câmera, quatro B-rolls 3D e encerramento com chamada para o perfil. A amostra foi aprovada e a versão final, exportada pelo Concat com `--reviewed`. Os arquivos dessa aplicação ficam na pasta local do vídeo, fora do Git.
 
 **Status:** v2 em 3D (22/10/2026): amostra sintética de 20 s e vitrine de elementos **aprovadas pelo usuário como direção do template** em 22/10/2026 (`APROVACAO.json`, com os hashes). Ainda não foi aplicada a nenhum vídeo real: cada aplicação exige amostra e revisão próprias. A v1 em 2D continua disponível com `"estilo": "2d"`.
 

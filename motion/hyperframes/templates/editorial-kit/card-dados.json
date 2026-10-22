@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "templateId": "card-dados",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 6,
+  "brand": "DIREÇÃO STUDIO",
+  "eyebrow": "LEITURA EM NÚMEROS / 02",
+  "title": "Dados que\ncontam histórias.",
+  "subtitle": "Uma comparação para enxergar a diferença.",
+  "footer": "FONTE: FIXTURE SINTÉTICA",
+  "value": 72,
+  "baseline": 48,
+  "metric": "ÍNDICE DEMONSTRATIVO",
+  "baselineLabel": "Cenário A",
+  "valueLabel": "Cenário B",
+  "fixture": true
+}

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "status": "approved",
+  "date": "2026-10-19",
+  "timezone": "America/Sao_Paulo",
+  "approvedBy": "usuario",
+  "evidence": "Gostei, pode salvar...",
+  "scope": "Identidade editorial v1 e as três amostras sintéticas do kit editorial. Não aprova futuros vídeos nem as novas peças 3D.",
+  "identityId": "direcao-editorial-v1",
+  "samples": [
+    {
+      "templateId": "titulo-editorial",
+      "sample": "Renders/editorial-kit-v2/titulo-editorial-amostra.mp4",
+      "sha256": "b472366383cc557494580ff099b48642962bc2192f3ee491fe9dba12ca1f64b7",
+      "sourceManifestSha256": "00e676fb99d8f9cbc7d45225a722163d35d3db0d08261e3a8f8dd032674dfe67"
+    },
+    {
+      "templateId": "card-dados",
+      "sample": "Renders/editorial-kit-v2/card-dados-amostra.mp4",
+      "sha256": "403a4569c211041948969a5e3ef68b984bc67948ffd8c7c641f316389b733d4b",
+      "sourceManifestSha256": "0740b52e81527f2ce9c53cc196bb43d7c55b54b1f5fce611e69e6974b7d4f3fb"
+    },
+    {
+      "templateId": "encerramento",
+      "sample": "Renders/editorial-kit-v2/encerramento-amostra.mp4",
+      "sha256": "4049c75586304cd603fd8fd119eb76e0e05901a912b574069f47f0d9dec9f811",
+      "sourceManifestSha256": "6e3552839744b2c5243dda903e0e486b16c8afe1382d8cb2ae37ff8c49db34a7"
+    }
+  ]
+}

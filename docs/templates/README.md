@@ -9,10 +9,17 @@ repositório, exemplo sintético e um caminho para usar pela central ou pelo cha
 | --- | --- | --- | --- | --- |
 | [Lower third básico](lower-third-basico/README.md) | 16:9 | identificar nomes e cargos em vídeos formais | Remotion | Identificação → Lower third básico |
 | [Short editorial 9:16](short-editorial-9x16/README.md) | 9:16 | short de 20–40 s de entrevista com muito motion e transições do Concat | Remotion + HyperFrames | Animação → Short editorial 9:16 |
+| [Caderno 3D · Three.js](caderno-3d-threejs/README.md) | 9:16 | conversa de ~2 min com cards 3D, cenas de caderno com profundidade e luz, foto viva, legendas e logo final; aprovado numa aplicação real | Concat + HyperFrames/Three.js | Animação → Caderno 3D · Three.js |
 | [Interface Explicativa](interface-explicativa/README.md) | 9:16 | fala com legenda central e destaque violeta alternada a cada 2–4 s com inserts de interface em 3D (perfil, busca, pergunta, checklist), ícones extrudados e cartão 3D com a fala viva; troca-se só o tema; direção 3D aprovada em 22/10/2026 com amostra sintética (ainda sem vídeo real) | Concat + HyperFrames/Three.js + Remotion (elementos) | Animação → Interface Explicativa |
 | [Editorial Film](editorial-film/README.md) | 9:16 | película, tipografia, legendas e painel com fotos; amostra sintética de 12 s | HyperFrames; requer pacote privado local | Animação → Editorial Film |
 
 ## Biblioteca de motion
+
+[Kit editorial · identidade v1](editorial-kit/README.md): três templates
+HyperFrames — **Título editorial**, **Card de dados** e **Encerramento** —
+com identidade compartilhada entre motores, exemplos sintéticos e preparação
+local. Peças opacas 9:16 ou 16:9, para montagem no Concat. A identidade é uma
+proposta para revisão; os três pedidos estão na categoria Animação da central.
 
 [Vinte templates do editor anterior](biblioteca/README.md), portados para o
 Remotion atual: Editorial, Estúdio, Impacto, Impacto Dinâmico, Teatro Retrô,
