@@ -1,5 +1,9 @@
 # Direção Studio — Concat
 
+Skills auxiliares GSAP, LottieFiles motion-design e Three.js:
+leia docs/SKILLS-MOTION.md e consulte as entradas em .agents/skills sob demanda.
+São apoio à direção/criação; Concat continua o único editor de montagem.
+
 Responda em português. Leia README.md e docs/CLI.md antes de operar.
 Concat é o único editor. Abra com INICIAR.ps1; pelo chat use
 `python scripts/concat_rpc.py`. Não inicie o antigo app/server.py.

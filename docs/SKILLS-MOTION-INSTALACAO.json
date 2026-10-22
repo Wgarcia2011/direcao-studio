@@ -1,0 +1,728 @@
+{
+  "date": "2026-10-22",
+  "commits": {
+    "gsap-skills": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+    "motion-design-skill": "f9a8a041b85185ee4881b3471d3415e939aac772",
+    "threejs-skills": "0e181866f095b5f06d005133876e926515390d95",
+    "genjutsu": "1f518a71378b15d423389e546e767cffc86e14c3"
+  },
+  "skills": {
+    "gsap-core": "gsap-skills",
+    "gsap-frameworks": "gsap-skills",
+    "gsap-performance": "gsap-skills",
+    "gsap-plugins": "gsap-skills",
+    "gsap-react": "gsap-skills",
+    "gsap-scrolltrigger": "gsap-skills",
+    "gsap-timeline": "gsap-skills",
+    "gsap-utils": "gsap-skills",
+    "motion-design": "motion-design-skill",
+    "threejs-animation": "threejs-skills",
+    "threejs-asset-pipeline": "threejs-skills",
+    "threejs-fundamentals": "threejs-skills",
+    "threejs-geometry": "threejs-skills",
+    "threejs-interaction": "threejs-skills",
+    "threejs-lighting": "threejs-skills",
+    "threejs-loaders": "threejs-skills",
+    "threejs-materials": "threejs-skills",
+    "threejs-performance": "threejs-skills",
+    "threejs-postprocessing": "threejs-skills",
+    "threejs-react-three-fiber": "threejs-skills",
+    "threejs-shaders": "threejs-skills",
+    "threejs-textures": "threejs-skills"
+  },
+  "installations": [
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-core",
+      "files": {
+        "INSTALL-SOURCE.json": "b25aca8e8e196a479c8f7a05f1cbb19a811a60192167341d73717b9c9c6817e4",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "de938eefd9a5bc6335216a17783788cd21408923ead290cda5871b7d61db66b8"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-frameworks",
+      "files": {
+        "INSTALL-SOURCE.json": "fcfba1103b9128f054deb73cf0870afc46056e0ba975278e61cc356c0997b597",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "3d7e8c2f6bddb32ffc1763b17bba9a8a3dcbc3bd5bf6815d921d3c5a4aded85d"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-performance",
+      "files": {
+        "INSTALL-SOURCE.json": "ba1195a8c0ff6a7d6e38f846d17290f759fe0ecf00e7df7c7d0ffbbae8931211",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "2dd51f19a7fcabe1c06caee9e61554485696d05003396c528237aba970a959ce"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-plugins",
+      "files": {
+        "INSTALL-SOURCE.json": "d5462333ab4e4519ac7fa04b60f262c4bb4ea6e05308f1dd1d044bd25e2ebb39",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "a755f587a107ae5c9f4f35702f6e0d870774c6930e28a082c4e9ebb1d2c7bf06"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-react",
+      "files": {
+        "INSTALL-SOURCE.json": "dc519d3d86c38ef6726cbc8c85f9631d967772d930ee0de5d6c3d6a3cd9dabf5",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "fd1ce4fa883a256e6578f13a4271b494a18dffaaa6111ab64ca1bc97d4dd8b21"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-scrolltrigger",
+      "files": {
+        "INSTALL-SOURCE.json": "ff7b80f7921737d7be2638674794c3c4c7e90cb40a785772dd4045411cf051e9",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "e6612777bcce1617d3b9e061b2f671fb0f36379684d0c61f7a1baa06d7f7a989"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-timeline",
+      "files": {
+        "INSTALL-SOURCE.json": "3230e8486d30ba83ce499fce608ad54a465a402653cc16d9e732739c53bd0b46",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "fbe7a2b9e66e66d2c956f650583d48385498b677ba1292f1dce9d1ffb1a77ea0"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\gsap-utils",
+      "files": {
+        "INSTALL-SOURCE.json": "6df5a3a0c9bc70222118cf84fae2c34b61445f17d39070edec89ddc77bfb1082",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "f71503f423561eeb5567ae8ee41e4363c85fd3970a8feaeac2c2b18309596bab"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\motion-design",
+      "files": {
+        "INSTALL-SOURCE.json": "6a6bfe7dbad1496daa2e1e16718f598996b3e960e58467d4d594910e9d572082",
+        "LICENSE": "caa3ebdb6e8306e4ad3f4b0ce7d3538dcbb1af1b98e8d4efe537ffa2ec55a36f",
+        "SKILL.md": "0fa7bd378776e776a9af528db040e5144127834c461ba7fb6805f47d13bc293d",
+        "director/choreography.md": "f49f9f6da4e6fe4aa7c186c1c7cbc95e4a1a1f4e0c84a06b75f0bb0740932e79",
+        "director/context-adaptation.md": "d077afcae69991b44fe55d8472a08b4ff3451a567ea69013ed0f347245e0c6db",
+        "director/core-philosophy.md": "f3adac0bfa780353ae31ea2694e3347485f11cfc04e3a87d5f215562778c60f4",
+        "director/decision-framework.md": "1231b547da3a81fdd7e2e2da8bc4ef37066b877503a85d8382b38e2d170323f4",
+        "director/disney-principles.md": "85fba416650206625f038ee31c36eab520e825ff90594bcc74c35c9f0ebbfd5d",
+        "director/emotion-mapping.md": "ce6ba400634d65a69bb60e7c8f25b5ac81f2af075987b346bf17fb951cee6931",
+        "director/motion-personality.md": "210055cda5766f17206f1b5ef23a112205d9ea37256170079aa1c3d91d920ea9",
+        "director/narrative-structure.md": "c19501805593ae0a5a4beb0f08a253190a49d047de68f0f87e1efb7713f10819",
+        "patterns/ambient-continuous.md": "9339415a2e65e676bdbb057de2c3f2d0f25a3a3c000d2dc1392335b988fe5f0a",
+        "patterns/entrance-exit.md": "d480b5f2a2ac33ff6704d8dd87b70de8604001708e009e9d18f3cca30f2f31d0",
+        "patterns/multi-element.md": "209d5b87b1c1d6f1cacb9e80d2a8e90e9e30f5ccdd178808e8e1b7bbd743fded",
+        "patterns/state-feedback.md": "015df95866a61ace37335cefe71a177b9a7da9610c8add040997b0c30053300b",
+        "reference/property-selection.md": "58c0d27fb10ceb0998cadd80be4d3c2e2fd4f0f7d6a9175827d7ec19e8daf10b",
+        "reference/quality-checklist.md": "9d2e4421ab185301e165ad1be77bfb1334692f66984a0402cbfafe60186a7b27",
+        "reference/timing-easing-tables.md": "31ea1921b740972ea5a753bf5421aeeb01936afef7add17c749f7feaedf96af9",
+        "reference/troubleshooting.md": "1b3eeee5352d824f8c173a7239434432870857abef6460cb6928a1372e915ad7"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-animation",
+      "files": {
+        "INSTALL-SOURCE.json": "8e994561d81d9a766a2f205c4057f4657d0675704d60f6b488f3f8ccfc50a204",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "0817b21856f0cba2e8ff50799638fab556d12483aaf7f1e8c41395f51c558b74"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-asset-pipeline",
+      "files": {
+        "INSTALL-SOURCE.json": "4f105dfe22d676eabc30a44e3c63c487b4112de7677a264749396c9968210e86",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "8051bc065735ab7174a7fee9f90dbe87789ca94003c581e008bb95fc8ebb36bb"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-fundamentals",
+      "files": {
+        "INSTALL-SOURCE.json": "0fea821b7cdf10a6f8184089968452253c0f1c844ddcc070b7b257fcd7b3aa64",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "359cd8df712c206885c289ebc0468a2f792e70a601c4bd6edf34634cb928a677"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-geometry",
+      "files": {
+        "INSTALL-SOURCE.json": "141e81785972b79397e7204703d5fe910cec18c24d8df44c29ee1568a6a4081f",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ab48fbd393b2d058996ff7b162031567b1c909c4222b570c1b28cb0e92d4408f"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-interaction",
+      "files": {
+        "INSTALL-SOURCE.json": "0cd868f0f5285c9942f7784eb8afeb99e31e747894577dfb9aa8471e4806d25b",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "046ca68d775563bcb249536eebf9f6c2ffe1555eaf68bc411e8e10405356fc67"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-lighting",
+      "files": {
+        "INSTALL-SOURCE.json": "184703c29e1ebfd43ebd47a701d51c80580b5996ced9d5212a8740c9340d1a88",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "e99170edcabb348afa70b265d9e45ec74139796d1a382e1b0e7d99b437a260d0"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-loaders",
+      "files": {
+        "INSTALL-SOURCE.json": "f05f9a6397404866bea680d38b41479745069ffc45c0daa3d403784adbae96ca",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ef7c1052b8df94bce13b37b11684d822a034b76923d841e4fc7edcae14d67931"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-materials",
+      "files": {
+        "INSTALL-SOURCE.json": "bf6159d06dcb0409f642c713b8311cdb9b1c149d4ccbc24a65de98d156c5efe6",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "a31247ecc76f623b1ec70397b73d2f91294c388d4428f9f4c189429490e4332c"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-performance",
+      "files": {
+        "INSTALL-SOURCE.json": "87f26ed7708cd786e9d4f4bb4d893383549e1d2750a0facc6ded8a3cbffa6daf",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "1c0391670ab072dd6f7ac864d853709b156e356d1872c0efea7022509b201526"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-postprocessing",
+      "files": {
+        "INSTALL-SOURCE.json": "f4bc799eb3fdfedf35b5b59e88b07ac00050854bec13980b8263f5b6460e5a96",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "678a42498ace36833526e433b07ad040d5b13172e5822afcec31731b1b618849"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-react-three-fiber",
+      "files": {
+        "INSTALL-SOURCE.json": "3fb880477b64a441d0da313275e031d3e7d8565830804e04ab7d5eb59ad2b9da",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ec7c6a41e691ac9ba93723932c575b1ab8c38f05c44355b44968a1439f360cf7"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-shaders",
+      "files": {
+        "INSTALL-SOURCE.json": "fdae87333b5d2e5699fae764c2f2a9390f51e1c7834f2cea23b55ebd47f4e38f",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "5570cf7bcdeddda74d841f26b5229256ffe452424fb2013aa41a983573af4438"
+      }
+    },
+    {
+      "destination": "C:\\Users\\wagne\\.codex\\skills\\threejs-textures",
+      "files": {
+        "INSTALL-SOURCE.json": "42ecead1f261765f200fd9672c9879f7bc1ec02f743b82417011583c0e3aab96",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "c0f83cb6ab05a454e5f1a9a6d247b1f936c62a69dc94b32a25814fcab44e43f6"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-core",
+      "files": {
+        "INSTALL-SOURCE.json": "b25aca8e8e196a479c8f7a05f1cbb19a811a60192167341d73717b9c9c6817e4",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "de938eefd9a5bc6335216a17783788cd21408923ead290cda5871b7d61db66b8"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-frameworks",
+      "files": {
+        "INSTALL-SOURCE.json": "fcfba1103b9128f054deb73cf0870afc46056e0ba975278e61cc356c0997b597",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "3d7e8c2f6bddb32ffc1763b17bba9a8a3dcbc3bd5bf6815d921d3c5a4aded85d"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-performance",
+      "files": {
+        "INSTALL-SOURCE.json": "ba1195a8c0ff6a7d6e38f846d17290f759fe0ecf00e7df7c7d0ffbbae8931211",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "2dd51f19a7fcabe1c06caee9e61554485696d05003396c528237aba970a959ce"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-plugins",
+      "files": {
+        "INSTALL-SOURCE.json": "d5462333ab4e4519ac7fa04b60f262c4bb4ea6e05308f1dd1d044bd25e2ebb39",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "a755f587a107ae5c9f4f35702f6e0d870774c6930e28a082c4e9ebb1d2c7bf06"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-react",
+      "files": {
+        "INSTALL-SOURCE.json": "dc519d3d86c38ef6726cbc8c85f9631d967772d930ee0de5d6c3d6a3cd9dabf5",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "fd1ce4fa883a256e6578f13a4271b494a18dffaaa6111ab64ca1bc97d4dd8b21"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-scrolltrigger",
+      "files": {
+        "INSTALL-SOURCE.json": "ff7b80f7921737d7be2638674794c3c4c7e90cb40a785772dd4045411cf051e9",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "e6612777bcce1617d3b9e061b2f671fb0f36379684d0c61f7a1baa06d7f7a989"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-timeline",
+      "files": {
+        "INSTALL-SOURCE.json": "3230e8486d30ba83ce499fce608ad54a465a402653cc16d9e732739c53bd0b46",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "fbe7a2b9e66e66d2c956f650583d48385498b677ba1292f1dce9d1ffb1a77ea0"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\gsap-utils",
+      "files": {
+        "INSTALL-SOURCE.json": "6df5a3a0c9bc70222118cf84fae2c34b61445f17d39070edec89ddc77bfb1082",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "f71503f423561eeb5567ae8ee41e4363c85fd3970a8feaeac2c2b18309596bab"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\motion-design",
+      "files": {
+        "INSTALL-SOURCE.json": "6a6bfe7dbad1496daa2e1e16718f598996b3e960e58467d4d594910e9d572082",
+        "LICENSE": "caa3ebdb6e8306e4ad3f4b0ce7d3538dcbb1af1b98e8d4efe537ffa2ec55a36f",
+        "SKILL.md": "0fa7bd378776e776a9af528db040e5144127834c461ba7fb6805f47d13bc293d",
+        "director/choreography.md": "f49f9f6da4e6fe4aa7c186c1c7cbc95e4a1a1f4e0c84a06b75f0bb0740932e79",
+        "director/context-adaptation.md": "d077afcae69991b44fe55d8472a08b4ff3451a567ea69013ed0f347245e0c6db",
+        "director/core-philosophy.md": "f3adac0bfa780353ae31ea2694e3347485f11cfc04e3a87d5f215562778c60f4",
+        "director/decision-framework.md": "1231b547da3a81fdd7e2e2da8bc4ef37066b877503a85d8382b38e2d170323f4",
+        "director/disney-principles.md": "85fba416650206625f038ee31c36eab520e825ff90594bcc74c35c9f0ebbfd5d",
+        "director/emotion-mapping.md": "ce6ba400634d65a69bb60e7c8f25b5ac81f2af075987b346bf17fb951cee6931",
+        "director/motion-personality.md": "210055cda5766f17206f1b5ef23a112205d9ea37256170079aa1c3d91d920ea9",
+        "director/narrative-structure.md": "c19501805593ae0a5a4beb0f08a253190a49d047de68f0f87e1efb7713f10819",
+        "patterns/ambient-continuous.md": "9339415a2e65e676bdbb057de2c3f2d0f25a3a3c000d2dc1392335b988fe5f0a",
+        "patterns/entrance-exit.md": "d480b5f2a2ac33ff6704d8dd87b70de8604001708e009e9d18f3cca30f2f31d0",
+        "patterns/multi-element.md": "209d5b87b1c1d6f1cacb9e80d2a8e90e9e30f5ccdd178808e8e1b7bbd743fded",
+        "patterns/state-feedback.md": "015df95866a61ace37335cefe71a177b9a7da9610c8add040997b0c30053300b",
+        "reference/property-selection.md": "58c0d27fb10ceb0998cadd80be4d3c2e2fd4f0f7d6a9175827d7ec19e8daf10b",
+        "reference/quality-checklist.md": "9d2e4421ab185301e165ad1be77bfb1334692f66984a0402cbfafe60186a7b27",
+        "reference/timing-easing-tables.md": "31ea1921b740972ea5a753bf5421aeeb01936afef7add17c749f7feaedf96af9",
+        "reference/troubleshooting.md": "1b3eeee5352d824f8c173a7239434432870857abef6460cb6928a1372e915ad7"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-animation",
+      "files": {
+        "INSTALL-SOURCE.json": "8e994561d81d9a766a2f205c4057f4657d0675704d60f6b488f3f8ccfc50a204",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "0817b21856f0cba2e8ff50799638fab556d12483aaf7f1e8c41395f51c558b74"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-asset-pipeline",
+      "files": {
+        "INSTALL-SOURCE.json": "4f105dfe22d676eabc30a44e3c63c487b4112de7677a264749396c9968210e86",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "8051bc065735ab7174a7fee9f90dbe87789ca94003c581e008bb95fc8ebb36bb"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-fundamentals",
+      "files": {
+        "INSTALL-SOURCE.json": "0fea821b7cdf10a6f8184089968452253c0f1c844ddcc070b7b257fcd7b3aa64",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "359cd8df712c206885c289ebc0468a2f792e70a601c4bd6edf34634cb928a677"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-geometry",
+      "files": {
+        "INSTALL-SOURCE.json": "141e81785972b79397e7204703d5fe910cec18c24d8df44c29ee1568a6a4081f",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ab48fbd393b2d058996ff7b162031567b1c909c4222b570c1b28cb0e92d4408f"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-interaction",
+      "files": {
+        "INSTALL-SOURCE.json": "0cd868f0f5285c9942f7784eb8afeb99e31e747894577dfb9aa8471e4806d25b",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "046ca68d775563bcb249536eebf9f6c2ffe1555eaf68bc411e8e10405356fc67"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-lighting",
+      "files": {
+        "INSTALL-SOURCE.json": "184703c29e1ebfd43ebd47a701d51c80580b5996ced9d5212a8740c9340d1a88",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "e99170edcabb348afa70b265d9e45ec74139796d1a382e1b0e7d99b437a260d0"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-loaders",
+      "files": {
+        "INSTALL-SOURCE.json": "f05f9a6397404866bea680d38b41479745069ffc45c0daa3d403784adbae96ca",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ef7c1052b8df94bce13b37b11684d822a034b76923d841e4fc7edcae14d67931"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-materials",
+      "files": {
+        "INSTALL-SOURCE.json": "bf6159d06dcb0409f642c713b8311cdb9b1c149d4ccbc24a65de98d156c5efe6",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "a31247ecc76f623b1ec70397b73d2f91294c388d4428f9f4c189429490e4332c"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-performance",
+      "files": {
+        "INSTALL-SOURCE.json": "87f26ed7708cd786e9d4f4bb4d893383549e1d2750a0facc6ded8a3cbffa6daf",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "1c0391670ab072dd6f7ac864d853709b156e356d1872c0efea7022509b201526"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-postprocessing",
+      "files": {
+        "INSTALL-SOURCE.json": "f4bc799eb3fdfedf35b5b59e88b07ac00050854bec13980b8263f5b6460e5a96",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "678a42498ace36833526e433b07ad040d5b13172e5822afcec31731b1b618849"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-react-three-fiber",
+      "files": {
+        "INSTALL-SOURCE.json": "3fb880477b64a441d0da313275e031d3e7d8565830804e04ab7d5eb59ad2b9da",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ec7c6a41e691ac9ba93723932c575b1ab8c38f05c44355b44968a1439f360cf7"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-shaders",
+      "files": {
+        "INSTALL-SOURCE.json": "fdae87333b5d2e5699fae764c2f2a9390f51e1c7834f2cea23b55ebd47f4e38f",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "5570cf7bcdeddda74d841f26b5229256ffe452424fb2013aa41a983573af4438"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\.agents\\skills\\threejs-textures",
+      "files": {
+        "INSTALL-SOURCE.json": "42ecead1f261765f200fd9672c9879f7bc1ec02f743b82417011583c0e3aab96",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "c0f83cb6ab05a454e5f1a9a6d247b1f936c62a69dc94b32a25814fcab44e43f6"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-core",
+      "files": {
+        "INSTALL-SOURCE.json": "b25aca8e8e196a479c8f7a05f1cbb19a811a60192167341d73717b9c9c6817e4",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "de938eefd9a5bc6335216a17783788cd21408923ead290cda5871b7d61db66b8"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-frameworks",
+      "files": {
+        "INSTALL-SOURCE.json": "fcfba1103b9128f054deb73cf0870afc46056e0ba975278e61cc356c0997b597",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "3d7e8c2f6bddb32ffc1763b17bba9a8a3dcbc3bd5bf6815d921d3c5a4aded85d"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-performance",
+      "files": {
+        "INSTALL-SOURCE.json": "ba1195a8c0ff6a7d6e38f846d17290f759fe0ecf00e7df7c7d0ffbbae8931211",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "2dd51f19a7fcabe1c06caee9e61554485696d05003396c528237aba970a959ce"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-plugins",
+      "files": {
+        "INSTALL-SOURCE.json": "d5462333ab4e4519ac7fa04b60f262c4bb4ea6e05308f1dd1d044bd25e2ebb39",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "a755f587a107ae5c9f4f35702f6e0d870774c6930e28a082c4e9ebb1d2c7bf06"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-react",
+      "files": {
+        "INSTALL-SOURCE.json": "dc519d3d86c38ef6726cbc8c85f9631d967772d930ee0de5d6c3d6a3cd9dabf5",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "fd1ce4fa883a256e6578f13a4271b494a18dffaaa6111ab64ca1bc97d4dd8b21"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-scrolltrigger",
+      "files": {
+        "INSTALL-SOURCE.json": "ff7b80f7921737d7be2638674794c3c4c7e90cb40a785772dd4045411cf051e9",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "e6612777bcce1617d3b9e061b2f671fb0f36379684d0c61f7a1baa06d7f7a989"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-timeline",
+      "files": {
+        "INSTALL-SOURCE.json": "3230e8486d30ba83ce499fce608ad54a465a402653cc16d9e732739c53bd0b46",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "fbe7a2b9e66e66d2c956f650583d48385498b677ba1292f1dce9d1ffb1a77ea0"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\gsap-utils",
+      "files": {
+        "INSTALL-SOURCE.json": "6df5a3a0c9bc70222118cf84fae2c34b61445f17d39070edec89ddc77bfb1082",
+        "LICENSE": "b8297853320e83ac0bee09cc0ef23254efbac3aee1d74aa3b3bcd0eac58894b8",
+        "SKILL.md": "f71503f423561eeb5567ae8ee41e4363c85fd3970a8feaeac2c2b18309596bab"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\motion-design",
+      "files": {
+        "INSTALL-SOURCE.json": "6a6bfe7dbad1496daa2e1e16718f598996b3e960e58467d4d594910e9d572082",
+        "LICENSE": "caa3ebdb6e8306e4ad3f4b0ce7d3538dcbb1af1b98e8d4efe537ffa2ec55a36f",
+        "SKILL.md": "0fa7bd378776e776a9af528db040e5144127834c461ba7fb6805f47d13bc293d",
+        "director/choreography.md": "f49f9f6da4e6fe4aa7c186c1c7cbc95e4a1a1f4e0c84a06b75f0bb0740932e79",
+        "director/context-adaptation.md": "d077afcae69991b44fe55d8472a08b4ff3451a567ea69013ed0f347245e0c6db",
+        "director/core-philosophy.md": "f3adac0bfa780353ae31ea2694e3347485f11cfc04e3a87d5f215562778c60f4",
+        "director/decision-framework.md": "1231b547da3a81fdd7e2e2da8bc4ef37066b877503a85d8382b38e2d170323f4",
+        "director/disney-principles.md": "85fba416650206625f038ee31c36eab520e825ff90594bcc74c35c9f0ebbfd5d",
+        "director/emotion-mapping.md": "ce6ba400634d65a69bb60e7c8f25b5ac81f2af075987b346bf17fb951cee6931",
+        "director/motion-personality.md": "210055cda5766f17206f1b5ef23a112205d9ea37256170079aa1c3d91d920ea9",
+        "director/narrative-structure.md": "c19501805593ae0a5a4beb0f08a253190a49d047de68f0f87e1efb7713f10819",
+        "patterns/ambient-continuous.md": "9339415a2e65e676bdbb057de2c3f2d0f25a3a3c000d2dc1392335b988fe5f0a",
+        "patterns/entrance-exit.md": "d480b5f2a2ac33ff6704d8dd87b70de8604001708e009e9d18f3cca30f2f31d0",
+        "patterns/multi-element.md": "209d5b87b1c1d6f1cacb9e80d2a8e90e9e30f5ccdd178808e8e1b7bbd743fded",
+        "patterns/state-feedback.md": "015df95866a61ace37335cefe71a177b9a7da9610c8add040997b0c30053300b",
+        "reference/property-selection.md": "58c0d27fb10ceb0998cadd80be4d3c2e2fd4f0f7d6a9175827d7ec19e8daf10b",
+        "reference/quality-checklist.md": "9d2e4421ab185301e165ad1be77bfb1334692f66984a0402cbfafe60186a7b27",
+        "reference/timing-easing-tables.md": "31ea1921b740972ea5a753bf5421aeeb01936afef7add17c749f7feaedf96af9",
+        "reference/troubleshooting.md": "1b3eeee5352d824f8c173a7239434432870857abef6460cb6928a1372e915ad7"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-animation",
+      "files": {
+        "INSTALL-SOURCE.json": "8e994561d81d9a766a2f205c4057f4657d0675704d60f6b488f3f8ccfc50a204",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "0817b21856f0cba2e8ff50799638fab556d12483aaf7f1e8c41395f51c558b74"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-asset-pipeline",
+      "files": {
+        "INSTALL-SOURCE.json": "4f105dfe22d676eabc30a44e3c63c487b4112de7677a264749396c9968210e86",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "8051bc065735ab7174a7fee9f90dbe87789ca94003c581e008bb95fc8ebb36bb"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-fundamentals",
+      "files": {
+        "INSTALL-SOURCE.json": "0fea821b7cdf10a6f8184089968452253c0f1c844ddcc070b7b257fcd7b3aa64",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "359cd8df712c206885c289ebc0468a2f792e70a601c4bd6edf34634cb928a677"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-geometry",
+      "files": {
+        "INSTALL-SOURCE.json": "141e81785972b79397e7204703d5fe910cec18c24d8df44c29ee1568a6a4081f",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ab48fbd393b2d058996ff7b162031567b1c909c4222b570c1b28cb0e92d4408f"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-interaction",
+      "files": {
+        "INSTALL-SOURCE.json": "0cd868f0f5285c9942f7784eb8afeb99e31e747894577dfb9aa8471e4806d25b",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "046ca68d775563bcb249536eebf9f6c2ffe1555eaf68bc411e8e10405356fc67"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-lighting",
+      "files": {
+        "INSTALL-SOURCE.json": "184703c29e1ebfd43ebd47a701d51c80580b5996ced9d5212a8740c9340d1a88",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "e99170edcabb348afa70b265d9e45ec74139796d1a382e1b0e7d99b437a260d0"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-loaders",
+      "files": {
+        "INSTALL-SOURCE.json": "f05f9a6397404866bea680d38b41479745069ffc45c0daa3d403784adbae96ca",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ef7c1052b8df94bce13b37b11684d822a034b76923d841e4fc7edcae14d67931"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-materials",
+      "files": {
+        "INSTALL-SOURCE.json": "bf6159d06dcb0409f642c713b8311cdb9b1c149d4ccbc24a65de98d156c5efe6",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "a31247ecc76f623b1ec70397b73d2f91294c388d4428f9f4c189429490e4332c"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-performance",
+      "files": {
+        "INSTALL-SOURCE.json": "87f26ed7708cd786e9d4f4bb4d893383549e1d2750a0facc6ded8a3cbffa6daf",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "1c0391670ab072dd6f7ac864d853709b156e356d1872c0efea7022509b201526"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-postprocessing",
+      "files": {
+        "INSTALL-SOURCE.json": "f4bc799eb3fdfedf35b5b59e88b07ac00050854bec13980b8263f5b6460e5a96",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "678a42498ace36833526e433b07ad040d5b13172e5822afcec31731b1b618849"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-react-three-fiber",
+      "files": {
+        "INSTALL-SOURCE.json": "3fb880477b64a441d0da313275e031d3e7d8565830804e04ab7d5eb59ad2b9da",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "ec7c6a41e691ac9ba93723932c575b1ab8c38f05c44355b44968a1439f360cf7"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-shaders",
+      "files": {
+        "INSTALL-SOURCE.json": "fdae87333b5d2e5699fae764c2f2a9390f51e1c7834f2cea23b55ebd47f4e38f",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "5570cf7bcdeddda74d841f26b5229256ffe452424fb2013aa41a983573af4438"
+      }
+    },
+    {
+      "destination": "D:\\Wagner\\Video\\Video Editor\\exportacao-github\\direcao-studio\\.agents\\skills\\threejs-textures",
+      "files": {
+        "INSTALL-SOURCE.json": "42ecead1f261765f200fd9672c9879f7bc1ec02f743b82417011583c0e3aab96",
+        "LICENSE": "fce46b6e69df2668a78dd6922ae7cd7d202c21bffe8deb6e244d4c9d18457d6b",
+        "SKILL.md": "c0f83cb6ab05a454e5f1a9a6d247b1f936c62a69dc94b32a25814fcab44e43f6"
+      }
+    }
+  ],
+  "genjutsu_isolated": {
+    "destination": "D:\\Wagner\\Video\\Video Editor\\Genjutsu\\.agents\\skills\\genjutsu",
+    "files": {
+      "INSTALL-SOURCE.json": "5cac64851d546f75ae16c935c039234e2816689e94df85c0816e1c2d46804a7c",
+      "LICENSE": "2bf6ea5895699c1dc142a9d3446481c95f8d65141676443d05ada30e711bea68",
+      "SKILL.md": "442bda631c0bef027c609ab5facef18c341d493bc4daf7e093bccde2456aec11",
+      "bunshin/GUIDE.md": "548adec34654c63aafdfb73b42d366c2349f0633d169dcde503554685e5ce9a0",
+      "cast/GUIDE.md": "ef13d533bf90c50289d78d41c44b5eced7f876ca8592434d96007620da003d6a",
+      "paint/GUIDE.md": "cc0735a6ef9167c5a4f3ca4c21c0104f144a7d7e233785ec6f956fb5cc6b7811",
+      "_jutsu/VERSIONS.md": "ba4993de5a107cbe035ab19a6bc1020f555847057921c33eb28038a57a6a4423",
+      "_jutsu/canvas-generative/GUIDE.md": "d0832263230f65dda63bd12ce046bf8e468d72313ab87328a70dbee1d4982d6e",
+      "_jutsu/canvas-generative/references/algorithms.md": "dc33ac2bda477c4ada4350117448e2a7955cd4b33721c2525307fe03173c0a7e",
+      "_jutsu/compose-graphics/GUIDE.md": "37e839bfd21f6dcc3f52d536299f52a141ae361160260501314a62ed9dda92fc",
+      "_jutsu/compose-graphics/references/agsl-recipes.md": "5d223a06a6c31779692923983fd858b1192e77f61356708799d22df0b528d262",
+      "_jutsu/compose-graphics/references/canvas-generative.md": "70d8a6848f6491ab8172154eb0b24dab8c5ade9ce5ec294fbaba3fb3c6aface3",
+      "_jutsu/compose-graphics/references/m3-expressive-deep.md": "5e429f94ec895463f7e50d8e471070ae7066d1000b700bf483011f555bc615a5",
+      "_jutsu/compose-motion/GUIDE.md": "2349139da7c38001fde3807aa608b29d3b3e9e054be499b41b6cec217e0ce688",
+      "_jutsu/compose-motion/references/gestures-compose.md": "7830a605af815ffd5c2777a30c89ff587b9a8f078b35df57cc05a00ff188a2e1",
+      "_jutsu/compose-motion/references/recomposition-and-anim.md": "fb65f83393eb95e02218bd0d5ce82e4a23051db27bf5d78faae3d2b394f748d3",
+      "_jutsu/compose-motion/references/shared-transitions.md": "4344d499d1635ef7b240167cbe1743e6896c695b1a4ff97006f052e3a0726d07",
+      "_jutsu/compose-multiplatform/GUIDE.md": "ce467ae80472faa9f127557d23668a62a09a8ab06536557e397d22b616290a46",
+      "_jutsu/compose-multiplatform/references/cmp-interop.md": "c2843590f487e5696e9b7b50ae16a71371aaca39b8db272c2c3953bea8bbf14e",
+      "_jutsu/compose-multiplatform/references/cmp-platform-quirks.md": "06c4287739f3b5b2a235cf188eb4ffa12c16726b44f1c5422ef5a865d0801ad2",
+      "_jutsu/css-native/GUIDE.md": "e310f09f4918ab9e6a5b6b85081137cb43f9a68c51f0eb323de6f8e1238a14fa",
+      "_jutsu/css-native/references/modern-css.md": "b9eb555c252bb83ac2ddbfba69c0912ebee12789742cede87cedabc19e6298f7",
+      "_jutsu/design-audit/GUIDE.md": "688ef0b8427657c444bf1e220f2502d001d9b0c82f569199abe3fb85f7ca4cce",
+      "_jutsu/design-audit/scripts/audit.py": "829e7483d068e1fe49fa8ec9474550587cc50785b8f3117e73c5bb2e963ce451",
+      "_jutsu/design-audit/scripts/tests/test_audit.py": "72ae64114c3f524bfb7f87a775434c48d4095c5029ed7aa1915543fad5f5ee87",
+      "_jutsu/desktop-principles/GUIDE.md": "7ea6f594ca05789c724c701f0635a23015fa94dda11150b74655359f416b2947",
+      "_jutsu/desktop-principles/references/keyboard-patterns.md": "5be8dbb0a8020d547f8302666eab19587d0d86298f65f82b9584012841c23699",
+      "_jutsu/desktop-principles/references/multi-window.md": "d3c22484cd27f07c75f1a80817db849c87ae49a8087123510921cc22808deb72",
+      "_jutsu/framer-motion/GUIDE.md": "72f200cf1bf00d641e0ecc726a1d087e6974d57e6e4fbc5b929334ed6ddbc3de",
+      "_jutsu/framer-motion/references/api.md": "19def605435970bf1e6d4787355e8f9e84b0533d7440f25873892e98e519720b",
+      "_jutsu/gsap/GUIDE.md": "1fe08ecd446b01163af8f1739fe1cd1b6eb8db5ed59804c8ed04e356c4d52738",
+      "_jutsu/gsap/references/core.md": "e2d0bbbef244f445eccf56d0c88018998ba994c754be8db2b67493a717f9836a",
+      "_jutsu/gsap/references/plugins.md": "7d102606507f82ac5f4133a040e732d0ed34d47e95f61a1a2efa4222d4583a17",
+      "_jutsu/gsap/references/scrolltrigger.md": "b0a0b54558f16e35395972e7ce5c7892936f1820c84dd319bbf791c93579cf0a",
+      "_jutsu/gsap/references/timeline.md": "889fc3e1f7d54ffa105f2271cbde35a6daa27ab32aaa2f3d9ebcb1d9fdc40578",
+      "_jutsu/mobile-principles/GUIDE.md": "b816dbdc6c74ee306dfdfc5bd8e9a8c168bd3be4253bfa76e26e666d8a87d492",
+      "_jutsu/mobile-principles/references/accessibility-mobile.md": "c7fd2d838a707f7aba1c1028c4f1669356a5d035d282e112d33be672a2137a1d",
+      "_jutsu/mobile-principles/references/gestures-deep.md": "80272e45f5cc6a4594124f14b870371d51fba29a5fc94eff650eff543913e18d",
+      "_jutsu/motion-principles/GUIDE.md": "836c14fb38345e018e5d5cd7a31ca9e9a7f64b8cf111eca49daa2e7f9ecb08e4",
+      "_jutsu/motion-principles/references/designers.md": "954624113d6cacf67e7fd0ced9fc1e12e5cc6c0b2f2ea64da03bbcfda6cf7582",
+      "_jutsu/motion-principles/references/easing-guide.md": "d72cbeb896cd9f3125a09bf6ea00e1354924932954323be34fbe81430d23d2bb",
+      "_jutsu/motion-principles/references/enter-exit-recipes.md": "9fa2f2b2b623db0003b8648d02a39910650aa9b36b308bcbbde6943932edf627",
+      "_jutsu/orchestration/GUIDE.md": "2b6aeb0501f9ea46a916623a9e7713589365680f1502aff1405e60a849d783a0",
+      "_jutsu/orchestration/references/evidence.md": "a579c081336286d87c97218dba783be3f3c2a88b0cfa2bcfd9b3280d8ce27a87",
+      "_jutsu/orchestration/references/impeccable.md": "abcade9a33cb5be0217b5c06c8b10a751172a5c18bc8c63dd693ce6c1be7332e",
+      "_jutsu/orchestration/references/material.md": "b694fd4bdf9345524d38ede67022c7324f0db98df66cba625023de59d5849584",
+      "_jutsu/orchestration/scripts/brief.mjs": "5ecd4f7f60f15ed8c48138e6751baa406ad4c0cac234db03e57a3d467f05ff1a",
+      "_jutsu/orchestration/scripts/shoot.mjs": "179e908036dd2b53894018e102c714a36976190adc816fb696498ce5f35024bc",
+      "_jutsu/orchestration/workflows/build.js": "eaf27ba6ea4dfea39c63adce0cc8667ce4df5c5074a809370fd0b014090aa826",
+      "_jutsu/orchestration/workflows/refine.js": "c9321983beb4170a92edb21707a538cd3697c9958618017b9d6960c6cf8f937e",
+      "_jutsu/orchestration/workflows/research.js": "5df15268441c13b6c2f5310a92d77240528c2e9ff6d6dc8552ff4a0353c088cb",
+      "_jutsu/orchestration/workflows/review.js": "156b926a61745bb7bf36849d9910690db8d2380218d5189d0396147436e96246",
+      "_jutsu/orchestration/workflows/verdict.js": "56e3ed7885714f58021637204a8771a51d965ffefdaa0cba29b7977287c0b2ab",
+      "_jutsu/swiftui-graphics/GUIDE.md": "3e2f5466deb7d4ce21d8e052a8437511b6d063f76a4140c393af9c5fe5f8af3e",
+      "_jutsu/swiftui-graphics/references/canvas-swiftui.md": "654b5211f083ddf524ebdbaf620636aff50cdc1f84e0d9dabdd97da82f7d4e59",
+      "_jutsu/swiftui-graphics/references/liquid-glass-deep.md": "de2f7575a02e2c2bef94af9db4f5717eefa22d6c5ffdb574e9f5759eb52a9656",
+      "_jutsu/swiftui-graphics/references/metal-recipes.md": "c788b7a809d3f98800d68414c513b2cc86dcf7ea38049d13952d89492e372b99",
+      "_jutsu/swiftui-motion/GUIDE.md": "88f5aabfdfc93c200a3b3c5f49360f73c01dacbb669a9b0cf8925dcc47f22302",
+      "_jutsu/swiftui-motion/references/gestures-swiftui.md": "cbe8c6ef0d1a99377beebdfaa5917d794d45f44df6c3c9e944b0899987c7de70",
+      "_jutsu/swiftui-motion/references/phase-keyframe-deep.md": "960ed750c467a4a09b112c3e962395ee619997380159760329be36b417dcb16f",
+      "_jutsu/swiftui-motion/references/springs-cheatsheet.md": "3ed04f62ccfad99cf423ee8968c525caee7498a02fbc874a3ce64b6d40f005df",
+      "_jutsu/tells/GUIDE.md": "7e5657899da9fae8aea0945120a42d12a7975991782d2f2037fc13f3b61a1fae",
+      "_jutsu/tells/references/web.md": "6344506bb9eab34205ead1715b2375d3729a11b52d52300435a0657a3bfd978c",
+      "_jutsu/threejs-r3f/GUIDE.md": "3d7fba87d7e5193b31d7831449f7fbc4ed2081e50adc5d02bda74b915a4e974a",
+      "_jutsu/threejs-r3f/references/scene-setup.md": "f9a8fdbd39424685cac2107af00eac998ba62a68e62afb6d22bb56604156ad2f",
+      "_jutsu/threejs-r3f/references/shaders.md": "d575f2d2bce2a58784c35c3a615b3e7f6789e44f3ccdbb992f2f105286eba91c",
+      "_jutsu/ui-ux-pro-max/GUIDE.md": "15074ec7d7801b20c7ff73fdebf9123adb054af90f147d2f95979578367e3822",
+      "_jutsu/ui-ux-pro-max/LICENSE-upstream.txt": "1b8bd455510cc1f6f9bd510ffe2ec372d1c51fe0e082ddfee8b41825fb7aa055",
+      "_jutsu/ui-ux-pro-max/UPSTREAM.md": "739fc058751d1757546569e1b63fb7a0c7aee7fa54e3af76ddf09e3bd082e9cc",
+      "_jutsu/ui-ux-pro-max/data/app-interface.csv": "a276e55817958075a8dffeb5f5d7be16703b1611e9f0a3527525e1a44df25c46",
+      "_jutsu/ui-ux-pro-max/data/charts.csv": "ebb565308115f955791b0431797a89d9b3587c25d5babb9428d10712c4924817",
+      "_jutsu/ui-ux-pro-max/data/colors.csv": "950708b259e64dc3558ee0401a7fb057cc6fe0a1412eb277097a5e16647a690f",
+      "_jutsu/ui-ux-pro-max/data/google-fonts.csv": "2c03a3cd134d126bd9d6a7dc2a6360dc5272219ad6df3eb9315b031f806e1487",
+      "_jutsu/ui-ux-pro-max/data/icons.csv": "9da693f818d43e2110e28d949905c85baad1650d383ae9e1568f58c766b0e016",
+      "_jutsu/ui-ux-pro-max/data/landing.csv": "080cedbcd61ff8ec9520f33929baa76bee9589e783f83b2f8d824a466b6a46d7",
+      "_jutsu/ui-ux-pro-max/data/motion.csv": "528be03324785eb568c9570f5d60fc1644d5bc7ce2cbdd21b648cb90ce74e76e",
+      "_jutsu/ui-ux-pro-max/data/products.csv": "83579b1fa5078e9607d6799195347506ffdd80ee0cb169693517b376459bc7f1",
+      "_jutsu/ui-ux-pro-max/data/react-performance.csv": "47c0a454cb73bf32378c55eb781dea4c44440ec6a1b52039119afc354315c17e",
+      "_jutsu/ui-ux-pro-max/data/styles.csv": "baedf4b9681eb7b5a404179e3cd5eb1e8e40b3e2807db5154b72e1431c644b11",
+      "_jutsu/ui-ux-pro-max/data/typography.csv": "9577e2243d032e226b36fe5037b33299872244f6905b296e16b597a3ed9853c8",
+      "_jutsu/ui-ux-pro-max/data/ui-reasoning.csv": "41976082ecae1100da937c949215dc6694393e03f3c2a7444dd92a9edb43cb11",
+      "_jutsu/ui-ux-pro-max/data/ux-guidelines.csv": "1870ee048f2a2bdd60709f8f7adf7f3b6dcad560bc005c8b2915a8ac8639820d",
+      "_jutsu/ui-ux-pro-max/data/stacks/angular.csv": "550f571dbe15191de0f409accafbd9fd61938fb95e857d0a17f45554d5551514",
+      "_jutsu/ui-ux-pro-max/data/stacks/astro.csv": "dfc5a1e32e85f07863b0f9dde8f299f826118a116d0e2c143e978594b1ae1d87",
+      "_jutsu/ui-ux-pro-max/data/stacks/avalonia.csv": "4c44ad3db22da3f849b5ff6e65cd8c0cf4fd601506c0393dda63cdbbc05538bc",
+      "_jutsu/ui-ux-pro-max/data/stacks/flutter.csv": "e470e6bc2bcd8562667cc764d1e1afb0be0a30ca4dc9ec12fa18b19d46f156bd",
+      "_jutsu/ui-ux-pro-max/data/stacks/html-tailwind.csv": "1f004891dd189f6bc2a7717401e3100244326e7e2f3963a79bf7b2349d85e091",
+      "_jutsu/ui-ux-pro-max/data/stacks/javafx.csv": "95dff6d366687d07a9de006384e049bdaba867655b482f4eb7a4af704ba31229",
+      "_jutsu/ui-ux-pro-max/data/stacks/jetpack-compose.csv": "8e1995b93414e9d50f8d450bdd15853ff138ca3b8c9d6529cd3171729fa5fa7f",
+      "_jutsu/ui-ux-pro-max/data/stacks/laravel.csv": "0282fc3e09a30a6e1d825adbec9e3473dd3f7df43bc82d7812f40a97cf5890fc",
+      "_jutsu/ui-ux-pro-max/data/stacks/nextjs.csv": "06a8e8c13bd44696c6ebb4cb6c4d8dea440e3de8cce77616512529ed29258f0c",
+      "_jutsu/ui-ux-pro-max/data/stacks/nuxt-ui.csv": "ceab72c6da970ebfac19154a00767bfaf1593bc9ec4c49841812ebe1e1ebbada",
+      "_jutsu/ui-ux-pro-max/data/stacks/nuxtjs.csv": "696ec6df0e5971cd8b69080ee6abea2e9748fb2de47acb2bcc748302684f2030",
+      "_jutsu/ui-ux-pro-max/data/stacks/react-native.csv": "a08ca77fcf6b6d9531982dce465366296013bfcf12d2938ac72ad57cf0c4f085",
+      "_jutsu/ui-ux-pro-max/data/stacks/react.csv": "b6e3eb0e4c9c01bd00ffb951d5ca224a19d488b4544c75436f48cf92ff12bf45",
+      "_jutsu/ui-ux-pro-max/data/stacks/shadcn.csv": "0f9cc6fbfebea8026950c422808bb3aae239185bad770726b331f827f8e1a6de",
+      "_jutsu/ui-ux-pro-max/data/stacks/svelte.csv": "bc8d158994a8bdf412830a9dd5e5a5534edd2f367a6e50e0ebd4d76f592dfa3f",
+      "_jutsu/ui-ux-pro-max/data/stacks/swiftui.csv": "e87cb9eee208bb753bdab96d4a261c7f830c4317ee90ec098316b248fc32be85",
+      "_jutsu/ui-ux-pro-max/data/stacks/threejs.csv": "ab3c9d1a690e7d2950719eba01ad6f6a5f4914886e7d9b05189a7b2d01d339d0",
+      "_jutsu/ui-ux-pro-max/data/stacks/uno.csv": "bfb0904f96ef7d986369067525398e4864c51edf69e8156f94040cad4bc79a36",
+      "_jutsu/ui-ux-pro-max/data/stacks/uwp.csv": "bfe240f56dcd7d4ad97c851a66ef8ad9a3316d3d11932c751465ccce8a954e85",
+      "_jutsu/ui-ux-pro-max/data/stacks/vue.csv": "9b793c3f4eec85f77a758c09322f2b62f3b3ca549bb713ccf0849ef885934395",
+      "_jutsu/ui-ux-pro-max/data/stacks/winui.csv": "eaee213792a6d7c941114767370569407fad989f5b05e022a9d7ed9c2570a384",
+      "_jutsu/ui-ux-pro-max/data/stacks/wpf.csv": "49f41990069ef87dd4a40f5936649535253a097740788323d0b9fa76f41ea11e",
+      "_jutsu/ui-ux-pro-max/references/pro-rules.md": "88bad87d10086f74780eb309d259ad68d5e6566fda19aabb6a7927f5cd56b2d2",
+      "_jutsu/ui-ux-pro-max/references/quick-reference.md": "cc90ef8239c926847e38928ef039bb0b13b100fac9b3c63711d350504badedf4",
+      "_jutsu/ui-ux-pro-max/scripts/core.py": "f2312caafcae700940644f8cf24439953bdec6a26fe7b9242613062759428b92",
+      "_jutsu/ui-ux-pro-max/scripts/design_system.py": "ba22643868e715b34c8c2b967aeee194178ec9360897339e06ab57cfadcb91ba",
+      "_jutsu/ui-ux-pro-max/scripts/search.py": "3577f4e6b5f96ff2da83ad386c3c41c3d7a0948d7374e15344356990ed83fffb",
+      "_jutsu/ui-ux-pro-max/scripts/validate_data.py": "403bf38439b862313356dbf993632d5ad1a87e6d99fea94e467e17a375c43071",
+      "_jutsu/ui-ux-pro-max/scripts/tests/test_core.py": "cdaed39ba0066bc1750977f3e2d50ed4f8bb177f43c66758d66f830dfe28f98f"
+    },
+    "scope": "standalone project only"
+  }
+}

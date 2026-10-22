@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/CloudAI-X/threejs-skills",
+  "commit": "0e181866f095b5f06d005133876e926515390d95",
+  "skill": "threejs-shaders",
+  "date": "2026-10-22",
+  "packaging": "upstream skill plus license"
+}
