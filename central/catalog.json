@@ -382,5 +382,13 @@
     "description": "Template: escolha entre 20 estilos de motion (caderno, túnel, contraste, cinético…).",
     "prompt": "Liste os templates de docs/templates/README.md e da biblioteca (motion/remotion/templates/biblioteca/indice.json), explicando cada um em uma ou duas frases. Depois de eu escolher, aplique o template ao vídeo de {videos} seguindo docs/templates/biblioteca/README.md: plano local na pasta MOTION do vídeo, trechos cortados em pausas, cenas sincronizadas com as palavras, prévia em quadros e amostra para revisão antes de qualquer entrega. Importe o resultado no Concat.",
     "check": false
+  },
+  {
+    "id": "interface-explicativa",
+    "category": "Animação",
+    "title": "Interface Explicativa · fala + UI violeta 3D",
+    "description": "Fala com legenda central e destaque violeta, alternada com inserts de interface em 3D (Three.js) em 9:16; direção aprovada; elementos avulsos pelo Remotion.",
+    "prompt": "Use o template de docs/templates/interface-explicativa/README.md em {videos}. Troque apenas o tema: escreva textos de perfil, busca, pergunta, checklist e sobreposições a partir da fala deste vídeo, sem reutilizar textos ou tempos do exemplo. Corrija a transcrição contra o áudio e gere as legendas com scripts/interface_explicativa.py legendas. Meça o rosto para o enquadramento 9:16, escolha os destaques (1 por frase, no máximo) e mantenha cerca de 60% de fala e um evento visual a cada 2–4 s. Valide, rode resumo, prepare com --amostra e gere uma amostra de 15–25 s; importe no Concat, exporte com --sample e aguarde minha aprovação da versão atual antes da versão completa.",
+    "check": false
   }
 ]

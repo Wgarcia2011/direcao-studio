@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>{title}</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{{font-family:IEText;src:url('assets/regular.ttf');font-weight:400}}
+@font-face{{font-family:IEText;src:url('assets/medio.ttf');font-weight:500}}
+@font-face{{font-family:IEText;src:url('assets/negrito.ttf');font-weight:700}}
+@font-face{{font-family:IEHand;src:url('assets/manuscrito.ttf');font-weight:400}}
+html,body{{margin:0;width:100%;height:100%;overflow:hidden;background:#fff}}
+#ie{{position:relative;width:1080px;height:1920px;overflow:hidden;background:#fff;font-family:IEText,sans-serif}}
+#ie *{{box-sizing:border-box}}
+#fala{{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;transform-origin:0 0;background:#0d0f3a}}
+#fala video{{position:absolute;left:0;top:0;width:{src_w}px;height:{src_h}px;transform-origin:0 0;display:block}}
+</style></head>
+<body>
+<div id="ie" data-composition-id="interface-explicativa" data-width="1080" data-height="1920" data-fps="30" data-duration="{duration}">
+  <div id="fala">
+    <video id="fonte" class="clip" src="assets/fala.mp4" playsinline data-has-audio="true"
+      data-start="0" data-duration="{video_duration}" data-media-start="{start}" data-track-index="1"></video>
+  </div>
+</div>
+<script type="module">
+import {{criarCena}} from './assets/cena.js';
+const range = {{start: {start}, duration: {duration}}};
+const ready = criarCena({{root: document.getElementById('ie'), fala: document.getElementById('fala'), video: document.getElementById('fonte'), range}});
+window.__hf = window.__hf || {{}}; window.__hf.buildReady = window.__hf.buildReady || {{}};
+window.__hf.buildReady['interface-explicativa-cena'] = ready;
+const cena = await ready;
+const clock = {{_t: 0}};
+Object.defineProperty(clock, 't', {{get() {{ return this._t; }}, set(v) {{ this._t = v; cena.renderAt(v); }}}});
+const tl = gsap.timeline({{paused: true}});
+tl.to(clock, {{t: range.duration, duration: range.duration, ease: 'none'}});
+cena.renderAt(0);
+window.__timelines = window.__timelines || {{}};
+window.__timelines['interface-explicativa'] = tl;
+window.__interfaceExplicativa = cena;
+</script>
+</body></html>

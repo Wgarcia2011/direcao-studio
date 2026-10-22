@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "status": "approved",
+  "date": "2026-10-22",
+  "timezone": "America/Sao_Paulo",
+  "approvedBy": "usuario",
+  "evidence": "Aprovo a amostra 3D v2 da Interface Explicativa (HyperFrames + Remotion + Three.js) como direção do template.",
+  "scope": "Direção visual do template Interface Explicativa v2 em 3D (estilo \"3d\"): amostra sintética HyperFrames + Three.js e vitrine de elementos Remotion + Three.js. Não aprova aplicações a vídeos reais, que exigem amostra e revisão próprias, nem a v1 em 2D.",
+  "templateId": "interface-explicativa",
+  "estilo": "3d",
+  "reference": "https://br.pinterest.com/pin/984106956076960638/",
+  "samples": [
+    {
+      "kind": "composicao",
+      "engines": "HyperFrames 0.8.137 + Three.js 0.186",
+      "sample": "docs/templates/motion/interface-explicativa/exemplo-3d-v2.mp4 (workspace)",
+      "sha256": "933672c65632bd5f91c60179209da66efdfc06677e0fd255074aee5445147ad7",
+      "sourceManifestSha256": "76b8f90accc3c7cf90f6114bcce26817013e07a1f0f69b95e5bbee20e9557a68"
+    },
+    {
+      "kind": "elementos",
+      "engines": "Remotion 4.0.533 + Three.js 0.186",
+      "sample": "docs/templates/motion/interface-explicativa/elementos-3d-v2.mp4 (workspace)",
+      "sha256": "5c010c36b4a4b85de26ce2bc7a957bd11a76dd1926431e2c95ff329c7fbec47f"
+    }
+  ],
+  "sourcesAtApproval": {
+    "motion/hyperframes/templates/interface-explicativa/cena3d.js": "69d815bed25866bf1b5f98b4512dbb84f0c8ddbc8b6e6d04ba0003b0e9f06a48",
+    "motion/hyperframes/templates/interface-explicativa/elementos3d.js": "89b9c862603d3011205e51153ef68338868af4f8486c7b22deda899d0ea2612e",
+    "motion/hyperframes/templates/interface-explicativa/pagina.html": "3c908659b6a069d5210ec6b10b44b8b29ddcaf08d76d1ff513757afbbe3a0418",
+    "motion/hyperframes/templates/interface-explicativa/exemplo-sintetico.json": "e3f8c97d34cb57697a5c092abc4256384f7e7a7a8acba02af209a2c69f5396bc",
+    "motion/remotion/src/InterfaceElementos3D.tsx": "ea8df54b0e3f0dfb1229efa9bf79ce25ed21ad6a9833ee58163f5eaece3d434e",
+    "scripts/interface_explicativa.py": "4c2226150eaae586d48288d987901a3929780c098f173dff8ddb31cbc18e699f"
+  }
+}

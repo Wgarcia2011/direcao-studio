@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "template": "interface-explicativa",
+ "fixture": true,
+ "estilo": "3d",
+ "titulo": "Interface Explicativa — exemplo sintético",
+ "tema": "método de estudo (texto ilustrativo)",
+ "video": "fala-sintetica.mp4",
+ "legendas": "legendas-sinteticas.json",
+ "duracao": 20.0,
+ "fonteVideo": {"largura": 1080, "altura": 1920},
+ "enquadramento": {"cx": 540, "cy": 960, "zoom": 1.0, "rostoY": 640},
+ "legendaY": 860,
+ "abertura": "luz",
+ "destaques": ["todo o meu tempo", {"texto": "pular", "icone": "pular"}, "erros", "aprender", "uma nova fase", "Era da Constância"],
+ "sublinhados": [
+  {"tipo": "slider", "at": 1.4, "ate": 2.55}
+ ],
+ "cenas": [
+  {"tipo": "perfil", "from": 2.6, "to": 4.2, "entrada": "luz", "saida": "branco",
+   "nome": "Canal Exemplo", "detalhe": "12,4 mil inscritos", "legenda": "Assistindo *aulas*"},
+  {"tipo": "busca", "from": 4.2, "to": 5.5, "entrada": "branco", "saida": "whip", "retorno": "cartao",
+   "texto": "Procurando uma *resposta*"},
+  {"tipo": "pergunta", "from": 9.2, "to": 11.2, "entrada": "luz", "saida": "branco",
+   "titulo": "1. Pergunta", "linhas": 3, "texto": "e chegar direto às *respostas* que você procura."},
+  {"tipo": "checklist", "from": 12.8, "to": 15.6, "entrada": "luz", "saida": "zoom",
+   "titulo": "Método", "itens": [
+    {"texto": "Revisão", "at": 13.4},
+    {"texto": "Questões", "at": 14.0},
+    {"texto": "Simulados", "at": 14.6}
+   ]}
+ ],
+ "sobreposicoes": [
+  {"tipo": "lista", "at": 8.1, "ate": 9.2, "y": 1060, "itens": [
+   {"texto": "Erro comum", "at": 8.15},
+   {"texto": "Erro comum", "at": 8.4},
+   {"texto": "Erro comum", "at": 8.65}
+  ]},
+  {"tipo": "manuscrito", "at": 15.7, "ate": 17.0, "palavras": ["Revisão", "Questões", "Simulados"]},
+  {"tipo": "caminho", "at": 17.1, "ate": 18.55, "icone": "livro"},
+  {"tipo": "faixa", "at": 18.6, "ate": 20.0, "texto": "Era da Constância"}
+ ],
+ "amostra": {"inicio": 0, "fim": 20.0}
+}
