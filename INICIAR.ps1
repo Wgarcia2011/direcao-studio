@@ -17,7 +17,7 @@ if ($Projeto) {
     if (-not (Test-Path -LiteralPath (Join-Path $resolved 'concat.json'))) {
         throw 'Escolha uma pasta de projeto Concat contendo concat.json.'
     }
-    $launch.ArgumentList = '"' + $resolved + '"'
+    $launch.ArgumentList = @('--project', ('"' + $resolved + '"'))
 }
 # Janela visivel: este e o editor solicitado pelo usuario.
 Start-Process @launch
