@@ -9,6 +9,7 @@ from pathlib import Path
 TPL = json.load(open(Path(__file__).resolve().parents[1] / "template.json", encoding="utf-8"))
 plan = json.load(open(sys.argv[1], encoding="utf-8"))
 VID, AUD = int(sys.argv[2]), int(sys.argv[3])
+ROSTO = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--rosto=")), None)
 FPS = TPL["fps"]
 T = 254016000000
 F = T // FPS
@@ -97,8 +98,14 @@ def efeitos(fx):
     for a, b in fx["push"]:
         end = min(b + pi["tail_s"], dur)
         add(a, end + 0.25, [(a, 100), (end, pi["scale"]), (end + 0.25, 100)])
-    for p in ("anchor", "position"):
-        ex("effects.setParam", {"clip": VID, "effect": "motion", "param": p, "value": cam["anchor"]})
+    if ROSTO:
+        pts = json.load(open(ROSTO, encoding="utf-8"))["points"]
+        for r in pts[::3]:
+            for p in ("anchor", "position"):
+                kf(VID, "motion", p, round(r["t"] * FPS), [round(r["x"], 1), round(r["y"], 1)])
+    else:
+        for p in ("anchor", "position"):
+            ex("effects.setParam", {"clip": VID, "effect": "motion", "param": p, "value": cam["anchor"]})
     for t, v in sorted(k for *_, ks in windows for k in ks):
         kf(VID, "motion", "scale", round(t * FPS), v)
     kf(VID, "opacity", "opacity", round((dur - o["fade_to_black_s"]) * FPS), 100)

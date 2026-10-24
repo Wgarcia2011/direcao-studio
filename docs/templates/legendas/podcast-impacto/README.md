@@ -16,6 +16,8 @@ de um corte de podcast vertical. Versão 1.
   push-in lento (até 112 %) nas combinações, punch-in rápido (122 %) em frases escolhidas e saída em
   zoom-in com fade para preto.
 - **Trechos negativos em preto e branco** (Tint), com as legendas mantidas coloridas.
+- **Zoom seguindo o rosto (opcional):** o centro de todos os zooms acompanha o ponto entre os olhos
+  do falante, rastreado no vídeo inteiro. Aprovado também numa versão sem legendas.
 - **Sem efeitos de áudio** (eco foi testado e recusado).
 
 Parâmetros completos em [`template.json`](template.json).
@@ -25,6 +27,8 @@ Parâmetros completos em [`template.json`](template.json).
 - `scripts/transcrever.py` — transcrição local com faster-whisper (GPU se houver CUDA), palavras com tempo.
 - `scripts/planejar.py` — gera o plano (legendas + efeitos) de `palavras.json` + `config.json`.
 - `scripts/filmcraft_aplicar.py` — aplica o plano ao vivo no FilmCraft; não exporta.
+  Opções: `--sem-legendas`, `--sem-efeitos`, `--rosto=rosto.json` (zoom centrado no rosto).
+- `scripts/rastrear_rosto.py` — rastreia o ponto entre os olhos do falante (OpenCV YuNet).
 - `exemplo/` — fala **sintética** com `palavras.json` e `config.json` de referência.
 
 ## Configuração por vídeo (`config.json`)
@@ -52,6 +56,22 @@ As configurações de vídeos reais ficam fora do Git (ex.: `C:\Users\<usuario>\
 5. Exporte uma amostra (`file.exportMedia` com `range: custom`, 0–30 s), confira formato, áudio e
    quadros, e **obtenha aprovação** antes do vídeo completo. A exportação longa ultrapassa o limite
    de 60 s do canal de controle: acompanhe pelo arquivo, sem repetir o comando.
+
+## Zoom seguindo o rosto
+
+1. Baixe uma vez o modelo `face_detection_yunet_2023mar.onnx` do repositório oficial
+   [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet)
+   para uma pasta fora do Git (ex.: `C:\Users\<usuario>\Apps\modelos`). Requer `opencv-python` 4.8+.
+2. `python scripts/rastrear_rosto.py VIDEO.mp4 MODELO.onnx rosto.json --cortes 17.6,96.5`
+   (os mesmos cortes do `config.json`). Confira a taxa de detecção impressa e desenhe o ponto em
+   alguns quadros antes de aplicar: o rastreador recomeça em cada corte e segue o rosto mais próximo.
+3. `python scripts/filmcraft_aplicar.py plano.json ID_VIDEO ID_AUDIO --rosto=rosto.json`
+   (acrescente `--sem-legendas` para a versão só com câmera). Âncora e posição do clipe recebem
+   keyframes a cada 0,3 s com o ponto rastreado; em 100 % o quadro não se move, e nos zooms o rosto
+   fica no lugar.
+
+O modelo clássico do EffectCraft não encontrou rostos de perfil com barba e óculos; o YuNet
+detectou 100 % das amostras no vídeo de referência.
 
 Limitações conhecidas (FilmCraft 0.12): o canal de controle não lista a timeline; guarde os ids
 retornados. `graphics.set` com `time` não cria keyframe — anime por `effects.setParam` com
