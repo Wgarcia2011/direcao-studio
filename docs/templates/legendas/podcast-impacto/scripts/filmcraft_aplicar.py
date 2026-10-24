@@ -10,6 +10,8 @@ TPL = json.load(open(Path(__file__).resolve().parents[1] / "template.json", enco
 plan = json.load(open(sys.argv[1], encoding="utf-8"))
 VID, AUD = int(sys.argv[2]), int(sys.argv[3])
 ROSTO = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--rosto=")), None)
+FOLLOW = TPL["camera"]["face_follow"]
+ENQUADRAR = float(next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--enquadrar=")), FOLLOW["base_scale"]))
 FPS = TPL["fps"]
 T = 254016000000
 F = T // FPS
@@ -98,16 +100,35 @@ def efeitos(fx):
     for a, b in fx["push"]:
         end = min(b + pi["tail_s"], dur)
         add(a, end + 0.25, [(a, 100), (end, pi["scale"]), (end + 0.25, 100)])
+    base = 1.0
     if ROSTO:
-        pts = json.load(open(ROSTO, encoding="utf-8"))["points"]
-        for r in pts[::3]:
-            for p in ("anchor", "position"):
-                kf(VID, "motion", p, round(r["t"] * FPS), [round(r["x"], 1), round(r["y"], 1)])
+        data = json.load(open(ROSTO, encoding="utf-8"))
+        Wv, Hv = data["size"]
+        pts = data["points"]
+        base = ENQUADRAR
+        tx, ty = Wv * FOLLOW["target_x"], Hv * FOLLOW["target_y"]
+        step = max(1, round(FOLLOW["key_every_s"] / max(pts[1]["t"] - pts[0]["t"], 1e-3))) if len(pts) > 1 else 1
+        sel = set(range(0, len(pts), step))
+        for c in fx["cuts"]:                        # sem deslizar através dos cortes
+            for i in range(len(pts) - 1):
+                if pts[i]["t"] < c <= pts[i + 1]["t"]:
+                    sel |= {i, i + 1}
+        for i in sorted(sel):
+            r = pts[i]
+            x, y = r["x"], r["y"]
+            px = min(max(tx, Wv - base * (Wv - x)), base * x)    # desloca até onde não aparece borda
+            py = min(max(ty, Hv - base * (Hv - y)), base * y)
+            fr = round(r["t"] * FPS)
+            kf(VID, "motion", "anchor", fr, [round(x, 1), round(y, 1)])
+            kf(VID, "motion", "position", fr, [round(px, 1), round(py, 1)])
     else:
         for p in ("anchor", "position"):
             ex("effects.setParam", {"clip": VID, "effect": "motion", "param": p, "value": cam["anchor"]})
-    for t, v in sorted(k for *_, ks in windows for k in ks):
-        kf(VID, "motion", "scale", round(t * FPS), v)
+    keys = sorted(k for *_, ks in windows for k in ks)
+    if not keys or keys[0][0] > 0:
+        keys.insert(0, (0, 100))
+    for t, v in keys:
+        kf(VID, "motion", "scale", round(t * FPS), round(v * base, 2))
     kf(VID, "opacity", "opacity", round((dur - o["fade_to_black_s"]) * FPS), 100)
     kf(VID, "opacity", "opacity", round(dur * FPS) - 1, 0)
     bw = TPL["negative_black_white"]

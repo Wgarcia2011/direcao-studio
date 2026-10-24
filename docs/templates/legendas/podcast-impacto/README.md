@@ -16,8 +16,9 @@ de um corte de podcast vertical. Versão 1.
   push-in lento (até 112 %) nas combinações, punch-in rápido (122 %) em frases escolhidas e saída em
   zoom-in com fade para preto.
 - **Trechos negativos em preto e branco** (Tint), com as legendas mantidas coloridas.
-- **Zoom seguindo o rosto (opcional):** o centro de todos os zooms acompanha o ponto entre os olhos
-  do falante, rastreado no vídeo inteiro. Aprovado também numa versão sem legendas.
+- **Câmera seguindo o rosto (opcional):** a imagem fica ampliada (125 %) e desliza para manter o
+  falante perto do centro, sem mostrar borda; os zooms acontecem em torno do rosto. Aprovado numa
+  versão sem legendas.
 - **Sem efeitos de áudio** (eco foi testado e recusado).
 
 Parâmetros completos em [`template.json`](template.json).
@@ -27,7 +28,8 @@ Parâmetros completos em [`template.json`](template.json).
 - `scripts/transcrever.py` — transcrição local com faster-whisper (GPU se houver CUDA), palavras com tempo.
 - `scripts/planejar.py` — gera o plano (legendas + efeitos) de `palavras.json` + `config.json`.
 - `scripts/filmcraft_aplicar.py` — aplica o plano ao vivo no FilmCraft; não exporta.
-  Opções: `--sem-legendas`, `--sem-efeitos`, `--rosto=rosto.json` (zoom centrado no rosto).
+  Opções: `--sem-legendas`, `--sem-efeitos`, `--rosto=rosto.json` (câmera seguindo o rosto) e
+  `--enquadrar=1.25` (ampliação base usada para reenquadrar).
 - `scripts/rastrear_rosto.py` — rastreia o ponto entre os olhos do falante (OpenCV YuNet).
 - `exemplo/` — fala **sintética** com `palavras.json` e `config.json` de referência.
 
@@ -66,9 +68,13 @@ As configurações de vídeos reais ficam fora do Git (ex.: `C:\Users\<usuario>\
    (os mesmos cortes do `config.json`). Confira a taxa de detecção impressa e desenhe o ponto em
    alguns quadros antes de aplicar: o rastreador recomeça em cada corte e segue o rosto mais próximo.
 3. `python scripts/filmcraft_aplicar.py plano.json ID_VIDEO ID_AUDIO --rosto=rosto.json`
-   (acrescente `--sem-legendas` para a versão só com câmera). Âncora e posição do clipe recebem
-   keyframes a cada 0,3 s com o ponto rastreado; em 100 % o quadro não se move, e nos zooms o rosto
-   fica no lugar.
+   (acrescente `--sem-legendas` para a versão só com câmera). A âncora do clipe recebe o ponto
+   rastreado a cada 0,3 s e a posição leva esse ponto para o centro horizontal e 40 % da altura,
+   limitada para nunca mostrar borda na ampliação base (`--enquadrar`, padrão 1,25). Todos os zooms
+   do template são multiplicados por essa base. Nos cortes, os keyframes trocam sem deslizar.
+
+Só ancorar o zoom no rosto, sem ampliação base, não produz movimento visível em 100 %: o
+reenquadramento é o que faz a câmera parecer seguir o falante.
 
 O modelo clássico do EffectCraft não encontrou rostos de perfil com barba e óculos; o YuNet
 detectou 100 % das amostras no vídeo de referência.

@@ -25,6 +25,7 @@
   },
   "camera": {
     "anchor": [540, 760],
+    "face_follow": {"base_scale": 1.25, "target_x": 0.5, "target_y": 0.4, "key_every_s": 0.3},
     "intro": {"from": 125, "seconds": 0.6},
     "outro": {"to": 118, "seconds": 0.8, "fade_to_black_s": 0.6},
     "cut_zoom": {"peak": 128, "before_s": 0.3, "after_s": 0.4},
