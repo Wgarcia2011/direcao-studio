@@ -1,0 +1,105 @@
+{
+  "corrections": [],
+  "highlights": [
+    {
+      "id": "TIPO-01",
+      "anchor": "tudo parecia difícil",
+      "after": 0,
+      "rows": [
+        [
+          [
+            2,
+            "m7",
+            64
+          ]
+        ],
+        [
+          [
+            1,
+            "g",
+            132
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "TIPO-24",
+      "anchor": "Ninguém acreditava no plano",
+      "after": 0,
+      "rows": [
+        [
+          [
+            1,
+            "s",
+            108
+          ]
+        ],
+        [
+          [
+            3,
+            "m4",
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "TIPO-15",
+      "anchor": "estudar junto é muito importante",
+      "after": 0,
+      "rows": [
+        [
+          [
+            2,
+            "m4",
+            62
+          ]
+        ],
+        [
+          [
+            2,
+            "m4",
+            62
+          ]
+        ],
+        [
+          [
+            1,
+            "g",
+            118,
+            "u"
+          ]
+        ]
+      ]
+    }
+  ],
+  "main_words": [
+    "sozinho",
+    "pessoas",
+    "caminho",
+    "apoio",
+    "grupo"
+  ],
+  "negative": [
+    [
+      "tudo parecia",
+      "difícil",
+      0
+    ],
+    [
+      "Ninguém",
+      "plano",
+      0
+    ]
+  ],
+  "punch": [
+    [
+      "o apoio mudou tudo",
+      "o apoio mudou tudo",
+      0
+    ]
+  ],
+  "cuts": [
+    6.0
+  ]
+}

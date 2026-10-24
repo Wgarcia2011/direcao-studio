@@ -34,6 +34,11 @@ Pedido na central: Animação → Biblioteca de templates de motion.
 estilos de legenda (composições `CaptionTrack`/`CaptionCatalog` da biblioteca).
 Referência de tipografia: [catálogo de legendas](../aprendizado/CATALOGO-TIPOGRAFIA-LEGENDAS.md).
 
+[Podcast Impacto](legendas/podcast-impacto/README.md): corte de podcast 9:16 com legendas em
+Bebas Neue, ênfases em Anton empilhadas, combinações editoriais, câmera (zoom de entrada, cortes,
+push-in, punch-in, saída) e trechos negativos em preto e branco. Aplicado ao vivo no FilmCraft;
+aprovado numa amostra real em 24/10/2026, com exemplo sintético.
+
 ## Listar Templates
 
 Quando o usuário escrever **"Listar Templates"**, o agente lê este arquivo e

@@ -1,0 +1,42 @@
+{
+  "id": "podcast-impacto-v1",
+  "name": "Podcast Impacto — legendas Bebas + ênfases empilhadas + câmera",
+  "approved_on": "2026-10-24",
+  "approval_scope": "Direção aprovada pelo usuário na amostra de 30 s; não aprova automaticamente outros vídeos.",
+  "editor": "FilmCraft 0.12 (controle ao vivo, porta 9878)",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "size_scale": 1.2,
+  "composition_center_y": 0.25,
+  "base": {"px": 150, "baseline_y": 1470, "style": "base"},
+  "emphasis": {"px": 124, "support_px": 70, "min_gap_s": 2.5},
+  "styles": {
+    "base": {"file": "BebasNeue-Regular.ttf", "family": "Bebas Neue", "style": "Regular", "color": "#ffffff", "upper": true},
+    "emph": {"file": "Anton-Regular.ttf", "family": "Anton", "style": "Regular", "color": "#ffe27a", "upper": true},
+    "m4": {"file": "manrope-400.ttf", "family": "Manrope", "style": "Regular", "color": "#ffffff", "upper": false},
+    "m7": {"file": "manrope-700.ttf", "family": "Manrope", "style": "Bold", "color": "#ffffff", "upper": false},
+    "g": {"file": "editorial-bold-italic.ttf", "family": "Georgia", "style": "Bold Italic", "color": "#fff0cf", "upper": false},
+    "s": {"file": "sora-700.ttf", "family": "Sora", "style": "Bold", "color": "#ffffff", "upper": true}
+  },
+  "animation": {
+    "text_in": {"scale": [70, 106, 100], "frames": [0, 5, 9], "opacity_frames": 5, "fade_out_frames": 3},
+    "emphasis_in": {"scale": [40, 116, 100], "frames": [0, 5, 9]}
+  },
+  "camera": {
+    "anchor": [540, 760],
+    "intro": {"from": 125, "seconds": 0.6},
+    "outro": {"to": 118, "seconds": 0.8, "fade_to_black_s": 0.6},
+    "cut_zoom": {"peak": 128, "before_s": 0.3, "after_s": 0.4},
+    "punch_in": {"scale": 122, "release_s": 0.2},
+    "push_in": {"scale": 112, "tail_s": 2.2}
+  },
+  "negative_black_white": {"effect": "tint", "ramp_in_s": 0.2, "ramp_out_s": 0.2, "hold_after_s": 0.3},
+  "audio_effects": "nenhum (eco foi testado e removido a pedido do usuário)",
+  "rules": [
+    "Palavra em destaque nunca ao lado do texto comum: sempre em linha própria acima ou abaixo.",
+    "Legendas comuns em Bebas Neue caixa alta; ênfases em Anton amarelo-claro, no máximo uma a cada 2,5 s.",
+    "Combinações editoriais (TIPO-xx) vêm do catálogo docs/aprendizado/CATALOGO-TIPOGRAFIA-LEGENDAS.md.",
+    "Trechos negativos em preto e branco; legendas continuam coloridas."
+  ]
+}
